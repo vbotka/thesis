@@ -1,0 +1,216 @@
+% Chapter 8
+\chapter{Súhrn výsledkov s uvedením nových poznatkov.}
+\label{Chapter8}
+\lhead{Chapter 8. \emph{Súhrn výsledkov s uvedením nových poznatkov}}
+% This is for the header on each page - perhaps a shortened title
+%----------------------------------------------------------------------
+
+V dizertačnej práci sú uvedené výsledky získané pri skúmaní parametrov
+štruktúr MOS s nehomogénnym rozložením prímesí v podpovrchovej oblasti
+polovodiča. Vzhľadom k tomu, že u nás nebola doposiaľ táto
+problematika komplexne riešená, bolo potrebné zhrnúť súčasné poznatky
+z tejto oblasti, zvládnuť metodiku merania a vyhodnotenia parametrov a
+prakticky ich realizovať. Praktická stránka pozostávala z realizácie
+jednotlivých kapacitných metód a vytvorenia komplexného pracoviska pre
+meranie a vyhodnotenie plošného rozloženia parametrov štruktúr MOS s
+perspektívou ďalšieho využitia pre skúmanie korelácií medzi
+jednotlivými parametrami, prípadne medzi parametrami iných testovacích
+štruktúr, alebo technologických postupov planárnej technológie.
+
+Dizertačná práca priniesla následovné výsledky:
+
+\begin{enumerate}
+
+% 1
+\item Vyriešili sme jedno-dimenzionálnu Poissonovu rovnicu pre
+  nehomogénne dotovaný substrát polovodiča a vypočítali sme teoretické
+  CV závislosti štruktúry MOS. Numerické riešenie Poissonovej rovnice
+  umožnilo získať informácie o fyzikálnych dejoch v štruktúre MOS v
+  procese merania CV závislostí a umožnilo overenie použitých
+  aproximácií pri výpočte koncentračných profilov.
+
+%2
+\item Okrem Štandardnej vysokofrekvenčnej a kvázistatickej CV
+  metódy sme realizovali postup merania štruktúr MOS metódou QC, kde
+  bolo potrebné:
+
+\begin{itemize}
+\item navrhnúť a realizovať prípravok pre umiestnenie meranej vzorky a
+  vzduchového kondenzátora
+\item  minimalizovať zvodové prúdy a parazitné kapacity
+\item zvoliť vhodné postupy určovania parazitných kapacít
+\item vytvoriť programové vybavenie pre zber a spracovanie dát.
+\end{itemize}
+
+Ako sa ukázalo počas zavádzania metódy, ako aj počas následovných
+experimentov, implementácia metódy QC vyžaduje vytvorenie dôkladného
+meracieho pracoviska s dôrazom na minimalizáciu zvodových prúdov a
+parazitných kapacít.
+
+%3
+\item Pre meranie generačného času života minoritných nosičov náboja
+  sme implementovali metódu konštantnej šírky OPN (CCT), ktorá
+  umožňuje efektívne vyhodnocovanie kvality polovodičových substrátov
+  pre vysoké hodnoty $\tau_{g}$ . Pri tvorbe riadiaceho programu sme
+  navrhli a realizovali algoritmus pre udržanie konštantnej
+  nerovnovážnej kapacity štruktúry MOS a merania závislosti
+  $V_{g}(t)$.
+
+%4
+\item Všetky použité metódy (HF, LF, QC a CCT) boli automatizované
+  pomocou osobného počítača PC AT s interfejsom PCIIA, pričom bolo
+  potrebné zvládnuť riadenie zbernice IMS-2 a efektívne využiť
+  autonómne schopnosti použitých prístrojov. Pre skúmanie plošného
+  rozloženia parametrov štruktúr MOS na kremíkovej doske sme
+  vypracovali programový balík pozostávajúci z približne 40 programov,
+  ktoré vykonávajú zber dát, ich spracovanie a určenie parametrov
+  štruktúr MOS.  Zároveň sú k dispozícii programy pre zobrazenie
+  získaných výsledkov.  Stručný prehľad vytvorených programov, ktoré
+  slúžia pre zber, spracovanie a zobrazenie dát plošného rozloženia
+  parametrov štruktúr MOS, je v dodatku \ref{app:AppendixH}.
+
+%5
+\item Pri výpočte koncentračných profilov dotujúcich prímesí v
+  podpovrchovej oblasti polovodiča sme aplikovali:
+\begin{itemize}
+\item korekciu aproximácie hlbokého ochudobnenia pri povrchu
+  polovodiča
+\item korekciu vzhľadom na hustotu pascí rozhrania $Si-SiO_{2}$
+\item výpočet šírky oblasti OPN pomocou aproximácie priebehu
+  elektrického potenciálu v polovodiči
+\item výpočet priestorového rozloženia dotujúcich atómov z
+  koncentračného profilu majoritných nosičov náboja.
+\end{itemize}
+
+%6
+\item Vhodnosť použitých aproximácií sme overili riešením Poissonovej
+  rovnice a výpočtom koncentračného profilu majoritných nosičov náboja
+  z teoretickej CV závislosti.  Tu sa ukázalo, že pre určovanie
+  koncentračných profilov implantovaných prímesí testovaných
+  kremíkových dosiek v záverečnom experimente je použitie uvedených
+  aproximácii vhodné.
+
+%7
+\item Pre rôzne dávky implantácie v rozsahu od $0.6 \times 10^{15}$ do
+  $60.0 \times 10^{15} m^{-2}$ sme určili na 10 kremíkových doskách
+  priebehy koncentračných profilov $N(x)$ na približne 300 štruktúrach
+  MOS každej testovanej dosky a vypočítali sme ich stredné
+  hodnoty. Zároveň sme určili strednú hodnotu časti dávky
+  implantovaných iónov, ktoré sa stali elektricky aktívnymi v
+  polovodiči $D_{a}$ . Ukázalo sa, že závislosť medzi dávkou
+  implantácie $D_{i}$ a množstvom elektricky aktívnych, implantovaných
+  prímesí $D_{a}=f(D_{i})$ je lineárna, čo usudzujeme z hodnoty
+  korelačného koeficientu $R(D_{i},D_{a})=0.99$.  Lineárnou regresiou
+  závislosti $D_{a}=f(D_{i})$ sme zistili, že z pôvodnej implantovanej
+  dávky sa do polovodiča dostalo a stalo sa elektricky aktívnymi
+  $71\%$ iónov. Uvedenú metodiku možno využiť pri kontrole procesu
+  implantácie a bola vypracovaná na základe požiadavky Tesly Piešťany.
+
+%8
+\item Vypočítané koncentračné profily sme overili simuláciou
+  technologického procesu implantácie pomocou funkcie Pearson IV. Z
+  porovnania výsledkov zistených pomocou kapacitných meraní a
+  simulácie vidieť malý rozdiel, ktorý môže byť spôsobený tým, že v
+  procese poimplantačného tepelného spracovania neboli všetky
+  implantované ióny aktivované.  Zistené rozdiely sú však
+  minimálne. Bola vypracovaná metodika na sledovanie plošného
+  rozloženia hĺbkových profilov dotujúcich prímesí v rámci hraníc
+  použiteľnosti kapacitnej metódy s možnosťou sledovať plošné
+  rozloženie v ľubovolnej hĺbke pod povrchom polovodiča. Na základe
+  experimentálnych výsledkov možno konštatovať, že proces implantácie
+  prebiehal na 4 palcových kremíkových substrátoch reprodukovateľne s
+  vysokou homogenitou rozloženia prímesí, čím sme overili kvalitu
+  implantačného zariadenia.
+
+%9
+\item Predchádzajúce výsledky, získané pri určovaní hĺbkových
+  koncentračných profilov, sa využili pri skúmaní vlastností rozhrania
+  $Si-SiO_{2}$ štruktúr MOS s implantovaným substrátom. Pre analýzu
+  týchto štruktúr bola použitá:
+\begin{enumerate}
+%a
+\item diferenciálna kapacitná metóda, porovnávajúca HF a LF CV
+  závislosť štruktúry MOS, pričom výpočet $\varphi_{s}(V_{g})$
+  zohľadňuje hĺbkový profil prímesí
+%b
+\item kvázistatická CV metóda, založená na porovnaní experimentálnej a
+  teoretickej CV závislosti.
+\end{enumerate}
+Z porovnania výsledkov získaných oboma metódami vyplýva, že hustota
+pascí rozhrania $Si-SiO_{2}$ v strede zakázaného pásu sa prakticky
+nelíši. Obe metodiky možno aplikovať na CV závislosti určené pomocou
+HF a kvázistatickej metódy, alebo na CV závislosti štruktúry MOS
+určené pomocou QC metódy. Zároveň sme zvládli postup určenia priebehu
+povrchového potenciálu $\varphi_s(V_g)$ pomocou QC metódy, alebo
+integráciou LF CV závislosti. Pre výpočet hustoty pascí z porovnania
+experimentálnej a teoretickej CV závislosti sme použili teoretickú LF
+CV závislosť určenú pomocou numerického riešenia Poissonovej rovnice
+pre nehomogénne rozloženie dotujúcich prímesí v polovodiči.
+
+%10
+\item Z porovnania HF a LF CV závislosti sme určili plošné rozloženie
+  hustoty pascí rozhrania $Si-SiO_{2}$ . Stredná hodnota hustoty pascí
+  rozhrania v strede zakázaného pásu testovaných dosiek sa pohybovala
+  v intervale od $2.6 \times 10^{14}$ do $4.4 \times 10^{14}
+  m^{-2}eV^{-1}$. Tieto hodnoty sú na dolnej hranici rozlišovacej
+  schopnosti použitej metódy a hovoria o dobrej kvalite rozhrania
+  $Si-SiO_{2}$ testovaných vzoriek a súčasne o kvalite opracovania
+  polovodičových substrátov.
+
+%11
+\item V záverečnom experimente sme metódou CCT určili plošné
+  rozloženie strednej hodnoty $\tau_{g}$ na 8 kremíkových doskách v
+  hĺbke od $0.9$ do $1.3 mm$, ktoré sa pohybujú od $0.41$ do $2.25
+  ms$, čo hovorí o vysokej kvalite substrátu. \newline Výhodou
+  použitej metódy je, že vyhodnocuje $\tau_{g}$ z generačného prúdu
+  minoritných nosičov náboja len z oblasti OPN a eliminuje vplyv
+  generácie minoritných nosičov náboja mimo túto oblasť, čo sa
+  prejavilo na reprodukovateľnosti hodnôt tohto parametra. \newline
+  Bola zistená vzájomná súvislosť medzi hĺbkovým profilom doby života
+  a koncentračným profilom implantovaných prímesí.  Dosiahnuté
+  výsledky poukazujú, že u skúmaných vzoriek dominantný mechanizmus,
+  ktorý určuje dobu života je rozptyl na ionizovaných prímesiach. To
+  taktiež potvrdzuje, že skúmané polovodičové substráty sú
+  vysoko-kvalitné z hľadiska defektov a preto je rozptyl na nich
+  vzhľadom na rozptyl na ionizovaných prímesiach zanedbateľný.
+
+%12
+\item Určili sme plošné rozloženie hrúbky oxidovej vrstvy vypočítanej
+  z kapacity štruktúry MOS v akumulácii na 10 kremíkových doskách, z
+  ktorého vidieť nehomogenity hrúbky $SiO_{2}$ spôsobené nerovnomerným
+  rozložením teploty a turbulenciami oxidačnej atmosféry v trubici
+  oxidačnej pece. \newline Stredné hodnoty hrúbky $SiO_{2}$ na jednotlivých
+  doskách sa pohybujú v intervale od $94.14$ do $102.85 nm$, pričom
+  v technologickom procese výroby štruktúr MOS bola požadovaná hodnota
+  $100 nm$. \newline Zároveň je z tabuľky stredných hodnôt vidieť, že
+  hrúbka oxidu je najnižšia pre kremíkové dosky, ktoré sa nachádzali
+  na prednom a zadnom konci oxidačnej lodičky a najhrubší oxid sa
+  vytvoril v strede, čo bolo spôsobené rozdelením teploty v oxidačnej
+  trubici. Tieto poznatky sú v súlade s Bermannovým modelom mechanizmu
+  termickej oxidácie.
+
+%13
+\item Skúmali sme plošné rozloženie napätia vyrovnaných pásov $V_{fb}$
+  pre 10 kremíkových dosiek. Stredné hodnoty $V_{fb}$ na jednotlivých
+  kremíkových doskách sa pohybujú v rozsahu od $-1.24$ do $-2.43
+  V$. Vzhľadom k tomu, že náboj pascí rozhrania je pre skúmané dosky
+  malý, rozptyl stredných hodnôt $V_{fb}$ môže byť spôsobený nábojom
+  alkalických iónov v oxide.
+
+%14
+\item Pre riešenie rovníc matematickej fyziky sme použili metódy
+  numerickej matematiky. Riešili sme diferenciálnu rovnicu druhého
+  rádu s počiatočnými podmienkami pomocou metódy prediktor-korektor so
+  štartovacím úsekom Runge-Kutta, hľadali sme korene nelineárnej
+  rovnice metódou dotyčníc, použili sme číslicové filtre pre
+  vyhladenie a určenie derivácií experimentálne získaných dát. Použili
+  sme funkcie knižnice NAG pre aproximáciu kubickými splajn-funkciami.
+
+%15
+\item Vypracovali sme systém a štruktúry dátových súborov, ktoré
+  uchovávajú namerané dáta a určené parametre štruktúry MOS, pričom
+  sme zohľadnili vzťahy medzi jednotlivými metodikami merania a
+  určovania parametrov, čo prispieva k väčšej efektívnosti programov a
+  umožňuje ďalšie použitie získaných výsledkov.
+
+\end{enumerate}

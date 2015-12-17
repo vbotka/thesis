@@ -1,0 +1,95 @@
+% Appendix H
+
+\chapter{Programy zberu, spracovania a zobrazenia dát pre plošné rozloženie parametrov štruktúr MOS.} % Main appendix title
+
+\label{app:AppendixH} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix H. \emph{Programy zberu, spracovania a zobrazenia dát}} % This is for the header on each page - perhaps a shortened title
+
+\begin{verbatim}
+I. PROGRAMY ZBERU DAT.
+
+Vsetky programy zberu dat pouzivaju pre riadenie krokovacieho zariadenia programy:
+* ZONDUP.EXE - zdvih stolika
+* ZONDDN.EXE - spustenie stolika
+* ZONDST.EXE - posuv stolika
+Informacie o pohybe krokovacieho zariadenia citaju zo suboru Z.XY
+
+1. ZCT.EXE - hlavny program metody CCT
+   segmenty:
+   * ZCT1.EXE - inicializacia zbernice IMS-2 a pristrojov
+   * ZCT2.EXE - meranie zavislosti V (t) a ukladanie dV /dt do
+     vystupneho suboru
+   * ZCT9.EXE - uvedenie zbernice IMS-2 do ppvodneho stavu
+
+2. ZHF.EXE - hlavny program rovnovaznej a nerovnovaznej HF CV metody
+   segmenty:
+   * ZHF1.EXE - inicializacia zbernice IMS-2 a pristrojov
+   * ZHF2.EXE - meranie zavislosti C   (V )
+   * ZHF3.EXE - vyhladenie nameranych dat a ulozenie do vystupneho
+     suboru
+   * ZHF9.EXE - uvedenie zbernice IMS-2 do ppvodneho stavu
+
+3. ZLF.EXE - hlavny program kvazistatickej CV metody
+   segmenty:
+   * ZLF1.EXE - inicializacia zbernice IMS-2 a pristrojov
+   * ZLF2.EXE - meranie zavislosti C   (V )
+   * ZLF3.EXE - vyhladenie nameranych dat, interpolacia a ulozenie do
+     vystupneho suboru
+   * ZLF9.EXE - uvedenie zbernice IMS-2 do ppvodneho stavu
+
+4. ZOXHF.EXE - hlavny program merania kapacity oxidu pomocou HF
+   CV metody
+   segmenty:
+   * ZOXHF1.EXE - inicializacia zbernice IMS-2 a pristrojov
+   * ZOXHF2.EXE - meranie kapacity oxidovej vrstvy a ukladanie do
+     vystupneho suboru
+   * ZOXHF9.EXE - uvedenie zbernice IMS-2 do ppvodneho stavu
+
+5. ZOXLF.EXE - hlavny program merania kapacity oxidu pomocou
+   kvazistatickej CV metody
+   segmenty:
+   * ZLF1.EXE - inicializacia zbernice IMS-2 a pristrojov
+   * ZOXLF2.EXE - meranie kapacity oxidovej vrstvy a ukladanie do
+     vystupneho suboru
+   * ZLF9.EXE - uvedenie zbernice IMS-2 do ppvodneho stavu
+
+
+II. PROGRAMY SPRACOVANIA DAT.
+
+6.    ZNX.EXE - vypocet koncentracneho profilu N(x)
+7.    ZNB.EXE - vypocet koncentracie substratu N
+8.    ZFV.EXE - vypocet povrchoveho potencialu ako funkcie 
+                napbtia hradla f (V )
+9.    ZDF.EXE - vypocet hustoty pasci rozhrania D
+10.   ZTX.EXE - vypocet generacneho casu zivota minoritnych 
+                nosicov naboja t (x)
+11.  ZWOX.EXE - vypocet hrubky oxidu h
+12.  ZYXI.EXE - vypocet integralnej hodnoty Y(x)
+13.  ZYXM.EXE - vypocet strednej hodnoty, smerodajnej od-
+                chylky a linearnej regresie
+14.ZKORFF.EXE - vypocet korelacneho koeficientu medzi para-
+                metrami zo suborov Subor1 <> Subor2
+15.ZKORYX.EXE - vypocet korelacneho koeficientu zavislosti
+                Y(x)
+
+
+III. PROGRAMY GRAFICKEHO ZOBRAZENIA DAT.
+
+16.   ZGF.EXE - zobrazenie zavislosti Y(x) s popisom osi
+17. ZSURF.EXE - plosne zobrazenie rozlozenia parametrov a
+                funkcnych zavislosti Y(x), pre rpzne x
+18. ZVIEW.EXE - zobrazenie jednotlivych zavislosti Y(x)
+19.ZVIEWD.EXE - zobrazenie jednotlivych zavislosti Y1(x) a
+                Y2(x)
+
+
+IV. POMOCNE PROGRAMY.
+
+20.   BELL.EXE - alarm
+21. ZASCII.EXE - konverzia binarneho formatu na ASCII
+22.   ZERR.EXE - vypis pozicii na doske s chybne nameranymi
+                 datami
+23. ZREPLC.EXE - vymena zaznamov v datovom subore
+24. ZTRUNC.EXE - skratenie datoveho suboru
+\end{verbatim}

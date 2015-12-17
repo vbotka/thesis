@@ -1,0 +1,72 @@
+% Appendix B
+
+\chapter{Úprava Poissonovej rovnice do normalizovaného tvaru.} % Main appendix title
+\label{app:AppendixB} % For referencing this appendix elsewhere, use \ref{AppendixB}
+\lhead{Appendix B. \emph{Úprava Poissonovej rovnice do normalizovaného tvaru}} % This is for the header on each page - perhaps a shortened title
+
+Poissonova rovnica má tvar
+
+\begin{equation}\label{eq:B.1}
+\frac{d^{2}\varphi}{dx^2} = - \frac{\rho(x)}{\varepsilon}
+\end{equation}
+
+Ak uvažujeme, že v polovodiči s koncentráciou substrátu $N_b$
+(predpokladajme donory) je vytvorený nehomogénny koncentračný profil
+$N(x)$ (predpokladajme akceptory), môzeme pre hustotu náboja napísať
+vzťah
+
+\begin{equation}\label{eq:B.2}
+\rho(x) = - q (n(x) - p(x) + N(x) -N_b)
+\end{equation}
+
+Členy $n(x)$ a $p(x)$, ktoré predstavujú  voľné  nosiče  náboja, vyjadríme pomocou normalizovaných potenciálov $u$ a $u_f$
+
+\begin{subequations}\label{eq:B.3}
+\begin{align}
+u(x) &= \frac{E_i(\infty) - E_i(x)}{kT} = \frac{q\varphi(x)}{kT} \label{subeq:B.3a}\\[0.5cm]
+u_f &= \frac{E_i(\infty) - E_f}{kT} \label{subeq:B.3b}
+\end{align}
+\end{subequations}
+
+a pomocou koncentrácie substrátu
+
+\begin{subequations}\label{eq:B.4}
+\begin{align}
+n(x) &= N_b {e}^{u(x)}\label{subeq:B.4a}\\[0.5cm]
+p(x) &= n_i {e}\frac{E_i(x) - E_f}{kT} = n_i {e}^{u_f-u(x)} = N_b {e}^{2u_f-u(x)}\label{subeq:B.4b}\\[0.5cm]
+\intertext{keď sme použili vzťah pre koncentráciu elektrónov v substráte}
+n(\infty) &= N_b = n_i {e}\frac{E_f-E_i(\infty)}{kT} = n_i {e}^{-u_f}\label{subeq:B.4c}
+\end{align}
+\end{subequations}
+
+Potom hustotu náboja môžeme napísať v tvare
+
+\begin{equation}\label{eq:B.5}
+\rho(x) = -qN_b(e^{u(x)} - e^{2u_f-u(x)} + \alpha(x) -1)
+\end{equation}
+
+kde $$\alpha(x) = \frac{N(x)}{N_b}$$
+
+Dosadením hustoty náboja \ref{eq:B.5} a substitúcie \ref{eq:B.3} do rovnice \ref{eq:B.1} dostaneme
+
+\begin{equation}\label{eq:B.6}
+\frac{d^{2}u(x)}{dx^2} = \frac{q^2N_b}{kT\varepsilon}(e^{u(x)} - e^{2u_f-u(x)} + \alpha(x) - 1)
+\end{equation}
+
+Zavedieme efektívnu Debayovu dĺžku
+
+\begin{equation}\label{eq:B.7}
+L_D = \Bigg[\frac{kT\varepsilon}{q^{2}N_b}\Bigg]^{\frac{1}{2}}
+\end{equation}
+
+na ktorú vzdialenosť $x$ normujeme
+
+\begin{equation}\label{eq:B.8}
+\xi = \frac{x}{L_D}
+\end{equation}
+
+Môžeme písať Poissonovu rovnicu v normovanom tvare
+
+\begin{equation}\label{eq:B.9}
+\frac{d^{2}u(\xi)}{d\xi^2} = e^{u(\xi)} - e^{2u_f-u(\xi)} + \alpha(\xi) -1
+\end{equation}
