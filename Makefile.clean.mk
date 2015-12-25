@@ -9,6 +9,7 @@ clean:	sub_clean
 	find . -name \*.toc -print -exec rm {} \;
 	find . -name \*.bak -print -exec rm {} \;
 	find . -name \*.lat -print -exec rm {} \;
+	find . -name \*.out -print -exec rm {} \;
 	find . -name \*~ -print -exec rm {} \;
 
 sub_clean:
