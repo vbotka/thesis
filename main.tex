@@ -24,31 +24,21 @@
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
-
 \documentclass[11pt, oneside]{Thesis} % The default font size and one-sided printing (no margin offsets)
-
 \graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
-
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
 \usepackage{tikz} % for diagrams
 \hypersetup{urlcolor=blue, colorlinks=true} % Colors hyperlinks in blue - change to black if annoying
 \title{\ttitle} % Defines the thesis title - don't touch this
-
 \begin{document}
-
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
-
 \setstretch{1.3} % Line spacing of 1.3
-
 % Define the page headers using the FancyHdr package and set up for one-sided printing
 \fancyhead{} % Clears all page headers and footers
 \rhead{\thepage} % Sets the right side header to show the page number
 \lhead{} % Clears the left side page header
-
 \pagestyle{fancy} % Finally, use the "fancy" page style to implement the FancyHdr headers
-
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % New command to make the lines in the title page
-
 % PDF meta-data
 \hypersetup{pdftitle={\ttitle}}
 \hypersetup{pdfsubject=\subjectname}
@@ -58,18 +48,14 @@
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
-
 \begin{titlepage}
 \begin{center}
-
 \textsc{\LARGE \univname}\\[1.5cm] % University name
 \textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
-
 \HRule \\[0.4cm] % Horizontal line
 {\huge \bfseries \ttitle}\\[0.4cm] % Thesis title
 \vfil {2nd unchanged edition in English}
 \HRule \\[1.5cm] % Horizontal line
-
 \begin{tabular}{l r}
 \parbox{5.5cm}{
 \begin{flushleft}
@@ -82,191 +68,98 @@
 \href{http://}{\supname}
 \end{flushright}}\\
 \end{tabular}\\[3cm]
-
 \large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
 \textit{in the}\\[0.4cm]
 \groupname\\\deptname\\[2cm] % Research group name and department name
- 
 {\large \today}% Date
 \vfil {(1st ed. April 1991)}\\[3cm]
 %\includegraphics{Logo} % University/department logo - uncomment to place it
- 
 \vfill
 \end{center}
-
 \end{titlepage}
 
 %----------------------------------------------------------------------------------------
 %	DECLARATION PAGE
 %	Your institution may give you a different text to place here
 %----------------------------------------------------------------------------------------
-
 \Declaration{
-
 \addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
-
-I, \authornames, declare that this thesis titled, '\ttitle' and the work presented in it are my own. I confirm that:
-
-\begin{itemize} 
-\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
-\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
-\item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
-\item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
-\item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
-\item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
-\end{itemize}
- 
-Signed:\\
-\rule[1em]{25em}{0.5pt} % This prints a line for the signature
- 
-Date:\\
-\rule[1em]{25em}{0.5pt} % This prints a line to write the date
+\input{Title/Declaration.tex}
 }
-
 \clearpage % Start a new page
 
 %----------------------------------------------------------------------------------------
 %	QUOTATION PAGE
 %----------------------------------------------------------------------------------------
-
-\pagestyle{empty} % No headers or footers for the following pages
-
-\null\vfill % Add some space to move the quote down the page a bit
-
+%\pagestyle{empty} % No headers or footers for the following pages
+%\null\vfill % Add some space to move the quote down the page a bit
 %\textit{``Thanks to my solid academic training, today I can write hundreds of words on virtually any topic without possessing a shred of information, which is how I got a good job in journalism."}
-
 %\begin{flushright}
 %Dave Barry
 %\end{flushright}
-
-\vfill\vfill\vfill\vfill\vfill\vfill\null % Add some space at the bottom to position the quote just right
-
-\clearpage % Start a new page
+%\vfill\vfill\vfill\vfill\vfill\vfill\null % Add some space at the bottom to position the quote just right
+%\clearpage % Start a new page
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE
 %----------------------------------------------------------------------------------------
-
 \addtotoc{Abstract} % Add the "Abstract" page entry to the Contents
-
 \abstract{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
-This thesis is devoted to the description of automated working set-up
-features for MOS structure evaluation. Using automated HF, LF, QC and
-CCT methods the homogeneity of doping profile, lifetime profile,
-density of interface states, flaband voltage and oxide thickness was
-investigated, with special attention given to the study of MOS
-structures with ion-implanted impurity distribution. The homogeneity
-of investigated parameters can be depicted by means of two-dimensional
-color pictures providing the operator with fast overview of the
-parameter's distribution and fluctuations.
-
+\input{Title/Abstract.tex}
 }
-
 \clearpage % Start a new page
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
-
 \setstretch{1.3} % Reset the line-spacing to 1.3 for body text (if it has changed)
-
 \acknowledgements{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
-
-\par Ďakujem svojmu školiteľovi Prof. Ing. Ottovi Csabayovi, DrSc. za
-usmerňovanie, cenné rady a kritické pripomienky pri spracovaní
-predloženej kandidátskej práce.
-
-\par Ďakujem ďalej vedeniu Katedry mikroelektroniky a kolegom z
-Oddelenia elektronických prvkov a integrovaných obvodov za vytvorené
-pracovné podmienky a podnetné konzultácie.
-
-\par Ďakujem tiež pracovníkom Tesly Piešťany, najmä RNDr.Bolečkovi za
-otestovanie homogenity špecifického odporu kremíkových dosiek pred
-technologickým spracovaním a za prípravu vzoriek pre záverečný
-experiment.
-
-\par Ďakujem bývalým pracovníkom Katedry mikroelektroniky
-Ing.Považanovi a Ing.Hrúzovi za cenné rady a pripomienky v oblasti
-automatizácie experimentu a spracovania dát. Ing.Považanovi ďakujem aj
-za prečítanie práce a pripomienky k nej.
+\input{Title/Acknowledgement.tex}
 }
 \clearpage % Start a new page
 
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
-
 \pagestyle{fancy} % The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
-
 \lhead{\emph{Contents}} % Set the left side page header to "Contents"
 \tableofcontents % Write out the Table of Contents
-
 \lhead{\emph{List of Figures}} % Set the left side page header to "List of Figures"
 \listoffigures % Write out the List of Figures
-
 \lhead{\emph{List of Tables}} % Set the left side page header to "List of Tables"
 \listoftables % Write out the List of Tables
+\clearpage % Start a new page
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
 %----------------------------------------------------------------------------------------
-
-\clearpage % Start a new page
-
 \setstretch{1.5} % Set the line spacing to 1.5, this makes the following tables easier to read
-
 \lhead{\emph{Abbreviations}} % Set the left side page header to "Abbreviations"
-\listofsymbols{ll} % Include a list of Abbreviations (a table of two columns)
-{
-\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
-%\textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
-}
+\input{Title/Abbreviations.tex}
+\clearpage % Start a new page
 
 %----------------------------------------------------------------------------------------
 %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
 %----------------------------------------------------------------------------------------
-
-\clearpage % Start a new page
-
 \lhead{\emph{Physical Constants}} % Set the left side page header to "Physical Constants"
-
-\listofconstants{lrcl} % Include a list of Physical Constants (a four column table)
-{
-Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
-% Constant Name & Symbol & = & Constant Value (with units) \\
-}
+\input{Title/Constants.tex}
+\clearpage % Start a new page
 
 %----------------------------------------------------------------------------------------
 %	SYMBOLS
 %----------------------------------------------------------------------------------------
-
-\clearpage % Start a new page
-
 \lhead{\emph{Symbols}} % Set the left side page header to "Symbols"
-
-\listofnomenclature{lll} % Include a list of Symbols (a three column table)
-{
-$a$ & distance & m \\
-$P$ & power & W (Js$^{-1}$) \\
-% Symbol & Name & Unit \\
-
-& & \\ % Gap to separate the Roman symbols from the Greek
-
-$\omega$ & angular frequency & rads$^{-1}$ \\
-% Symbol & Name & Unit \\
-}
+\input{Title/Symbols.tex}
+\clearpage % Start a new page
 
 %----------------------------------------------------------------------------------------
 %	DEDICATION
 %----------------------------------------------------------------------------------------
-
 \setstretch{1.3} % Return the line spacing back to 1.3
-
 \pagestyle{empty} % Page style needs to be empty for this page
-
-\dedicatory{For/Dedicated to/To my\ldots} % Dedication text
-
+\dedicatory{\input{Title/Dedication.tex}} % Dedication text
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+\clearpage % Start a new page
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
@@ -309,7 +202,6 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 \input{Appendices/AppendixG}
 \input{Appendices/AppendixH}
 \input{Appendices/AppendixBibliography.tex}
-
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 \backmatter
 

@@ -9,7 +9,8 @@ FIGS = Figures/fig-1-1.eps Figures/fig-1-2.eps Figures/fig-1-3.eps Figures/fig-3
 APPENDICES = Appendices/AppendixA.tex Appendices/AppendixB.tex Appendices/AppendixC.tex Appendices/AppendixD.tex Appendices/AppendixE.tex Appendices/AppendixF.tex Appendices/AppendixG.tex Appendices/AppendixH.tex Appendices/AppendixBibliography.tex
 CHAPTERS = Chapters/Introduction.tex Chapters/Chapter1.tex Chapters/Chapter2.tex Chapters/Chapter3.tex Chapters/Chapter4.tex Chapters/Chapter5.tex Chapters/Chapter6.tex Chapters/Chapter7.tex Chapters/Chapter8.tex Chapters/Chapter9.tex
 DIAGRAMS = Figures/diagram-1.EPS Figures/diagram-2.EPS
-main.dvi	: main.tex Thesis.cls $(APPENDICES) $(CHAPTERS) $(FIGS) $(DIAGRAMS)
+TITLE = Title/Abbreviations.tex Title/Abstract.tex Title/Acknowledgement.tex Title/Constants.tex Title/Declaration.tex Title/Dedication.tex Title/Symbols.tex
+main.dvi	: main.tex Thesis.cls $(APPENDICES) $(CHAPTERS) $(FIGS) $(DIAGRAMS) $(TITLE)
 	latex main.tex
 	latex main.tex
 	latex main.tex
