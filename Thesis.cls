@@ -218,8 +218,8 @@
                 {DEPARTMENT OF MICROELECTRONICS}}
 %-------------------------------------------------                
 \group{\texorpdfstring{\href{Research Group Web Site URL Here (include http://)} % Your research group's URL
-                {Oddelenie elektronických prvkov a integrovaných obvodov}} % Your research group's name - this is currently used in the title page 
-                {Oddelenie elektronických prvkov a integrovaných obvodov}}
+                {Group of Electronic Components and Integrated Circuits}} % Your research group's name - this is currently used in the title page 
+                {Group of Electronic Components and Integrated Circuits}}
 %-------------------------------------------------                
 \GROUP{\texorpdfstring{\href{Research Group Web Site URL Here (include http://)} % Your research group's URL
                 {Oddelenie elektronických prvkov a integrovaných obvodov)}} % Your research group's name in capitals - this is not currently used anywhere in the template, cite it with \GROUPNAME if you want it
