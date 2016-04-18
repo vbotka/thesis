@@ -14,7 +14,7 @@ main.dvi	: main.tex Thesis.cls $(APPENDICES) $(CHAPTERS) $(FIGS) $(DIAGRAMS) $(T
 	latex main.tex
 	latex main.tex
 	latex main.tex
-	latex2html main.tex
+#	latex2html main.tex
 
 main.txt : com-cv-vb-en.ps
 	ps2ascii main.ps com-cv-vb-en.txt
