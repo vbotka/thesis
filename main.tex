@@ -28,6 +28,8 @@
 \graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
 \usepackage{tikz} % for diagrams
+\usepackage{imakeidx}
+\makeindex
 \hypersetup{urlcolor=blue, colorlinks=true} % Colors hyperlinks in blue - change to black if annoying
 \title{\ttitle} % Defines the thesis title - don't touch this
 \begin{document}
@@ -203,6 +205,14 @@
 \input{Appendices/AppendixH}
 \input{Appendices/AppendixBibliography.tex}
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+\newpage
+\lhead{\emph{Index}} % Change the page header to say "Index"
+\addcontentsline{toc}{chapter}{Index}
+\printindex
 \backmatter
 
 %----------------------------------------------------------------------------------------
@@ -212,4 +222,5 @@
 \lhead{\emph{Bibliography}} % Change the page header to say "Bibliography"
 \bibliographystyle{unsrtnat} % Use the "unsrtnat" BibTeX style for formatting the Bibliography
 \bibliography{Bibliography} % The references (bibliography) information are stored in the file named "Bibliography.bib"
+
 \end{document}  
