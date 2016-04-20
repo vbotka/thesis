@@ -10,6 +10,9 @@ clean:	sub_clean
 	find . -name \*.bak -print -exec rm {} \;
 	find . -name \*.lat -print -exec rm {} \;
 	find . -name \*.out -print -exec rm {} \;
+	find . -name \*.idx -print -exec rm {} \;
+	find . -name \*.ilg -print -exec rm {} \;
+	find . -name \*.ind -print -exec rm {} \;
 	find . -name \*~ -print -exec rm {} \;
 
 sub_clean:
@@ -22,7 +25,7 @@ sub_clean:
 clean-all:	sub_clean-all
 	find . -name \*.dvi -print -exec rm {} \;
 	find . -name \*.ps -print -exec rm {} \;
-	find . -name \*.pdf -print -exec rm {} \;
+#	find . -name \*.pdf -print -exec rm {} \;
 # *.EPS must not be cleaned
 	find . -name \*.eps -print -exec rm {} \;
 	find . -name \*.eps1 -print -exec rm {} \;
@@ -34,6 +37,10 @@ clean-all:	sub_clean-all
 	find . -name \*.bak -print -exec rm {} \;
 	find . -name \*.lat -print -exec rm {} \;
 	find . -name \*.txt -print -exec rm {} \;
+	find . -name \*.out -print -exec rm {} \;
+	find . -name \*.idx -print -exec rm {} \;
+	find . -name \*.ilg -print -exec rm {} \;
+	find . -name \*.ind -print -exec rm {} \;
 	find . -name \*~ -print -exec rm {} \;
 
 sub_clean-all:
