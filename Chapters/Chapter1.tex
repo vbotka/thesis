@@ -1,8 +1,11 @@
 % Chapter 1
 
-\chapter{The current state of the subject.} % Main chapter title
-\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
-\lhead{Chapter 1. \emph{The current state of the subject}} % This is for the header on each page - perhaps a shortened title
+% Main chapter title
+\chapter{The current state of the subject.}
+% For referencing the chapter elsewhere, use \ref{Chapter1}
+\label{Chapter1}
+% This is for the header on each page - perhaps a shortened title
+\lhead{Chapter 1. \emph{The current state of the subject}} 
 
 \iffalse
 Doposiaľ používané metódy pre analýzu elektrofyzikálnych vlastností
@@ -96,7 +99,9 @@ $C_{sc}(\varphi_{s})$, ktorá je funkciou povrchového potenciálu
 polovodiča. Potom pre kapacitu štruktúry MOS platí \cite{I.1}
 \fi
 
-\section{Ideal MOS structure.}  \index{MOS!ideal structure}
+
+\section{Ideal MOS structure.}
+\index{MOS!ideal structure}
 MOS structure can be considered a dipole, which equivalent scheme can
 be thought of as a serial connection of voltage-independent capacity
 of the oxid $C_{ox}$ and space charge capacity $C_{sc}(\varphi_{s})$,
@@ -155,17 +160,22 @@ structure can be distinguished:
 \item depletion mode and inversion (deep depletion).
 \end{itemize}
 
-
+\iffalse
 \section{Kapacitné závislosti ideálnej štruktúry MOS.}
-
 Pre všetky uvedené prípady platí v polovodiči jednodimenzionálna
 Poissonova rovnica
+\fi
+
+\section{Capacitor characteristics of ideal MOS structure.}
+\index{MOS!ideal structure} For all of these cases one-dimensional
+Poisson equation is valid in the semiconductor,
 
 \begin{equation}\label{eq:1.2}
 \frac{d^2\varphi}{dx^2}=-\frac{q}{\varepsilon}(p-n+N_{p}-N_{A})
 \end{equation}
-\index{Poissonova rovnica}
+\index{Poisson equation}
 
+\iffalse
 ktorá určuje priebeh elektrického potenciálu $\varphi$ ako funkciu
 vzdialenosti od povrchu polovodiča $x$. Rovnicu \ref{eq:1.2} možno
 analyticky vyriešiť len pre určité špeciálne prípady priebehu
@@ -179,11 +189,30 @@ ochudobnenia sme riešili rovnicu \ref{eq:1.2}, kde pri vhodnej
 variácii parametra $V_g$ možno zároveň získať priebeh povrchového
 potenciálu ako funkciu napätia hradla $\varphi_{s}(V_g)$ a závislosť
 kapacity štruktúry MOS $C_{mos}(V_g)$ (Dodatok \ref{app:AppendixA}).
+\fi
+
+which determines the course of the electrical potential $\varphi$ as a
+function of the distance from the surface of the semiconductor
+$x$. Equation \ref{eq:1.2} can be solved analytically only for certain
+special cases of the impurities concentration profile, and, in
+general, numerical methods must be used \cite{1.9,1.10}. Then, for
+known profile of the concentration impurities in semiconductor an
+electric potential in the semiconductor can be obtained, where
+potential on the gate is the parameter which defines the state of the
+MOS structure. For further clarification of physical processes in the
+MOS structure in the transition from accumulation to inversion, or
+deep depletion, we solved the equation \ref{eq:1.2}, where by
+appropriate variation of the parameter $V_g$ both surface potential
+$\varphi_{s}(V_g)$ and capacity of MOS structure $C_{MOS}(V_g)$ can
+be calculated as a function of the gate voltage (Appendix
+\ref{app:AppendixA}).
+\index{surface potential}
 
 \begin{figure}[h!]\centering
 %\framebox[10cm]{\rule{0cm}{3cm}}
 \includegraphics{Figures/fig-1-1.eps}
 \captionsetup{justification=raggedright, singlelinecheck=false}
+\iffalse
 \caption[Priebeh koncentrácie prímesí v podpovrchovej oblasti
   polovodiča]{Priebeh koncentrácie prímesí v podpovrchovej oblasti
   polovodiča simulovaný Gaussovským rozložením \cite{1.11} s
@@ -194,6 +223,18 @@ kapacity štruktúry MOS $C_{mos}(V_g)$ (Dodatok \ref{app:AppendixA}).
   priebehy koncentrácií majoritných nosičov pre napätia hradla rôzne
   od nuly. Stav termodynamickej rovnováhy medzi rozložením prímesí a
   nosičov náboja je popísaný v dodatku \ref{app:AppendixD}.}
+\fi
+\caption[Concentration of dopant in the subsurface of the
+  semiconductor] {Concentration of dopant in the subsurface of the
+  semiconductor simulated by Gaussian distribution \cite{1.11} with
+  the following parameters $R_p=0.1 \mu{m}$; $\Delta{R_p}=0.03\mu{m}$;
+  $N_{max}=10^{23} m^{-3}$; $N_{bulk}=10^{20} m^{-3}$ (indicated by a
+  solid line 1). The profile of the majority charge carriers for
+  $V_g=0$ (indicated by a solid line 2). The dotted line shows
+  profiles of the concentrations of majority carriers for various gate
+  voltages different from zero. State of thermodynamic equilibrium
+  between the distribution of dopant and charge carriers is described
+  in Appendix \ref{app:AppendixD}.}
 \label{fig:1.1}
 \end{figure}
 
@@ -260,6 +301,7 @@ zvyšovaním napätia hradla sa oblasť priestorového náboja naďalej
 rozpína a kapacita klesá. Z obrázku \ref{fig:1.3} je vidieť, že po
 prekonaní oblasti s vysokou koncentráciou prímesí krivka hlbokého
 ochudobnenia začína klesať rýchlejšie.
+
 
 \section{Reálna štruktúra MOS.}  Odlišnosť ideálnej a reálnej
 štruktúry MOS bola obsažne spracovaná v práci \cite{1.12} a tu
@@ -338,3 +380,4 @@ Skorupa W., Kogler R. : Electronics Letters Vol.25 (1989) s.1898.
 \bibitem[1.14]{1.14}
 Gall P. at al. : Electronics Letters Vol.25 (1989) s.429
 \end{thebibliography}
+
