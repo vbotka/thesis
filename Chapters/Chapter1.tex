@@ -1,5 +1,4 @@
 % Chapter 1
-
 % Main chapter title
 \chapter{The current state of the subject.}
 % For referencing the chapter elsewhere, use \ref{Chapter1}
@@ -36,7 +35,6 @@ predchádzajúcich skutočností uvedieme v ďalšej časti tejto kapitoly
 len najnutnejšie poznatky, ktoré sú potrebné pre riešenie danej
 problematiky.
 \fi
-
 Up to now, the methods used for analysis of electrophysical properties
 of MOS structures are based on the assumption that the distribution of
 impurities in the substrate is homogeneous. This issue was addressed
@@ -77,7 +75,6 @@ presný. Elektrickými meraniami štruktúry MOS možno skúmať vlastnosti
 objemu $SiO_2$, jeho rozhrania s polovodičom a kovom, ako aj
 vlastnosti podpovrchovej oblasti polovodiča.
 \fi
-
 \section{Basics of the MOS structure.}
 MOS structure forms a simple test structure. Almost all of its
 electrical properties can be examined by measurements of this
@@ -98,8 +95,6 @@ oxidu $C_{ox}$ a kapacity oblasti priestorového náboja (OPN)
 $C_{sc}(\varphi_{s})$, ktorá je funkciou povrchového potenciálu
 polovodiča. Potom pre kapacitu štruktúry MOS platí \cite{I.1}
 \fi
-
-
 \section{Ideal MOS structure.}
 \index{MOS!ideal structure}
 MOS structure can be considered a dipole, which equivalent scheme can
@@ -117,7 +112,6 @@ semiconductor. Then for the capacity of MOS structure is valid
 Pri analýze štruktúry MOS sa používajú následovné zjednodušujúce
 predpoklady, ktoré definujú ideálnu štruktúru MOS:
 \fi
-
 Following simplistic assumptions, that define ideal MOS structure, can
 be used when analyzing the MOS structure:
 
@@ -129,7 +123,6 @@ be used when analyzing the MOS structure:
 \item platí vzťah $V_{g}=V_{ox}+\varphi_{s}$  .
 \end{itemize}
 \fi
-
 \begin{itemize}
 \item the density of interface traps $Si-SiO_2$ is equal zero
 \item there are no charges in the insulator $SiO_2$
@@ -142,7 +135,6 @@ be used when analyzing the MOS structure:
 \noindent V závislosti od hradlového napätia možno rozlíšiť tieto
 pracovné režimy štruktúry MOS:
 \fi
-
 \noindent Depending on the gate voltage operating modes of MOS
 structure can be distinguished:
 
@@ -153,7 +145,6 @@ structure can be distinguished:
 \item režim ochudobnenia a inverzie (hlbokého ochudobnenia).
 \end{itemize}
 \fi
-
 \begin{itemize}
 \item enhancement mode
 \item flat band mode
@@ -165,7 +156,6 @@ structure can be distinguished:
 Pre všetky uvedené prípady platí v polovodiči jednodimenzionálna
 Poissonova rovnica
 \fi
-
 \section{Capacitor characteristics of ideal MOS structure.}
 \index{MOS!ideal structure} For all of these cases one-dimensional
 Poisson equation is valid in the semiconductor,
@@ -190,7 +180,6 @@ variácii parametra $V_g$ možno zároveň získať priebeh povrchového
 potenciálu ako funkciu napätia hradla $\varphi_{s}(V_g)$ a závislosť
 kapacity štruktúry MOS $C_{mos}(V_g)$ (Dodatok \ref{app:AppendixA}).
 \fi
-
 which determines the course of the electrical potential $\varphi$ as a
 function of the distance from the surface of the semiconductor
 $x$. Equation \ref{eq:1.2} can be solved analytically only for certain
@@ -238,6 +227,7 @@ be calculated as a function of the gate voltage (Appendix
 \label{fig:1.1}
 \end{figure}
 
+\iffalse
 \par Na obrázku \ref{fig:1.1} je znázornený priebeh koncentrácie
 prímesí v polovodiči (simulovaný Gaussovským priebehom) a priebehy
 majoritných nosičov náboja pre stav štruktúry meniaci sa od obohatenia
@@ -249,27 +239,57 @@ Zároveň je zrejmý rozdiel medzi priebehom koncentrácie prímesí a
 priebehom koncentrácie majoritných nosičov náboja v stave
 termodynamickej rovnováhy pre nulové napätie hradla, ktorý vzniká v
 dôsledku difúzie majoritných nosičov náboja.
+\fi
+\par Picture \ref{fig:1.1} shows the profile of the dopant
+concentration in semiconductor (simulated by Gaussian function) and
+profiles of majority charge carriers for states of the structure
+varying from enrichment to inversion, depicting the process of
+depletion of the semiconductor subsurface. It can be seen, that the
+profile of the concentration of majority carriers in implanted field
+enter the maximum and then decreases toward the concentration of the
+substrate, which is reached at a ground potential point. Also obvious
+is the difference between the concentrations of dopant and the
+concentration of majority charge carriers in the state of
+thermodynamic equilibrium for zero gate voltage, which results indue
+to diffusion of majority charge carriers.
 
 \begin{figure}[h!]\centering
 %\framebox[10cm]{\rule{0cm}{3cm}}
 \includegraphics{Figures/fig-1-2.eps}
 \captionsetup{justification=raggedright, singlelinecheck=false}
+\iffalse
 \caption[Priebeh povrchového potenciálu $\varphi_s(V_g)$ ako funkcie
   napätia hradla]{Priebeh povrchového potenciálu $\varphi_s(V_g)$ ako
   funkcie napätia hradla pre nízkofrekvenčné (LF) a vysokofrekvenčné
   (HF) meranie (označený 1) a pre meranie v stave hlbokého
   ochudobnenia (označený 2).}
+\fi
+\caption[Surface potential $\varphi_s(V_g)$ as a function of the gate
+  voltage]{Surface potential $\varphi_s(V_g)$ as a function of the
+  gate voltage for low frequency (LF) and high frequency (HF)
+  measurement (depicted 1) and measurement in deep depletion (depicted
+  2).}
 \label{fig:1.2}
 \end{figure}
 
-\par Na obrázku \ref{fig:1.2} sú znázornené priebehy povrchového
-potenciálu pre rôzne režimy merania štruktúry MOS. V oblasti
-obohatenia a ochudobnenia sú obidva priebehy rovnaké. Od počiatku
-inverzie sa povrchový potenciál pre LF a HF meranie ustaľuje v
-dôsledku vytvárania inverznej vrstvy.  Krivka hlbokého ochudobnenia
+\iffalse \par Na obrázku \ref{fig:1.2} sú znázornené priebehy
+povrchového potenciálu pre rôzne režimy merania štruktúry MOS. V
+oblasti obohatenia a ochudobnenia sú obidva priebehy rovnaké. Od
+počiatku inverzie sa povrchový potenciál pre LF a HF meranie ustaľuje
+v dôsledku vytvárania inverznej vrstvy.  Krivka hlbokého ochudobnenia
 ďalej klesá. Tento stav sa v reálnej štruktúre ukončí elektrickým
 prierazom.
+\fi
 
+\par Picture \ref{fig:1.2} shows surface potential for various
+measurements of the MOS structure. In the enhancement and depletion
+both curves are identical. From the beginning of the inversion the
+surface potential stabilizes for LF and HF measurements as a result of
+the creation of the inversion layer. The curve of deep depletion
+further declines. This state will be terminated by the breakdown in a
+real structure.
+
+\iffalse
 \par Na obrázku \ref{fig:1.3} sú znázornené kapacitne-napäťové
 závislosti štruktúry MOS. Všetky tri krivky majú spoločný priebeh v
 oblasti obohatenia a ochudobnenia (spoločný priebeh majú aj krivky
@@ -283,24 +303,53 @@ vysokofrekvenčný merací signál, avšak kapacita už ďalej neklesá,
 pretože so zvyšovaním napätia hradla sa zvyšuje prevážne koncentrácia
 minoritných nosičov v inverznej vrstve a oblasť priestorového náboja
 sa ďalej nerozpína.
+\fi
+\par Picture \ref{fig:1.3} shows Capacitance-Voltage profiles of the
+MOS structure. All three curves are identical in enhancement and
+depletion (profiles of the surface potential are also identical). In
+this section the capacity declines slowly, because the space charge
+region expands to the region with high concentration of the dopant
+\ref{fig:1.1}. From the beginning of the inversion the the curves
+depart. Low frequency curve, which detects the inversion layer rises
+toward the capacity of the silica. High frequency curve doesn't detect
+the inversion layer, because the minority charge carriers are not able
+to follow the high frequency measurement signal. However the capacity
+doesn't decline any further, because with the increasing of the gate
+voltage increases mostly the concentration of the minority charge
+carriers in the inversion layer and the space charge region doesn't
+expand any further.
 
 \begin{figure}[h!]\centering
 %\framebox[10cm]{\rule{0cm}{3cm}}
 \includegraphics{Figures/fig-1-3.eps}
 \captionsetup{justification=raggedright, singlelinecheck=false}
+\iffalse
 \caption[Priebeh kapacity štruktúry MOS v závislosti od napätia
   hradla]{Priebeh kapacity štruktúry MOS v závislosti od napätia
   hradla pre nízkofrekvenčné meranie (označené 1), vysokofrekvenčné
   meranie (označené 2) a meranie v stave hlbokého ochudobnenia
   (označené 3).}
+\fi
+\caption[Profile of the capacity of the MOS structure depending on the
+  gate voltage]{Profile of the capacity of the MOS structure depending
+  on the gate voltage for low frequency measurement (depicted 1), high
+  frequency measurement (depicted 2) and measurement in deep depletion
+  (depicted 3).}
 \label{fig:1.3}
 \end{figure}
 
+\iffalse
 \par V stave hlbokého ochudobnenia sa nevytvára inverzná vrstva a so
 zvyšovaním napätia hradla sa oblasť priestorového náboja naďalej
 rozpína a kapacita klesá. Z obrázku \ref{fig:1.3} je vidieť, že po
 prekonaní oblasti s vysokou koncentráciou prímesí krivka hlbokého
 ochudobnenia začína klesať rýchlejšie.
+\fi
+\par No inversion layer is created in deep depletion and with the
+increasing gate voltage the space charge region expands and capacity
+declines. Picture \ref{fig:1.3} shows, that after having passed the
+section with the high concentration of dopant the curve of deep
+depletion starts to decline faster.
 
 
 \section{Reálna štruktúra MOS.}  Odlišnosť ideálnej a reálnej
