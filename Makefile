@@ -1,3 +1,5 @@
+SHELL = /bin/sh
+
 include Makefile.suffixes.mk
 include Makefile.variables.mk
 include Makefile.subdirs.mk
