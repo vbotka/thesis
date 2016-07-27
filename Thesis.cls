@@ -210,7 +210,7 @@
                 {SLOVAK UNIVERSITY OF TECHNOLOGY IN BRATISLAVA}}
 %-------------------------------------------------                
 \department{\texorpdfstring{\href{Department or Microelectronics Web Site URL Here (include http://)} % Your department's URL
-                {Department of Microelektronics}} % Your department's name - used in the title page and abstract
+                {Department of Microelectronics}} % Your department's name - used in the title page and abstract
                 {Department of Microelectronics}}
 %-------------------------------------------------                
 \DEPARTMENT{\texorpdfstring{\href{Department or School Web Site URL Here (include http://)} % Your department's URL
