@@ -9,6 +9,10 @@ with ion-implanted impurity distribution. The homogeneity of investigated parame
 can be depicted by means of two-dimensional color pictures providing the operator with
 fast overview of the parameters distribution and fluctuations.
 
-Download current document from https://botka.link/files/current-thesis-en.pdf (5MB)
+Download current version from
+https://botka.link/files/current-thesis-en.pdf (5MB)
+
+Download scanned original thesis from
+https://botka.link/files/1992-thesis-scanned-sk.pdf (49MB)
 
 Licensed under: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
