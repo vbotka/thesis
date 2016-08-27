@@ -2,7 +2,7 @@
 ------------------------------------------------------------------------------------------------
 **SLOVAK UNIVERSITY OF TECHNOLOGY IN BRATISLAVA**
 
-**Faculty of electrical engineering and information technology**
+**Faculty of Electrical engineering and Information technology**
 
 **Department of Microelectronics**
 
