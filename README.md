@@ -6,7 +6,7 @@
 
 **Department of Microelectronics**
 
-###Doctoral Thesis: Electrophysical properties of the MOS structure with implanted bulk
+**Doctoral Thesis: Electrophysical properties of the MOS structure with implanted bulk**
 
 **by Vladimir Botka**
 
