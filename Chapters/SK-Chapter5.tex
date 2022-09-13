@@ -1,24 +1,19 @@
 % Chapter 5
 
-\chapter{Pracovisko pre automatizovaný zber dát.} % Main chapter title
-
-\label{Chapter5} % For referencing the chapter elsewhere, use \ref{Chapter1} 
-
-\lhead{Chapter 5. \emph{Pracovisko pre automatizovaný zber dát}} % This is for the header on each page - perhaps a shortened title
+\chapter{Pracovisko pre automatizovaný zber dát.}\label{Chapter5}
+\lhead{Chapter 5. \emph{Pracovisko pre automatizovaný zber dát}}
 
 Na popisovanom pracovisku možno automaticky merať vysokofrekvenčnú a
-nízkofrekvenčnú kapacitu štruktúry MOS. Na obrázku \ref{fig:5.1} je
+nízkofrekvenčnú kapacitu štruktúry MOS\@. Na obrázku~\ref{fig:5.1} je
 zobrazené blokové zapojenie prístrojov, pomocou ktorých sú jednotlivé
 metódy realizované.
 
 \begin{figure}[h!]\centering
-\includegraphics{Figures/fig-5-1.eps}
-\captionsetup{justification=raggedright, singlelinecheck=false}
-\caption[Bloková schéma zapojenia prístrojov automatizovaného
-  pracoviska]{Bloková schéma zapojenia prístrojov automatizovaného
-  pracoviska pre určovanie plošného rozloženia parametrov štruktúr MOS
-  s nehomogénnou dotáciou substrátu.}
-\label{fig:5.1}
+  \includegraphics{Figures/fig-5-1.eps}% chktex-file 8
+  \caption[Bloková schéma zapojenia prístrojov automatizovaného
+    pracoviska]{Bloková schéma zapojenia prístrojov automatizovaného
+    pracoviska pre určovanie plošného rozloženia parametrov štruktúr
+    MOS s nehomogénnou dotáciou substrátu.}\label{fig:5.1}
 \end{figure}
 
 Riadiacim počítačom meraní je osobný počítač PC AT vybavený
@@ -32,7 +27,7 @@ postavené na Katedre mikroelektroniky. Voltmeter M1T330 je výrobkom
 Metry Blansko a krokovacie hrotové zariadenie Zond A5 bolo dovezené zo
 Sovietskeho Zväzu. Posledne spomínané zariadenie neobsahuje štandardne
 interfejs IMS-2 a bolo dodatočne vybavené modulom IMS-2 vlastnej
-konštrukcie \cite{5.1}.
+konštrukcie~\cite{5.1}.
 
 Ďalším novým prvkom našej realizácie pracoviska pre meranie štruktúr
 MOS je možnosť automatického zberu dát po celej kremíkovej doske a ich
@@ -45,7 +40,7 @@ a sú definované operátorom.
 
 Dôležitým momentom pri realizácii programov zberu dát bolo
 zabezpečenie proti strate nameraných dát v dôsledku výskytu ľubovolnej
-chyby (napr. výpadku napätia), alebo v prípade nutnosti prerušiť
+chyby (napr.\ výpadku napätia), alebo v prípade nutnosti prerušiť
 meranie. Pretože trvanie zberu dát na kremíkovej doske s 300
 štruktúrami sa pohybuje od 0.5 do 12 hodín v závislosti od
 požadovaného druhu merania, bolo potrebné programovo zabezpečiť (1)
@@ -107,7 +102,7 @@ závislosť. Prvý záznam obsahuje počet meraní kapacity na jednej
 hradlovým napätiam z prvého záznamu. Súbory druhého typu pozostávajú
 len zo záznamov, ktoré obsahujú pozície štruktúry (X,Y) a hodnotu
 parametra. Ako príklad uvedieme dátový súbor, ktorý obsahuje kapacity
-oxidovej vrstvy štruktúr MOS. Pretože sa jedná o rozsiahle dátové
+oxidovej vrstvy štruktúr MOS\@. Pretože sa jedná o rozsiahle dátové
 súbory bola zvolená binárna forma záznamu.  Celočíselné hodnoty majú
 dĺžku 2 bajty a čísla s pohyblivou desatinnou čiarkou zaberajú 4
 bajty.
@@ -145,7 +140,7 @@ množstvo prenášaných bajtov. Ukončenie merania a pripravenosť na
 prenos dát signalizuje prístroj HP4280a nastavením signálu SRQ
 (Service Request) na zbernici IMS-2, čím je synchronizovaná jeho
 činnosť s riadiacim počítačom.  Tu možno spomenúť užitočnú vlastnosť
-interfejsu GPIB-PCIIA \cite{5.2}, ktorý po detekovaní signálu SRQ môže
+interfejsu GPIB-PCIIA~\cite{5.2}, ktorý po detekovaní signálu SRQ môže
 automaticky vykonať sériové hlásenie prístrojov (Serial Poll) a po
 nájdení prístroja, ktorý žiada o obsluhu uložiť jeho stavové slovo do
 internej pamäte. Tým je vodič SRQ zbernice IMS-2 uvolnený a interfejs
@@ -156,7 +151,7 @@ internej pamäte.
 
 Použitím automatického riadenia merania a binárneho prenosu dát sa
 podarilo dosiahnuť minimálny čas HF C-V merania.  Konkrétne hodnoty
-trvania meraní a časové diagramy sú v časti \ref{sec:5.4}.
+trvania meraní a časové diagramy sú v časti~\ref{sec:5.4}.
 
 Ak potrebujeme určiť koncentračný profil dotujúcich prímesí vo väčšej
 hĺbke, ako je šírka OPN v stave inverzie, musime zmerat C-V závislosť
@@ -168,7 +163,7 @@ každé meranie kapacity riadiť samostatne. Merací cyklus riadiaceho
 programu potom obsahuje nastavenie požadovaného hradlového napätia,
 prevedenie merania kapacity (spustenie merania a čakanie na jeho
 ukončenie) a prenos dát z meracieho prístroja do riadiaceho počítača,
-pričom všetky uvedené prenosy sa vykonávajú vo forme ASCII. Oproti
+pričom všetky uvedené prenosy sa vykonávajú vo forme ASCII\@. Oproti
 štandardnej HF C-V metóde sa dĺžka merania jedného bodu C-V závislosti
 o rád zväčší.
 
@@ -178,7 +173,6 @@ kapacita oxidu určovaná pomocou samostatného programu, ktorý meria
 kapacitu štruktúry MOS pre zadané hradlové napätie ďaleko v akumulácii
 a namerané hodnoty uloží do samostatného dátového súboru.
 
-
 \section{Meranie kvázistatických C-V závislostí.}\label{sec:5.2}
 
 Kvázistatickú C-V závislosť štruktúry MOS meriame pomocou zdroja
@@ -186,7 +180,7 @@ lineárne narastajúceho napätia, elektromera Keithley 642 a voltmetra
 M1T330. Kapacitu štruktúry MOS určíme zo vzťahu
 
 \begin{equation}\label{eq:5.1}
-C_{mos}^{LF} = i \bigg[ \frac{dV_{g}}{dt} \bigg]^{-1}
+  C_{mos}^{LF} = i\ {\bigg[\frac{dV_{g}}{dt}\bigg]}^{-1}
 \end{equation}
 
 Presné meranie nabíjacieho prúdu štruktúry MOS je hlavným problémom
@@ -199,21 +193,21 @@ veličinu (okrem prúdu možno merať ešte napätie a náboj) a merací
 rozsah prístroja.
 
 Meranie a prenos dát z elektrometra do riadiaceho počítača môže
-prebiehať v dvoch módoch, ktoré sa odlišujú adresou prístroja
-\cite{5.3}. V kontinuálnom móde pracuje A/D prevodník prístroja
-nepretržite a na žiadosť o vyslanie dát do počítača interfejs vyšle
-posledné ukončené meranie (v tomto momente už môže byť začatý ďalší
-A/D prevod). V spúšťanom móde A/D prevodník čaká na povel k začatiu
-merania z interfejsu, ktorý dostane po žiadosti riadiaceho počítača o
-vyslanie nameraných dát. Potom prebehne A/D prevod a namerané dáta sú
-odoslané do počítača. Doba merania prístroja Keithley 642 je 400
-ms. Táto doba je potrebná na ustálenie dynamických javov, ktoré
-spôsobuje komunikácia po zbernici IMS- 2. Pretože interfejs prístroja
-nie je galvanicky oddelený od meracej časti, majú obvod merania prúdu
-a zbernica IMS-2 spoločnú zem. Tým komunikácia zbernice IMS-2 počas
-A/D prevodu spôsobuje zašumenie meraného signálu.  Tento problém možno
-odstrániť použitím spúšťaného módu, v ktorom pristroj po prijatí
-žiadosti o vyslanie nameraných dát najprv počká na ustálenie
+prebiehať v dvoch módoch, ktoré sa odlišujú adresou
+prístroja~\cite{5.3}. V kontinuálnom móde pracuje A/D prevodník
+prístroja nepretržite a na žiadosť o vyslanie dát do počítača
+interfejs vyšle posledné ukončené meranie (v tomto momente už môže byť
+začatý ďalší A/D prevod). V spúšťanom móde A/D prevodník čaká na povel
+k začatiu merania z interfejsu, ktorý dostane po žiadosti riadiaceho
+počítača o vyslanie nameraných dát. Potom prebehne A/D prevod a
+namerané dáta sú odoslané do počítača. Doba merania prístroja Keithley
+642 je 400 ms. Táto doba je potrebná na ustálenie dynamických javov,
+ktoré spôsobuje komunikácia po zbernici IMS- 2. Pretože interfejs
+prístroja nie je galvanicky oddelený od meracej časti, majú obvod
+merania prúdu a zbernica IMS-2 spoločnú zem. Tým komunikácia zbernice
+IMS-2 počas A/D prevodu spôsobuje zašumenie meraného signálu.  Tento
+problém možno odstrániť použitím spúšťaného módu, v ktorom pristroj po
+prijatí žiadosti o vyslanie nameraných dát najprv počká na ustálenie
 dynamických javov a potom vykoná A/D prevod.
 
 Okrem prúdu potrebujeme pre výpočet kapacity poznať rýchlosť nárastu
@@ -250,22 +244,22 @@ napätia hradla v súlade s HF C-V meraním, čo uľahčí výpočet tých
 parametrov štruktúr MOS, ktore sa určujú z HF a kvázistatickej C-V
 závislosti.
 
-Dá sa ukázať \cite{5.4}, že kubické splajn-funkcie vznikajú
+Dá sa ukázať~\cite{5.4}, že kubické splajn-funkcie vznikajú
 minimalizáciou kvadratického funkcionálu
 
-$$\int_{a}^{b}(y^{''}(x))^{2}dx$$                     
+$\int_{a}^{b}{(y^{''}(x))}^{2}dx$
 
-ktorý je analógom energie ohybu pružného nosníku.  Ak doplníme
+ktorý je analógom energie ohybu pružného nosníku. Ak doplníme
 podmienku minimalizácie uvedeného funkcionálu podmienkou najmenších
 štvorcov vzdialenosti aproximačných funkcií a nameraných bodov,
 vznikne aproximácia pomocou kubických splajn-funkcií. V našom programe
 sme použili dvojicu podprogramov z numerickej knižnice NAG (Numerical
-Algorythm Group), ktorých označenie je E02BAF a E02BCF. Podprogram
+Algorythm Group), ktorých označenie je E02BAF a E02BCF\@. Podprogram
 E02BAF na základe zadaných bodov vypočíta koeficienty aproximačných
 B-splajn polynómov.  Užívateľovi je daná možnosť zvoliť uzly, medzi
 ktorými sa nachádzajú jednotlivé B-splajn polynómy. Numerická metóda
 tvorby koeficientov je stabilná dokonca aj pre viacnásobné
-(tzn.koincidenčné) uzly \cite{5.5, 5.6} (citované v príručke NAG). Z
+(tzn.koincidenčné) uzly~\cite{5.5, 5.6} (citované v príručke NAG). Z
 teórie splajnových funkcií potom vyplýva, že pomocou viacnásobných
 uzlov môžeme aproximovať funkcie s nespojitými deriváciami. Túto
 vlastnosť sme použili pri aproximácii kvázistatickej C-V závislosti,
@@ -274,7 +268,7 @@ inverzie. Pri prechode medzi ochudobnením a stavom slabej inverzie tu
 dochádza vplyvom exponenciálnej závislosti koncentrácie minoritných
 nosičov od elektrického potenciálu k prudkej zmene kapacity. Do tohto
 bodu sme umiestnili tri koincidenčné uzly, čím sme umožnili
-nespojitosť derivácii 1., 2. a 3. rádu. Následne vypočítané hodnoty
+nespojitosť derivácii 1., 2.\ a 3.\ rádu. Následne vypočítané hodnoty
 kapacity pomocou podprogramu E02BCF vykazujú dobré aproximačné
 vlastnosti. Uvedeným postupom sme odstránili prekmity aproximačných
 polynómov, ktoré často vznikajú pri aproximácii funkcií s väčšou
@@ -286,12 +280,12 @@ Pre meranie metódou konštantnej šírky OPN sme použili prístroje
 HP4280a a zdroj jednosmerného (JS) napäťia, ktorý bol postavený na
 Katedre mikroelektroniky. Merací obvod prístroja HP4280a pozostáva z
 vnútorného zdroja JS napätia (INT BIAS), zdroja HF signálu a
-ampérmetra (označeného A) \cite{5.7}. Vnútorný zdroj JS napätia má
+ampérmetra (označeného A)~\cite{5.7}. Vnútorný zdroj JS napätia má
 rozsah $(-100.0,+100.0)V$ s rozlíšením $0.1V$, avšak v rozsahu
 $(-2.0,+2.0)V$ môžeme nastavovať napätie s rozlíšením $0.001V$. Ak
 meriame štruktúry MOS vytvorené na kvalitných kremíkových substrátoch,
 relaxácia nerovnovážnych nosičov náboja prebieha pomaly, čo spôsobuje
-aj pomalú zmenu kapacity štruktúry MOS.  Aby sme mohli udržiavať
+aj pomalú zmenu kapacity štruktúry MOS\@. Aby sme mohli udržiavať
 konštantnú veľkosť nerovnovážnej kapacity štruktúry MOS potrebujeme
 meniť hradlové napätie podľa možnosti s čo najmenšími zmenami. Pre
 tento účel je vhodný napäťový rozsah (-2.0,+2.0) V vnútorného JS
@@ -300,27 +294,26 @@ stavu hlbokého ochudobnenia použijeme externý zdroj JS napätia, ktorý
 môže nastavovať napätie v intervale (-40.0, +40.0) V s rozlíšením 0.1
 V. Prístroj HP4280a umožňuje veľkú flexibilitu konfigurácie elementov
 meracieho obvodu. K dispozícii je 14 módov. Pre náš experiment sme
-zvolili mod 11 \cite{5.2}, ktorý umožňuje pripojenie externého
-zdroja JS napätia.
+zvolili mod 11~\cite{5.2}, ktorý umožňuje pripojenie externého zdroja
+JS napätia.
 
 \begin{figure}[h!]\centering
-\includegraphics{Figures/fig-5-2.eps}
-\captionsetup{justification=raggedright, singlelinecheck=false}
-\caption[Zapojenie prístrojov pre metódu konštantnej šírky
-  OPN]{Zapojenie prístrojov pre metódu konštantnej šírky OPN.}
-\label{fig:5.2}
+  \includegraphics{Figures/fig-5-2.eps}
+  \caption[Zapojenie prístrojov pre metódu konštantnej šírky
+    OPN]{Zapojenie prístrojov pre metódu konštantnej šírky
+    OPN.}\label{fig:5.2}
 \end{figure}
 
 Meranie zavislosti $V_{g}(t)$ potom prebieha v následovných
 krokoch. Pomocou externého zdroja JS napätia privedieme štruktúru MOS
 do nerovnovážneho stavu. Zo zmeny kapacity $\Delta{C}$, ktorú
-odmeriame prístrojom HP4280a, vypočítame pomocou vzťahu \ref{eq:3.9}
-požadovanú zmenu napätia hradla $\Delta{V_{g}}$ . Ak je jej veľkosť v
+odmeriame prístrojom HP4280a, vypočítame pomocou vzťahu~\ref{eq:3.9}
+požadovanú zmenu napätia hradla $\Delta{V_{g}}$. Ak je jej veľkosť v
 absolútnej hodnote väčšia ako $0.001 V$ zmeníme hodnotu napätia hradla
-o $\Delta{V_{g}}$ , čím udržiavame konštantnú hodnotu nerovnovážnej
-kapacity štruktúry MOS. Pri každej zmene napätia hradla odčítame čas,
-kedy táto zmena nastala. Meranie závislosti $V_{g}(t)$ ukončíme, ak
-uplynul čas merania (označme ho $T_{hold}$), ktorý zadáva operátor,
+o $\Delta{V_{g}}$, čím udržiavame konštantnú hodnotu nerovnovážnej
+kapacity štruktúry MOS\@. Pri každej zmene napätia hradla odčítame
+čas, kedy táto zmena nastala. Meranie závislosti $V_{g}(t)$ ukončíme,
+ak uplynul čas merania (označme ho $T_{hold}$), ktorý zadáva operátor,
 prípadne ak zmena hradlového napätia presiahla hraničné hodnoty
 intervalu $(-2.0,+2.0) V$.  Experimentálne sa ukázalo, že programová
 spätnoväzobná slučka zabezpečujúca konštantnú hodnotu kapacity pracuje
@@ -329,9 +322,9 @@ kolísanie udržiavanej kapacity lepšie ako 1\%.
 
 Meranie opakujeme pre rôzne hodnoty kapacity štruktúry MOS v
 nerovnovážnom stave, aby sme mohli určiť generačnú dobu minoritných
-nosičov náboja podľa vztahu \ref{eq:3.10}.
+nosičov náboja podľa vzťahu~\ref{eq:3.10}.
 
-Parametrami riadiaceho programu je interval, v ktorom sa má pohybovat
+Parametrami riadiaceho programu je interval, v ktorom sa má pohybovať
 hranica OPN $(W_{start}, W_{stop})$ s krokom $W_{step}$. Ďalším
 parametrom je hodnota $T_{hold}$, ktorá udáva maximálnu dobu merania
 jednej závislosti $V_{g}(t)$.
@@ -343,26 +336,26 @@ nameraných dát a zo zadanej vzdialenosti hranice OPN potom určuje
 počiatočné hradlové napätie pre nastavenie externého zdroja JS
 napätia.  Pre svoju činnosť potrebuje riadiaci program ešte jeden
 dátovy súbor, obsahujúci koncentračné profily dotujúcich prímesí
-meraných štruktúr MOS. Hodnoty koncentrácie sú potrebné pri
-vyčíslovaní zmeny napätia hradla štruktúry MOS podľa vzťahu
-\ref{eq:3.9}.
+meraných štruktúr MOSň2. Hodnoty koncentrácie sú potrebné pri
+vyčíslovaní zmeny napätia hradla štruktúry MOS podľa
+vzťahu~\ref{eq:3.9}.
 
 Po zmeraní závislosti $V_{g}(t)$ určíme lineárnou regresiou jej
-smernicu.  Z uskutočnených experimentov sa ukazuje, že minimálna doba
+smernicu. Z uskutočnených experimentov sa ukazuje, že minimálna doba
 merania zavislosti $V_{g}(t)$, kedy ešte možno očakávať akceptovateľné
-výsledky je pre substráty s hodnotami $\tau_g$ rádove
-$10^{3}\mu{s}$ približne $T_{hold}=10s$. Počas tejto doby
-prichádzalo k zmene napätia hradla v rozsahu $50-500 mV$ v závislosti
-od šírky OPN a v závislosti od prírastku minoritných nosičov z oblasti
-mimo OPN. Zároveň bolo z grafického znázornenia závislosti
-$\frac{dV_g}{dt}=f(w)$ vidieť vplyv prírastku minoritných nosičov náboja
-z oblasti mimo OPN, čo sa prejavilo približne rovnakým sklonom
-závislostí $\frac{dV_g}{dt}=f(w)$, ale rôznou absolútnou hodnotou.  Zo
-zobrazenia závislostí $\frac{dV_g}{dt}=f(w)$ na celej kremíkovej doske
-vyplýva, že akceptovateľné hodnoty $\tau_{g}$ možno počítať jedine z
-derivácie funkcie $\frac{dV_g}{dt}=f(w)$ podľa w (vzťah \ref{eq:3.10}
-príp. \ref{eq:3.7}) a v žiadnom prípade nie z jej fukčných hodnôt
-(vzťah \ref{eq:3.5}). Do výstupného dátového súboru sme ukladali
+výsledky je pre substráty s hodnotami $\tau_g$ rádove $10^{3}\mu{s}$
+približne $T_{hold}=10s$. Počas tejto doby prichádzalo k zmene napätia
+hradla v rozsahu $50-500 mV$ v závislosti od šírky OPN a v závislosti
+od prírastku minoritných nosičov z oblasti mimo OPN\@. Zároveň bolo z
+grafického znázornenia závislosti $\frac{dV_g}{dt}=f(w)$ vidieť vplyv
+prírastku minoritných nosičov náboja z oblasti mimo OPN, čo sa
+prejavilo približne rovnakým sklonom závislostí
+$\frac{dV_g}{dt}=f(w)$, ale rôznou absolútnou hodnotou. Zo zobrazenia
+závislostí $\frac{dV_g}{dt}=f(w)$ na celej kremíkovej doske vyplýva,
+že akceptovateľné hodnoty $\tau_{g}$ možno počítať jedine z derivácie
+funkcie $\frac{dV_g}{dt}=f(w)$ podľa w (vzťah~\ref{eq:3.10}
+príp.~\ref{eq:3.7}) a v žiadnom prípade nie z jej fukčných hodnôt
+(vzťah~\ref{eq:3.5}). Do výstupného dátového súboru sme ukladali
 funkčné závislosti $\frac{dV_g}{dt}=f(w)$.
 
 Z princípu metódy vyplýva minimálna vzdialenosť od povrchu polovodiča,
@@ -372,10 +365,10 @@ zodpovedajúca počiatku slabej inverzie v polovodiči.
 \section{Časové diagramy použitých metód.}\label{sec:5.4}
 
 Aby sme mohli odhadnúť dobu merania pre jednotlivé metódy, znázorníme
-graficky časové závislosti hradlového napätia štruktúry MOS. Okrem
+graficky časové závislosti hradlového napätia štruktúry MOS\@. Okrem
 rovnovážnej HF C-V metódy, kde je celý priebeh merania riadený
 procesorom prístroja HP4280a a jeho časový diagram je prevzatý z
-manuálu \cite{5.7}, boli časové diagramy určené na základe
+manuálu~\cite{5.7}, boli časové diagramy určené na základe
 experimentálne nameraných hodnôt. Tieto časové hodnoty sú závislé od
 druhu riadiaceho počítača a od optimalizácie riadiacich programov. V
 našom experimente sme použili osobný počítač PC AT, pracujúci na
@@ -388,7 +381,7 @@ V spojení s časovými diagramami uvedieme aj rozsahy napätí použitých
 prístrojov.
 
 \par\emph{POZNÁMKA.} V prípade, ak je pri maximálnej hodnote časového
-údaju uvedený údaj 'neohraničené', znamená to, že jeho maximálna
+údaju uvedený údaj `neohraničené', znamená to, že jeho maximálna
 veľkosť závisí od dátového typu zodpovedajúcej premennej riadiaceho
 programu, prípadne od rozsahu prístroja.
 
@@ -397,142 +390,125 @@ programu, prípadne od rozsahu prístroja.
 \subsection{Rovnovážna HF C-V závislosť.}\label{sec:5.4.1}
 
 \begin{figure}[h!]\centering
-\includegraphics{Figures/fig-5-3.eps}
-\captionsetup{justification=raggedright, singlelinecheck=false}
-\caption[Časový diagram rovnovážnej HF C-V metódy]{Časový diagram
-  rovnovážnej HF C-V metódy.}
-\label{fig:5.3}
+  \includegraphics{Figures/fig-5-3.eps}
+  \caption[Časový diagram rovnovážnej HF C-V metódy]{Časový diagram
+    rovnovážnej HF C-V metódy.}\label{fig:5.3}
 \end{figure}
 
 \begin{table}[h!]\centering
-\begin{tabular}{ l p{0.5\linewidth} l l }
-\hline
-parameter   & popis parametra & min. & max.hodnota \\
-\hline
-$T_H$       & čas ustálenia \dotfill & $3 ms$ &  $650 s$\\
-$T_D$       & čas pozdržania merania \dotfill & $3 ms$ & $650 s$ \\
-$T_M$       & čas merania \dotfill & $40 ms$ \\
-$T_X$       & binárny prenos dát,\\
-            & predspracovanie dát,\\
-            & uloženie dát do súboru,\\
-            & posuv stolíka na ďalšiu štruktúru \dotfill & $\sim 7 s$ \\
-$V_{start}$ & \dotfill & $-100.0 V$ & $+100.0 V$ \\
-$V_{stop}$  & \dotfill & $-100.0 V$ & $+100.0 V$ \\
-$V_{step}$  & \dotfill & $\pm 0.001 V$ & $\pm 200.0 V$ \\
-\hline
-\end{tabular}
-\caption[Časový diagram rovnovážnej HF C-V metódy]{Časový diagram
-  rovnovážnej HF C-V metódy.}
-\label{tab:5.1}
+  \begin{tabular}{l p{0.5\linewidth} l l}
+    param.      & popis parametra & min. & max.hodnota\\
+    \hline% chktex-file 44
+    $T_H$       & čas ustálenia \dotfill & $3 ms$ &  $650 s$\\
+    $T_D$       & čas pozdržania merania \dotfill & $3 ms$ & $650 s$\\
+    $T_M$       & čas merania \dotfill & $40 ms$\\
+    $T_X$       & binárny prenos dát,\\
+                & predspracovanie dát,\\
+                & uloženie dát do súboru,\\
+                & posuv stolíka na ďalšiu štruktúru \dotfill & $\sim 7 s$\\
+    $V_{start}$ & \dotfill & $-100.0 V$ & $+100.0 V$\\
+    $V_{stop}$  & \dotfill & $-100.0 V$ & $+100.0 V$\\
+    $V_{step}$  & \dotfill & $\pm 0.001 V$ & $\pm 200.0 V$\\
+    \hline
+  \end{tabular}
+  \caption[Časový diagram rovnovážnej HF C-V metódy]{Časový diagram
+    rovnovážnej HF C-V metódy.}\label{tab:5.1}
 \end{table}
 
 \newpage
 \subsection{Nerovnovážna HF C-V závislosť.}\label{sec:5.4.2}
 
 \begin{figure}[h!]\centering
-\includegraphics{Figures/fig-5-4.eps}
-\captionsetup{justification=raggedright, singlelinecheck=false}
-\caption[Časový diagram nerovnovážnej HF C-V metódy]{Časový diagram
-  nerovnovážnej HF C-V metódy.}
-\label{fig:5.4}
+  \includegraphics{Figures/fig-5-4.eps}
+  \caption[Časový diagram nerovnovážnej HF C-V metódy]{Časový diagram
+    nerovnovážnej HF C-V metódy.}\label{fig:5.4}
 \end{figure}
 
 \begin{table}[h!]\centering
-\begin{tabular}{ l p{0.5\linewidth} l l }
-\hline
-parameter   & popis parametra & min. & max.hodnota \\
-\hline
-$T_H$  & čas relaxácie minoritných nosičov náboja \dotfill & $0 s$ &  neohraničené \\
-$T_M$  & čas merania a prenos dát \dotfill & $330 ms$ \\
-$T_X$  & predspracovanie dát, \\
-       & uloženie dát do súboru, \\
-       & posuv stolíka na ďalšiu štruktúru \dotfill & $\sim 4 s$ \\
-$V_{start}$ & \dotfill & $-100.0$ & $+100.0 V$ \\
-$V_{stop}$ & \dotfill & $-100.0$ & $+100.0 V$ \\
-$V_{step}$ & \dotfill & $\pm 0.001$ & $\pm 200.0 V$ \\
-$V_{acum}$ & \dotfill & $-100.0$ & $+100.0 V$ \\
-\hline
-\end{tabular}
-\caption[Časový diagram nerovnovážnej HF C-V metódy]{Časový diagram
-  nerovnovážnej HF C-V metódy.}
-\label{tab:5.2}
+  \begin{tabular}{l p{0.5\linewidth} l l}
+    param.      & popis parametra & min. & max.hodnota\\
+    \hline
+    $T_H$       & čas relaxácie minoritných nosičov náboja \dotfill & $0 s$ &  neohraničené\\
+    $T_M$       & čas merania a prenos dát \dotfill & $330 ms$\\
+    $T_X$       & predspracovanie dát,\\
+                & uloženie dát do súboru,\\
+                & posuv stolíka na ďalšiu štruktúru \dotfill & $\sim 4s$\\
+    $V_{start}$ & \dotfill & $-100.0$ & $+100.0 V$\\
+    $V_{stop}$  & \dotfill & $-100.0$ & $+100.0 V$\\
+    $V_{step}$  & \dotfill & $\pm 0.001$ & $\pm 200.0 V$\\
+    $V_{acum}$  & \dotfill & $-100.0$ & $+100.0 V$\\
+    \hline
+  \end{tabular}
+  \caption[Časový diagram nerovnovážnej HF C-V metódy]{Časový diagram
+    nerovnovážnej HF C-V metódy.}\label{tab:5.2}
 \end{table}
 
 \newpage
 \subsection{Kvázistatická C-V závislosť.}\label{sec:5.4.3}
 
 \begin{figure}[h!]\centering
-\includegraphics{Figures/fig-5-5.eps}
-\captionsetup{justification=raggedright, singlelinecheck=false}
-\caption[Časový diagram kvázistatickej C-V metódy]{Časový diagram
-  kvázistatickej C-V metódy.}
-\label{fig:5.5}
+  \includegraphics{Figures/fig-5-5.eps}
+  \caption[Časový diagram kvázistatickej C-V metódy]{Časový diagram
+    kvázistatickej C-V metódy.}\label{fig:5.5}
 \end{figure}
 
 \begin{table}[h!]\centering
-\begin{tabular}{ l p{0.5\linewidth} l l }
-\hline
-parameter   & popis parametra & min. & max.hodnota \\
-\hline
-$T_H$  & čas ustálenia \dotfill & $0 s$ & neohraničené \\
-$T_V$  & čas merania napätia hradla a času \dotfill & $5 s$ \\
-$T_M$  & čas merania prúdu a času \dotfill & neohraničené\\
-$T_X$  & predspracovanie dát, \\
-       & uloženie dát do súboru, \\
-       & posuv stolíka na ďalšiu štruktúru \dotfill & $\sim 15 s$ \\
-$V_{start}$ & \dotfill & $-20.0$ & $+20.0 V$ \\
-$V_{stop}$ & \dotfill & $-20.0$ & $+20.0 V$ \\
-$dV/dt$ & \dotfill & $\pm 0.1mV/s$ & $\pm 10.0V/s$ \\
-\hline
-\end{tabular}
-\caption[Časový diagram kvázistatickej C-V metódy]{Časový diagram
-  kvázistatickej C-V metódy.}
-\label{tab:5.3}
+  \begin{tabular}{ l p{0.5\linewidth} l l }
+    parameter   & popis parametra & min. & max.hodnota\\
+    \hline
+    $T_H$       & čas ustálenia \dotfill & $0 s$ & neohraničené\\
+    $T_V$       & merania napätia hradla a času \dotfill & $5 s$\\
+    $T_M$       & merania prúdu a času \dotfill & neohraničené\\
+    $T_X$       & predspracovanie dát,\\
+                & uloženie dát do súboru,\\
+                & posuv stolíka na ďalšiu štruktúru \dotfill & $\sim 15s$\\
+    $V_{start}$ & \dotfill & $-20.0$ & $+20.0 V$\\
+    $V_{stop}$  & \dotfill & $-20.0$ & $+20.0 V$\\
+    $dV/dt$     & \dotfill & $\pm 0.1mV/s$ & $\pm 10.0V/s$\\
+    \hline
+  \end{tabular}
+  \caption[Časový diagram kvázistatickej C-V metódy]{Časový diagram
+    kvázistatickej C-V metódy.}\label{tab:5.3}
 \end{table}
 
 \newpage
 \subsection{Metóda konštantnej šírky OPN.}\label{sec:5.4.4}
 
 \begin{figure}[h!]\centering
-\includegraphics{Figures/fig-5-6.eps}
-\captionsetup{justification=raggedright, singlelinecheck=false}
-\caption[Časový diagram metódy konštantnej šírky OPN]{Časový diagram
-  metódy konštantnej šírky OPN}.
-\label{fig:5.6}
+  \includegraphics{Figures/fig-5-6.eps}
+  \caption[Časový diagram metódy konštantnej šírky OPN]{Časový diagram
+    metódy konštantnej šírky OPN}.\label{fig:5.6}
 \end{figure}
 
 \begin{table}[h!]\centering
-\begin{tabular}{ l p{0.5\linewidth} l l }
-\hline
-parameter   & popis parametra & min. & max.hodnota \\
-\hline
-$T_H$ & čas relaxácie minoritných nosičov náboja \dotfill & $0 s$ & neohraničené \\
-$T_M$ & čas merania, výpočet $dV/dt$ \dotfill & $10 s$ & neohraničené \\
-$T_X$ & uloženie dát do súboru, \\
-      & posuv stolíka na ďalšiu štruktúru \dotfill & $\sim 2 s$ \\
-$V_{start}$ & \dotfill & $-40.0$ & $+40.0 V$ \\
-$V_{stop}$  & \dotfill & $-40.0$ & $+40.0 V$ \\
-$V_{acum}$  & \dotfill & $-40.0$ & $+40.0 V$ \\
-\hline
-\end{tabular}
-\caption[Časový diagram metódy konštantnej šírky OPN]{Časový diagram
-  metódy konštantnej šírky OPN.}
-\label{tab:5.4}
+  \begin{tabular}{ l p{0.5\linewidth} l l }
+    param.      & popis parametra & min. & max.hodnota\\
+    \hline
+    $T_H$       & čas relaxácie minoritných nosičov náboja \dotfill & $0 s$ & neohraničené\\
+    $T_M$       & čas merania, výpočet $dV/dt$ \dotfill & $10 s$ & neohraničené\\
+    $T_X$       & uloženie dát do súboru,\\
+                & posuv stolíka na ďalšiu štruktúru \dotfill & $\sim 2s$\\
+    $V_{start}$ & \dotfill & $-40.0$ & $+40.0 V$\\
+    $V_{stop}$  & \dotfill & $-40.0$ & $+40.0 V$\\
+    $V_{acum}$  & \dotfill & $-40.0$ & $+40.0 V$\\
+    \hline
+  \end{tabular}
+  \caption[Časový diagram metódy konštantnej šírky OPN]{Časový diagram
+    metódy konštantnej šírky OPN.}\label{tab:5.4}
 \end{table}
 
 
 \begin{thebibliography}{}
-\bibitem[5.1]{5.1} Mariassy P. : Riadiaca jednotka prístroja typu
-  talker/listener na spojenie so zbernicou IMS. Diplomová práca. EF
+\bibitem[5.1]{5.1} Mariassy P.: Riadiaca jednotka prístroja typu
+  talker/listener na spojenie so zbernicou IMS\@. Diplomová práca. EF
   SVŠT Bratislava 1988.
 \bibitem[5.2]{5.2} National Instruments, IEEE-488 Instrumentation
   Interface. User guide.
 \bibitem[5.3]{5.3} Keithley model 642, Instruction manual.
 \bibitem[5.4]{5.4} Marčuk G.I.: Metódy numerické matematiky. Academia
   Praha 1987.
-\bibitem[5.5]{5.5} Cox M.G. : J. Inst. Maths. Aplics. , 10 (1972)
-  s.134.
-\bibitem[5.6]{5.6} De Boor C. : J. Approx. Theory, 6 (1972) s.50.
+\bibitem[5.5]{5.5} Cox M.G.: J. Inst. Maths. Aplics., 10 (1972) s.134.
+\bibitem[5.6]{5.6} De Boor C.: J. Approx. Theory, 6 (1972) s.50.
 \bibitem[5.7]{5.7} Hewlett-Packard, Operational and service manual,
   Model HP4280a.
 \end{thebibliography}

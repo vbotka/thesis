@@ -1,0 +1,35 @@
+% Appendix F
+
+\chapter{Určenie povrchového potenciálu $\varphi_s$ z Q-C metódy.}\label{app:AppendixF}
+\lhead{Appendix F. \emph{Určenie povrchového potenciálu $\varphi_s$ z Q-C metódy}}
+
+Spôsob určenia povrchového potenciálu štruktúry MOS je popísany v
+článku~\cite{App.3}. Tu uvedieme jeho hlavnú myšlienku.
+
+Pre zmenu nábojov na sériovo-paralelnom zapojení kondenzátorov Q-C
+metódy môžeme písať (pozri dodatok~\ref{app:AppendixE}).
+
+\begin{equation}\label{eq:F.1}
+  \Delta Q_x + \Delta Q_i = \Delta Q_w + \Delta Q_{mos}
+\end{equation}
+
+Ak vyjadríme zmenu náboja na napäťovo-nezávislých kondenzátoroch
+pomocou ich kapacity a napätia, za predpokladu, že vychádzame zo stavu
+kedy $V_i=0$ a $V_g=0$, môžeme písať
+
+\begin{equation}\label{eq:F.2}
+  \Delta Q_{mos} = (C_{iLF} + C_{x})V_{i} - C_{w}V_{g}
+\end{equation}
+
+Zmenu náboja na štruktúre MOS môžeme vyjadriť aj pomocou jej vlastných
+parametrov
+
+\begin{equation}\label{eq:F.3}
+  \Delta Q_{mos} = C_{ox}(V_{g} - \varphi_{s} + \varphi_{s0})
+\end{equation}
+
+a kombináciou~\ref{eq:F.2} a~\ref{eq:F.3} môžeme písať výsledný vzťah
+
+\begin{equation}\label{eq:F.4}
+  \varphi_{s} = \varphi_{s0} - \frac{C_{iLF} + C_{x}}{C_{ox}}V_i + {\Big[1 + \frac{C_{w}}{C_{ox}}\Big]}V_{g}
+\end{equation}

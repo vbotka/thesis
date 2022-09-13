@@ -1,37 +1,36 @@
 % Appendix F
 
-\chapter{Určenie povrchového potenciálu $\varphi_s$ z Q-C metódy.} % Main appendix title
+\chapter{Calculation of the surface potential $\varphi_s$ from Q-C method.}\label{app:AppendixF}
+\lhead{Appendix F. \emph{Calculation of surface potential $\varphi_s$ from Q-C method}}
 
-\label{app:AppendixF} % For referencing this appendix elsewhere, use \ref{AppendixA}
+The method for determining the surface potential of an MOS structure
+is described in Appendix~\ref{app:AppendixC}. Here we give its main idea.
 
-\lhead{Appendix F. \emph{Určenie povrchového potenciálu $\varphi_s$ z Q-C metódy}} % This is for the header on each page - perhaps a shortened title
-
-Spôsob určenia povrchového potenciálu štruktúry MOS je popísany v článku \cite{App.3}. Tu uvedieme jeho hlavnú myšlienku.
-
-Pre zmenu nábojov na sériovo-paralelnom zapojení kondenzátorov Q-C
-metódy môžeme písať (pozri dodatok \ref{app:AppendixE}).
+To change the charges on a series-parallel circuit of Q-C capacitors
+methods we can write (see Appendix~\ref{app:AppendixE}).
 
 \begin{equation}\label{eq:F.1}
-\Delta Q_x + \Delta Q_i = \Delta Q_w + \Delta Q_{mos}
+  \Delta Q_x + \Delta Q_i = \Delta Q_w + \Delta Q_{mos}
 \end{equation}
 
-Ak vyjadríme zmenu náboja na napäťovo-nezávislých kondenzátoroch
-pomocou ich kapacity a napätia, za predpokladu, že vychádzame zo stavu
-kedy $V_i=0$ a $V_g=0$, môžeme písať
+If we express the change of charge on voltage-independent capacitors
+by their capacitance and voltage, assuming that we start from the
+state where $V_i=0$ and $V_g=0$, we can write
 
 \begin{equation}\label{eq:F.2}
-\Delta Q_{mos} = (C_{iLF} + C_{x})V_{i} - C_{w}V_{g}
+  \Delta Q_{mos} = (C_{iLF} + C_{x})V_{i} - C_{w}V_{g}
 \end{equation}
 
-Zmenu náboja na štruktúre MOS môžeme vyjadriť aj pomocou jej vlastných
-parametrov
+We can also express the change of charge on the MOS structure by its
+own parameters
 
 \begin{equation}\label{eq:F.3}
-\Delta Q_{mos} = C_{ox}(V_{g} - \varphi_{s} + \varphi_{s0})
+  \Delta Q_{mos} = C_{ox}(V_{g} - \varphi_{s} + \varphi_{s0})
 \end{equation}
 
-a kombináciou \ref{eq:F.2} a \ref{eq:F.3} môžeme písať výsledný vzťah
+and by combining~\ref{eq:F.2} and~\ref{eq:F.3} we can write the
+resulting relation
 
 \begin{equation}\label{eq:F.4}
-\varphi_{s} = \varphi_{s0} - \frac{C_{iLF} + C_{x}}{C_{ox}}V_i + \Big[1 + \frac{C_{w}}{C_{ox}}\Big]V_{g}
+  \varphi_{s} = \varphi_{s0} - \frac{C_{iLF} + C_{x}}{C_{ox}}V_i + {\bigg[1 + \frac{C_{w}}{C_{ox}}\bigg]}V_{g}
 \end{equation}

@@ -1,66 +1,23 @@
 % Introduction
-\chapter{Introduction.} % Main chapter title
-\label{Introduction} % For referencing the chapter elsewhere, use \ref{Chapter1} 
-\lhead{\emph{Introduction}} % This is for the header on each page - perhaps a shortened title
+\chapter{Introduction.}\label{Introduction}
+\lhead{\emph{Introduction}}
 %----------------------------------------------------------------------------------------
 
-\iffalse \par Oblasť diagnostiky štruktúr MOS bola v posledných
-desaťročiach predmetom rozsiahleho výskumu a v súčasnosti sa nachádza
-v štádiu rutinného používania. Mnohé metodiky určovania parametrov
-štruktúr MOS možno v súčasnosti považovať za uzavreté o čom svedčia
-rozsiahle monografie publikované v tejto oblasti \cite{I.1} \cite{I.2}
-\cite{I.3} \cite{I.4}. Zároveň je k dispozícii profesionálne
-prístrojové vybavenie pre určovanie parametrov štruktúr MOS, ktoré
-slúži pre rýchlu diagnostiku technológie výroby polovodičových prvkov
-a integrovaných obvodov. Mnohé technologické postupy používané v
-súčasnosti pri výrobe diskrétnych polovodičových súčiastok a
-integrovaných obvodov na báze kremíka sú dostatočne preskúmané a pri
-ich používaní sa dosahuje vysoká reprodukovateľnosť parametrov, avšak
-stále ešte možno nájsť oblasti, v ktorých vývoj diagnostiky
-polovodičových prvkov pomocou štruktúr MOS nie je ukončený.
-\fi
 Diagnostics of MOS structure has been subject of extensive research in
 recent decades and now is at the stage-routine use. At present many
 methods of determining the parameters of MOS structure can be
 considered as closed as evidenced by the extensive monographies
-published in this area, \cite{I.1} \cite{I.2} \cite{I.3}
-\cite{I.4}. At the same time the professional instrumentation for the
-determination of the parameters of MOS structure is available, which
-is used for rapid diagnostics of the technology of semiconductor
-devices and integrated circuits. Many technological processes
-currently used in the production of discrete semiconductor devices and
-integrated circuits based on silicon are well investigated, and high
-reproducibility of parameters is achieved, however, there are still
-areas where improvements in diagnostics of semiconductor devices using
-MOS structures is not completed.
+published in this area,~\cite{I.1, I.2, I.3, I.4}. At the same time
+the professional instrumentation for the determination of the
+parameters of MOS structure is available, which is used for rapid
+diagnostics of the technology of semiconductor devices and integrated
+circuits. Many technological processes currently used in the
+production of discrete semiconductor devices and integrated circuits
+based on silicon are well investigated, and high reproducibility of
+parameters is achieved, however, there are still areas where
+improvements in diagnostics of semiconductor devices using MOS
+structures is not completed.
 
-\iffalse
-\par V snahe o vyššiu efektívnosť výroby sa prejavuje tendencia
-používať kremíkové dosky stále väčších priemerov, čo prináša v spojení
-s problematikou výťažnosti potrebu štatistického prístupu k
-vyhodnocovaniu testovaných parametrov jednotlivých štruktúr. Merané
-parametre testovacích štruktúr úzko súvisia s hodnotami
-technologických parametrov dosiahnutých v procese výroby a funkčnosť
-hotovej súčiastky závisí od veľkého množstva jednotlivých
-technologických krokov, ktoré sa pohybujú v určitých tolerančných
-medziach. Pri zvyšovaní hustoty integrácie a s tým súvisiacim
-zmenšovaním rozmerov jednotlivých integrovaných elementov sa stáva
-dôležitou otázka tolerančných intervalov technologických
-parametrov. Automatizácia výroby súvisí spravidla s veľkým objemom
-výroby, ktorej efektívnosť zaisťuje v najväčšej miere jej
-technológia. Podrobná analýza technologických operácií nie je zďaleka
-jednoduchou záležitosťou a vyžaduje veľké množstvo experimentov a
-pokusov. Výsledky týchto experimentov je nutné efektívne snímať a pre
-vyhodnotenie pouzit výpočtovú techniku, pričom objem snímaných a
-vyhodnocovaných dát vyžaduje použitie databázových systémov.  Existuje
-celá rada matematických metód, ktoré sú pre tieto účely vhodné a sú k
-dispozícii balíky programov, ktoré riešia problémy analýzy
-technologických procesov \cite{I.5}. Pravdepodobne prevláda pri výrobe
-integrovaných obvodov heuristický prístup k riešeniu otázok funkčnosti
-produktov a objasnenie závislosti niektorých parametrov môže viesť k
-exaktnejšiemu rozhodovaniu pri riadení chodu technologických
-zariadení.
-\fi
 Aiming at enhancing the production efficiency there is still a
 tendency to use silicon wafers of larger diameters. In connection with
 the issue of yield it brings the requirement of statistical approach
@@ -80,34 +37,16 @@ efficiently record the results of these experiments and use computers
 for calculations, where the volume of recorded and calculated data
 requires the use of database systems. There are number of mathematical
 methods which are suitable for this purpose and available program
-packages that address the analysis of technological processes
-\cite{I.5}. Heuristic approach to addressing functionality of the
-products probably prevails in the production of integrated
+packages that address the analysis of technological
+processes~\cite{I.5}. Heuristic approach to addressing functionality
+of the products probably prevails in the production of integrated
 circuits. Clarification of dependencies of some parameters may lead to
 more exact management decisions by controlling the technology devices.
 
-\iffalse
-\par V tejto práci sme sa pokúsili o sprístupnenie informacií o
-plošnom rozložení niektorých parametrov štruktúr MOS na kremíkovej
-doske so zameraním sa na proces iónovej implantácie, ktorá vytváraním
-nehomogénneho hĺbkového rozloženia prímesných atómov v polovodiči
-vyžaduje prispôsobenie metód merania tejto podmienke. Plošné
-zobrazenie parametrov štruktúr MOS je založené na veľkom množstve
-meraní a spracovaní dát a aplikácia kapacitných metód na testovanie
-celej kremíkovej dosky si vyžaduje vybudovanie adekvátnych
-prostriedkov zberu, spracovania a zobrazenia dát. Niektoré zo
-skúmaných parametrov vykazujú geometrickú symetriu a iné sa náhodne
-pohybujú v určitom intervale hodnôt. Plošné zobrazenie skúmaných
-parametrov tak poskytuje rýchlu a prehľadnú informáciu o kvalite
-jednotlivých technologických krokov, od ktorých hodnota skúmaného
-parametra závisí. Zároveň si možno pomocou tejto vizuálnej informácie
-vytvoriť predstavu o fluktuáciách skúmaných parametrov na kremíkovej
-doske a neprikladať váhu náhodne zmeraným extrémnym hodnotám.
-\fi
-\par In this work, we tried to make available the information on spatial
-distribution of some parameters of MOS structures on silicon wafer
-focusing on the ion implantation, that by creating inhomogeneous depth
-distribution of the dopant atoms in the semiconductor requires
+\par In this work, we tried to make available the information on
+spatial distribution of some parameters of MOS structures on silicon
+wafer focusing on the ion implantation, that by creating inhomogeneous
+depth distribution of the dopant atoms in the semiconductor requires
 adapting the measurement methods to this condition. Planar display of
 the MOS structure parameters is based on a large number of
 measurements and data processing, and the application of the
@@ -122,15 +61,6 @@ possible, by means of this visual information, to create an overview
 of the fluctuations of the parameters examined on silicon wafer and
 disregard randomly measured extreme values.
 
-\iffalse
-\par Ďalšímm pokračovanímm predkladanej práce by malo byť hľadanie
-súvislostí medzi parametrami testovacích štruktúr rôznych druhov
-(napr.štruktúra MOS, tranzistorové štruktúry) so zameraním na
-zlepšenie výťažnosti výroby integrovaných obvodov. Pravdepodobne by
-bolo možné na základe poznatkov o miere závislosti medzi jednotlivými
-parametrami rozhodnúť, aká zmena technologického parametra ovplyvní
-funkčnosť produkovanej súčiastky.
-\fi
 \par The further continuation of this study should be searching
 relationships between the parameters of the test structures of
 different types (e.g. MOS structure, transistor structures) with a
@@ -140,57 +70,20 @@ degree of dependence between parameters, to determine what change of a
 technological parameter affects the functionality of the produced
 devices.
 
-\iffalse
-\par
-Vlastná práca zahŕňa v sebe viacero oblastí vedecko-výskumnej
-činnosti, ktoré možno následovne vyčleniť:
-\begin{itemize}
-\item{fyzikálne základy použitých metód a interpretácia výsledkov}
-\item{automatizácia experimentu}
-\item{použitie numerickej  matematiky pre riešenie fyzikálnych rovníc a spracovanie dát}
-\item{tvorba programového vybavenia} .
-\end{itemize}
-\fi
 \par This work comprises a number of areas of scientific research that
 can be listed as follows:
 \begin{itemize}
 \item{basics of used physical methods and interpretation of results}
 \item{automation of the experiment}
-\item{use of numerical mathematics for solving physical equations and data processing}
+\item{use of numerical mathematics for solving physical equations and
+  data processing}
 \item{programming}.
 \end{itemize}
 
-\iffalse \par Kapitola 1 obsahuje prehľad súčasného stavu skúmanej
-problematiky a zaoberá sa problematikou ideálnej a reálnej štruktúry
-MOS. Pre získanie informácií o fyzikálnych dejoch v ideálnej štruktúre
-MOS sme numericky vyriešili jednodimenzionálnu Poissonovu rovnicu pre
-nehomogénne rozloženie prímesí v polovodiči a zároveň sme získali
-teoretické kapacitne-napäťové závislosti štruktúry MOS. Kapitola 2
-obsahuje ciele dizertačnej práce. Použité metódy merania a postupy
-určovania niektorých parametrov štruktúr MOS sú popísané v kapitole 3
-a 4. Pritom boli rozpracované jednako metody používané v minulosti na
-Oddelení polovodičových štruktúr a integrovaných obvodov, a zároveň sa
-zaviedli nové, doteraz u nás nepužívané metódy (metoda Q-C, metóda
-konštantnej šírky oblasti priestorového náboja). Kapitola 5 obsahuje
-niektoré myšlienky realizácie automatizovaného zberu a predspracovania
-dát. Riešia sa tu problémy štruktúr datových súborov, zabezpečenie
-proti strate nameraných dát a manipulácie s jednotlivými záznamami
-datových súborov. Zároveň sú v tejto časti spomenuté niektoré riešenia
-problémov spojených s automatizáciou experimentu. Napriek tomu, že
-tento okruh otázok nesúvisí priamo s fyzikálnou stránkou prevedených
-meraní, je potrebné zdôraznit, že bez ich systematického vyriešenia by
-prakticky nebolo možné efektívne realizovať automatizované pracovisko
-pre sledovanie plošného rozloženia elektrofyzikálnych parametrov
-štruktúr MOS. Spracovanie nameraných dát a zobrazenie výsledkov
-plošného rozloženia parametrov je uvedené v kapitole 6 a kapitola 7
-obsahuje tabuľky s výsledkami experimentu. Zároveň sú tu uvedené aj
-výsledky skúmania vzájomnej korelácie niektorých parametrov štruktúr
-MOS.
-\fi
-\par Chapter 1 provides an overview of the current state of
-research problems and deals with the ideal and real MOS structure. To
-obtain information on the physical processes in an ideal MOS structure
-we numerically solved the one-dimensional Poisson's equation for
+\par Chapter 1 provides an overview of the current state of research
+problems and deals with the ideal and real MOS structure. To obtain
+information on the physical processes in an ideal MOS structure we
+numerically solved the one-dimensional Poisson's equation for
 inhomogeneous distribution of impurities in semiconductor and at the
 same time we have gained the theoretical capacity-voltage curves of
 MOS structure. Chapter 2 comprises objectives of this
@@ -216,50 +109,32 @@ the spatial distribution of the parameters is in Chapter 6 and Chapter
 time the results of the examination of cross-correlation of certain
 parameters of the MOS structure are also shown.
 
-\iffalse
-\par Použité programy sú väčšinou napísané v jazyku C a iba niektoré
-podprogramy spracovania dat a numerického riešenia fyzikálnych rovnic
-používajú programovací jazyk Fortran. Celý systém programov bol
-realizovaný pod operačným systémom MS DOS. Prenos programov pod iný
-operačný systém by vyžadoval vyriešenie následovných okruhov
-problémov:
-\begin{itemize}
-\item{riadenie zbernice IMS-2}
-\item{prisppsôbenie sa systému práce so súbormi}
-\item{grafické zobrazenie údajov} .
-\end{itemize}
-\fi
 \par Programs are written mainly in C, and only some subroutines, to
 process data and to solve physical equations numerically, use the
 programming language Fortran. The whole system of programs was
-developed under the operating system MS DOS. Transfer of the programs
+developed under the operating system MS DOS\@. Transfer of the programs
 to other operating system would require solution of the following
 problems:
 \begin{itemize}
-\item{IMS-2 (IEEE-488) bus control}
-\item{porting of the file processing}
-\item{handling of graphical images} .
+\item IMS-2 (IEEE-488) bus control
+\item Porting of the file processing
+\item Handling of graphical images
 \end{itemize}
 
-\iffalse \par Pre väčšiu prehľadnosť textu boli niektoré jej dielčie
-časti presunuté do dodatkov.  Práca obsahuje značný počet obrázkov,
-ktoré pomáhajú doplniť text a samy o sebe poskytujú množstvo
-informácií.
-\fi
 \par To improve clarity of the text some sub-sections were moved to
 the amendments. The work contains a large number of images which help
 to complete the text and themselves provide large amount of
 information.
 
 \begin{thebibliography}{}
-\bibitem[I.1]{I.1}
-Nicollian E.H., Brews J.R. : MOS Physics  and  Technology. John Wiley and Sons. New York 1982.
-\bibitem[I.2]{I.2}
-Grove A.S. : Physics and Technology of Semiconductor devices. John Wiley and Sons. New York 1967.
-\bibitem[I.3]{I.3}
-Sze S.M. : Physics of semiconductor devices. John Wiley and Sons. New York 1969.
-\bibitem[I.4]{I.4}
-Runyan W.R., Bean K.E. : Semiconductor integrated  circuit  processing technology. Addison-Wesley 1990.
-\bibitem[I.5]{I.5}
-AIP ve vývoji technologie pro automatizovanou výrobu. Zborník zo seminara. Dom techniky CSVTS Pardubice 1990.
+\bibitem[I.1]{I.1} Nicollian E.H., Brews J.R.: MOS Physics and
+  Technology. John Wiley and Sons. New York 1982.
+\bibitem[I.2]{I.2} Grove A.S.: Physics and Technology of Semiconductor
+  devices. John Wiley and Sons. New York 1967.
+\bibitem[I.3]{I.3} Sze S.M.: Physics of semiconductor devices. John
+  Wiley and Sons. New York 1969.
+\bibitem[I.4]{I.4} Runyan W.R., Bean K.E.: Semiconductor integrated
+  circuit processing technology. Addison-Wesley 1990.
+\bibitem[I.5]{I.5} AIP ve vývoji technologie pro automatizovanou
+  výrobu. Zborník zo seminara. Dom techniky CSVTS Pardubice 1990.
 \end{thebibliography}

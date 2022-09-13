@@ -1,15 +1,14 @@
 % Introduction
-\chapter{Introduction.} % Main chapter title
-\label{Introduction} % For referencing the chapter elsewhere, use \ref{Chapter1} 
-\lhead{\emph{Introduction}} % This is for the header on each page - perhaps a shortened title
+\chapter{Introduction.}\label{Introduction}
+\lhead{\emph{Introduction}}
 %----------------------------------------------------------------------------------------
 
 \par Oblasť diagnostiky štruktúr MOS bola v posledných desaťročiach
 predmetom rozsiahleho výskumu a v súčasnosti sa nachádza v štádiu
 rutinného používania. Mnohé metodiky určovania parametrov štruktúr MOS
 možno v súčasnosti považovať za uzavreté o čom svedčia rozsiahle
-monografie publikované v tejto oblasti \cite{I.1} \cite{I.2} \cite{I.3}
-\cite{I.4}. Zároveň je k dispozícii profesionálne prístrojové vybavenie
+monografie publikované v tejto oblasti~\cite{I.1, I.2, I.3,
+  I.4}. Zároveň je k dispozícii profesionálne prístrojové vybavenie
 pre určovanie parametrov štruktúr MOS, ktoré slúži pre rýchlu
 diagnostiku technológie výroby polovodičových prvkov a integrovaných
 obvodov. Mnohé technologické postupy používané v súčasnosti pri výrobe
@@ -39,7 +38,7 @@ vyhodnotenie pouzit výpočtovú techniku, pričom objem snímaných a
 vyhodnocovaných dát vyžaduje použitie databázových systémov.  Existuje
 celá rada matematických metód, ktoré sú pre tieto účely vhodné a sú k
 dispozícii balíky programov, ktoré riešia problémy analýzy
-technologických procesov \cite{I.5}. Pravdepodobne prevláda pri výrobe
+technologických procesov~\cite{I.5}. Pravdepodobne prevláda pri výrobe
 integrovaných obvodov heuristický prístup k riešeniu otázok funkčnosti
 produktov a objasnenie závislosti niektorých parametrov môže viesť k
 exaktnejšiemu rozhodovaniu pri riadení chodu technologických
@@ -70,22 +69,21 @@ bolo možné na základe poznatkov o miere závislosti medzi jednotlivými
 parametrami rozhodnúť, aká zmena technologického parametra ovplyvní
 funkčnosť produkovanej súčiastky.
 
-\par
-Vlastná práca zahŕňa v sebe viacero oblastí vedecko-výskumnej
+\par Vlastná práca zahŕňa v sebe viacero oblastí vedecko-výskumnej
 činnosti, ktoré možno následovne vyčleniť:
 \begin{itemize}
-\item{fyzikálne základy použitých metód a interpretácia výsledkov}
-\item{automatizácia experimentu}
-\item{použitie numerickej  matematiky pre riešenie fyzikálnych rovníc a spracovanie dát}
-\item{tvorba programového vybavenia} .
+\item Fyzikálne základy použitých metód a interpretácia výsledkov
+\item Automatizácia experimentu
+\item Použitie numerickej  matematiky pre riešenie fyzikálnych rovníc a spracovanie dát
+\item Tvorba programového vybavenia.
 \end{itemize}
 
 \par Kapitola 1 obsahuje prehľad súčasného stavu skúmanej problematiky
-a zaoberá sa problematikou ideálnej a reálnej štruktúry MOS. Pre
+a zaoberá sa problematikou ideálnej a reálnej štruktúry MOS\@. Pre
 získanie informácií o fyzikálnych dejoch v ideálnej štruktúre MOS sme
 numericky vyriešili jednodimenzionálnu Poissonovu rovnicu pre
 nehomogénne rozloženie prímesí v polovodiči a zároveň sme získali
-teoretické kapacitne-napäťové závislosti štruktúry MOS. Kapitola 2
+teoretické kapacitne-napäťové závislosti štruktúry MOS\@. Kapitola 2
 obsahuje ciele dizertačnej práce. Použité metódy merania a postupy
 určovania niektorých parametrov štruktúr MOS sú popísané v kapitole 3
 a 4. Pritom boli rozpracované jednako metody používané v minulosti na
@@ -101,22 +99,23 @@ tento okruh otázok nesúvisí priamo s fyzikálnou stránkou prevedených
 meraní, je potrebné zdôraznit, že bez ich systematického vyriešenia by
 prakticky nebolo možné efektívne realizovať automatizované pracovisko
 pre sledovanie plošného rozloženia elektrofyzikálnych parametrov
-štruktúr MOS. Spracovanie nameraných dát a zobrazenie výsledkov
+štruktúr MOS\@. Spracovanie nameraných dát a zobrazenie výsledkov
 plošného rozloženia parametrov je uvedené v kapitole 6 a kapitola 7
 obsahuje tabuľky s výsledkami experimentu. Zároveň sú tu uvedené aj
 výsledky skúmania vzájomnej korelácie niektorých parametrov štruktúr
-MOS.
+MOS\@.
 
 \par Použité programy sú väčšinou napísané v jazyku C a iba niektoré
 podprogramy spracovania dat a numerického riešenia fyzikálnych rovnic
 používajú programovací jazyk Fortran. Celý systém programov bol
-realizovaný pod operačným systémom MS DOS. Prenos programov pod iný
+realizovaný pod operačným systémom MS DOS\@. Prenos programov pod iný
 operačný systém by vyžadoval vyriešenie následovných okruhov
 problémov:
+
 \begin{itemize}
-\item{riadenie zbernice IMS-2}
-\item{prisppsôbenie sa systému práce so súbormi}
-\item{grafické zobrazenie údajov} .
+\item Riadenie zbernice IMS-2
+\item Prisppsôbenie sa systému práce so súbormi
+\item Grafické zobrazenie údajov
 \end{itemize}
 
 \par Pre väčšiu prehľadnosť textu boli niektoré jej dielčie časti
@@ -126,13 +125,13 @@ pomáhajú doplniť text a samy o sebe poskytujú množstvo informácií.
 
 \begin{thebibliography}{}
 \bibitem[I.1]{I.1}
-Nicollian E.H., Brews J.R. : MOS Physics  and  Technology. John Wiley and Sons. New York 1982.
+Nicollian E.H., Brews J.R.: MOS Physics  and  Technology. John Wiley and Sons. New York 1982.
 \bibitem[I.2]{I.2}
-Grove A.S. : Physics and Technology of Semiconductor devices. John Wiley and Sons. New York 1967.
+Grove A.S.: Physics and Technology of Semiconductor devices. John Wiley and Sons. New York 1967.
 \bibitem[I.3]{I.3}
-Sze S.M. : Physics of semiconductor devices. John Wiley and Sons. New York 1969.
+Sze S.M.: Physics of semiconductor devices. John Wiley and Sons. New York 1969.
 \bibitem[I.4]{I.4}
-Runyan W.R., Bean K.E. : Semiconductor integrated  circuit  processing technology. Addison-Wesley 1990.
+Runyan W.R., Bean K.E.: Semiconductor integrated circuit  processing technology. Addison-Wesley 1990.
 \bibitem[I.5]{I.5}
 AIP ve vývoji technologie pro automatizovanou výrobu. Zborník zo seminara. Dom techniky CSVTS Pardubice 1990.
 \end{thebibliography}

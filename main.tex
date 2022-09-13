@@ -27,9 +27,28 @@
 \documentclass[11pt, oneside]{Thesis} % The default font size and one-sided printing (no margin offsets)
 \graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
+\usepackage{amsmath}
+\usepackage{caption}
+\captionsetup[diagram]{
+  justification=raggedright,
+  labelsep=newline, % <<< label and text on different lines
+  singlelinecheck=false % <<< raggadright also when the caption is shorter
+  % than a single line
+  }
+\captionsetup[figure]{
+  justification=raggedright,
+  labelsep=newline, % <<< label and text on different lines
+  singlelinecheck=false % <<< raggadright also when the caption is shorter
+  % than a single line
+  }
+\captionsetup[table]{
+  justification=raggedright,
+  labelsep=newline, % <<< label and text on different lines
+  singlelinecheck=false % <<< raggadright also when the caption is shorter
+  % than a single line
+  }
 \usepackage{tikz} % for diagrams
-\usepackage{imakeidx}
-\makeindex
+\usepackage{imakeidx}\makeindex
 \usepackage{hyperref}
 \hypersetup{urlcolor=blue, colorlinks=true} % Colors hyperlinks in blue - change to black if annoying
 \title{\ttitle} % Defines the thesis title - don't touch this
@@ -55,10 +74,10 @@
 \begin{center}
 \textsc{\LARGE \univname}\\[1.5cm] % University name
 \textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
-\HRule \\[0.4cm] % Horizontal line
+\HRule\\[0.4cm] % Horizontal line
 {\huge \bfseries \ttitle}\\[0.4cm] % Thesis title
 \vfil {2nd unchanged edition in English}
-\HRule \\[1.5cm] % Horizontal line
+\HRule\\[1.5cm] % Horizontal line
 \begin{tabular}{l r}
 \parbox{5.5cm}{
 \begin{flushleft}
@@ -175,7 +194,7 @@
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
 %----------------------------------------------------------------------------------------
-\mainmatter % Begin numeric (1,2,3...) page numbering
+\mainmatter% Begin numeric (1,2,3...) page numbering
 \pagestyle{fancy} % Return the page headers back to the "fancy" style
 % Include the chapters of the thesis as separate files from the Chapters folder
 % Uncomment the lines as you write the chapters
@@ -214,14 +233,12 @@
 \lhead{\emph{Index}} % Change the page header to say "Index"
 \addcontentsline{toc}{chapter}{Index}
 \printindex
-\backmatter
-
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
-\label{Bibliography}
-\lhead{\emph{Bibliography}} % Change the page header to say "Bibliography"
-\bibliographystyle{unsrtnat} % Use the "unsrtnat" BibTeX style for formatting the Bibliography
-\bibliography{Bibliography} % The references (bibliography) information are stored in the file named "Bibliography.bib"
+\newpage
+\lhead{\emph{Bibliography}}\backmatter% Change the page header to say "Bibliography"
+\bibliographystyle{unsrtnat}% Use the "unsrtnat" BibTeX style for formatting the Bibliography
+\bibliography{Bibliography}\label{Bibliography} % The references (bibliography) information are stored in the file named "Bibliography.bib"
 
 \end{document}  

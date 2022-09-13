@@ -1,0 +1,156 @@
+% Appendix A
+
+\chapter{Numerické riešenie Poissonovej rovnice.}\label{app:AppendixA}
+\raggedright\lhead{Appendix A. \emph{Numerické riešenie Poissonovej rovnice}}
+
+Poissonovu rovnicu možno napísať v normalizovanom tvare
+(Dodatok~\ref{app:AppendixB})
+
+\begin{equation}\label{eq:A.1}
+  \frac{d^2u}{dx^2} = e^u - e^{2u_f-u} + \alpha(x) - 1 \qquad {x\ge0}
+\end{equation}
+
+ Koncentrácie majoritných a minoritných nosičov náboja predstavujú
+ prvé dva členy na pravej strane rovnice. Koncentráciu substrátu a
+ prímesí predstavuje člen $\alpha(x)-1$. Uvedenú rovnicu budeme riešiť
+ ako diferenciálnu rovnicu druhého rádu s počiatočnými podmienkami,
+ ktoré získame následujúcou úvahou~\cite{App.1}. Vo väčšine prípadov
+ nehomogénnej koncentrácie polovodiča možno nájsť hĺbku v polovodiči,
+ za ktorou môžeme považovať koncentráciu prímesí za
+ konštantnú. Označme túto hĺbku $x_1$ a určíme ju z podmienky
+
+\begin{equation}\label{eq:A.2}
+  \alpha(x_1)  =  0.01
+\end{equation}
+
+Potom pre $x\ge{x_1}$ môžeme zanedbať člen $\alpha(x)$
+
+\begin{equation}\label{eq:A.3}
+  \frac{d^2u}{dx^2} = e^u - e^{2u_f-u} - 1 \qquad {x\ge{x_1}}
+\end{equation}
+
+Vzťah~\ref{eq:A.3} predstavuje Poissonovu rovnicu pre homogénny
+polovodič, ktorú možno riešiť analyticky s okrajovými podmienkami
+
+\begin{equation}\label{eq:A.4}
+  u(\infty) = 0 \qquad \frac{du}{dx}\Big\rvert_{x=\infty} = 0
+\end{equation}
+
+aby sme dostali vzťah pre prvú deriváciu potenciálu
+
+\begin{equation}\label{eq:A.5}
+  \frac{du}{dx} = - \frac{u}{|u|} \sqrt{2} \big{[e^u - e^{2u_f-u} - 1 \big]}^{\frac{1}{2}} \qquad {x\ge{x_1}}
+\end{equation}
+
+ Počiatočné podmienky pre riešenie rovnice~\ref{eq:A.1} v oblasti
+ ${0\leq{x}\leq{x_1}}$ potom tvorí voľne zvolený potenciál v bode
+ $x_1$ a prvá derivácia potenciálu v bode $x_1$ vyjadrená
+ vzťahom~\ref{eq:A.5}. Vhodnou volbou potenciálu v bode $x_1$ a
+ opakovaným numerickým riešením rovnice~\ref{eq:A.1} z objemu po
+ povrch polovodiča dostaneme súbor priebehov potenciálu v polovodiči
+ od akumulácie po inverziu. Potrebujeme ešte poznať napätie hradla pre
+ každý priebeh potenciálu v polovodiči pri známej kapacite oxidovej
+ vrstvy.  Pre normálové zložky intenzity elektrického poľa na rozhraní
+ oxidu a polovodiča platí vzťah
+
+\begin{equation}\label{eq:A.6}
+  \varepsilon_{ox}E_{ox} = \varepsilon_s{E_s}
+\end{equation}
+
+Ak označíme hrúbku oxidovej vrstvy $h_{ox}$, pre napätie hradla
+dostaneme vzťahy
+
+\begin{align}
+  v_g &= u_s + h_{ox}E_{ox} \label{eq:A.7} \\
+  v_g &= u_s - ku_{s}^{'} \qquad\qquad kde\ {k = h_{ox}\frac{\varepsilon_s}{\varepsilon_{ox}}} \label{eq:A.8}
+\end{align}
+
+,kde $u_s$ je hodnota potenciálu na povrchu polovodiča a $u_{s}^{'}$
+jej priestorová derivácia. Po odnormovaní sme tým získali priebeh
+povrchového potenciálu ako funkciu napätia hradla
+(obrázok~\ref{fig:1.2}). Pre výpočet kapacity štruktúry MOS
+následovným vzťahom (Dodatok~\ref{app:AppendixC})
+
+\begin{equation}\label{eq:A.9}
+  \frac{C_{mos}}{C_{ox}} = 1 - \frac{du_s}{dv_g}
+\end{equation}
+
+potrebujeme poznať hodnotu derivácie povrchového potenciálu podľa
+napätia hradla. Derivovaním rovnice~\ref{eq:A.1} podľa $v_g$ dostaneme
+vzťah
+
+\begin{samepage}
+\begin{subequations}\label{eq:A.10}
+  \begin{align}
+    \frac{d^{2}w}{dx^2} &= w \Big[e^u + e^{2u_f-u}\Big] \qquad &{x\ge{0}} \label{eq:A.10a} \\
+    \intertext{,kde $w=\frac{du}{dv_g}$}
+    \intertext{a tým istým postupom pre~\ref{eq:A.5} a~\ref{eq:A.8} dostaneme vzťahy}
+    \frac{dw}{dx}\frac{du}{dx} &= w \Big[e^u - e^{2u_f-u} - 1\Big] \qquad &{x\ge{x_1}} \label{eq:A.10b} \\[0.3cm]
+    w_s - kw_s^{'} &= 1 \label{eq:A.10c}
+  \end{align}
+\end{subequations}
+\end{samepage}
+
+Pre volne zvolenú hodnotu $w$ v bode $x_1$ vypočítame prvú deriváciu
+podľa vzťahu~\ref{eq:A.10b} a s oboma počiatočnými podmienkami riešime
+rovnicu~\ref{eq:A.10a} z bodu $x_1$ smerom k povrchu, čím získame
+hodnoty $\beta$ a $\gamma$ pre veličiny $w_s$ a $w^{'}_s$.  Pretože
+hodnota w v bode $x_1$ bola voľne zvolená, nemusia hodnoty $\beta$ a
+$\gamma$ spĺňať podmienku~\ref{eq:A.10c}. Pretože
+rovnice~\ref{eq:A.10a},~\ref{eq:A.10b} a~\ref{eq:A.10c} sú
+lineárne, platia vzťahy
+
+\begin{samepage}
+\begin{subequations}\label{eq:A.11}
+  \begin{align}
+  1 &= w_s - kw^{'}_s = \frac{\beta - k\gamma}{\beta - k\gamma} = \frac{\beta}{\beta -k\gamma} - k\frac{\gamma}{\beta -k\gamma} \\[0.3cm]
+  w_s &= \frac{\beta}{\beta -k\gamma} \qquad w^{'}_s = \frac{\gamma}{\beta -k\gamma}
+  \end{align}
+\end{subequations}
+\end{samepage}
+
+Ako výsledok možno vypočítať kapacitu štruktúry MOS
+
+\begin{equation}\label{eq:A.12}
+  \frac{C_{mos}}{C_{ox}} = 1 - \frac{du_s}{dv_g} = 1 - w_s = -kw^{'}_s = -k\frac{\gamma}{\beta - k\gamma}
+\end{equation}
+
+Treba poznamenať, že kapacita vypočítaná podľa vzťahov~\ref{eq:A.10}
+a~\ref{eq:A.12} je nízkofrekvenčná kapacita štruktúry MOS, pretože vo
+vzťahoch~\ref{eq:A.10} je započítaný príspevok minoritných nosičov
+náboja. Vysokofrekvenčnú kapacitnú závislosť dostaneme elimináciou
+členov predstavujúcich príspevok minoritných nosičov náboja zo
+vzťahov~\ref{eq:A.10}. Dostaneme
+
+\begin{samepage}
+\begin{subequations}\label{eq:A.13}
+  \begin{align}
+    \frac{d^{2}w}{dx^{2}} &= we^{u} \qquad &{x\ge{x_1}}                 \label{eq:A.13a} \\[0.3cm]
+    \frac{dw}{dx}\frac{du}{dx} &= w \big[e^u-1\big] \qquad &{x\ge{x_1}} \label{eq:A.13b} \\[0.3cm]
+    w_s-kw_s^{'} &= 1                                                   \label{eq:A.13c}
+  \end{align}
+\end{subequations}
+\end{samepage}
+
+Pre výpočet kapacitnej závislosti štruktúry MOS v stave hlbokého
+ochudobnenia treba eliminovať príspevky minoritných nosičov náboja aj
+zo vzťahov pre výpočet potenciálu. Úpravou~\ref{eq:A.1} a~\ref{eq:A.5}
+dostaneme
+
+\begin{samepage}
+\begin{subequations}\label{eq:A.14}
+  \begin{align}
+  \frac{d^2u}{dx^2} &= {e^u + \alpha(x)-1} \qquad &{x\ge0}                                     \label{eq:A.14a} \\[0.3cm]
+  \frac{du}{dx} &= -\frac{u}{|u|} \sqrt{2} \big{[e^u-1\big]}^{\frac{1}{2}} \qquad &{x\ge{x_1}} \label{eq:A.14b}
+  \end{align}
+\end{subequations}
+\end{samepage}
+
+Na obrázku~\ref{fig:1.3} sú znázornené nízkofrekvenčná,
+vysokofrekvenčná CV krivka a CV krivka hlbokého ochudobnenia,
+vypočítané uvedeným postupom. Pre riešenie diferenciálnej rovnice bola
+použitá metóda prediktor-korektor so štartovacím úsekom
+Runge-Kutta. Program bol napísaný v jazyku Fortran a výpočet jednej CV
+závislosti s približne 100 bodmi trval na počítacoch ADT 4500
+resp. IBM PC AT s matematickým koprocesorom 1 až 2 minúty v
+dvojnásobnej presnosti operácií s plávajucou čiarkou.

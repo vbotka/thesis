@@ -1,19 +1,17 @@
 % Appendix C
 
-\chapter{Výpočet kapacity štruktúry MOS.} % Main appendix title
+\chapter{Calculation of MOS structure capacity.}\label{app:AppendixC}
+\lhead{Appendix C. \emph{Calculation of MOS structure capacity}}
 
-\label{app:AppendixC} % For referencing this appendix elsewhere, use \ref{AppendixA}
-
-\lhead{Appendix C. \emph{Výpočet kapacity štruktúry MOS}} % This is for the header on each page - perhaps a shortened title
-
-Zmenu náboja na hradlovej elektróde štruktúry MOS môžeme vyjadriť
-pomocou kapacity štruktúry MOS a kapacity oxidovej vrstvy
+The change of the charge at the gate electrode of an MOS structure can
+be expressed by the capacitance of the MOS structure and the
+capacitance of the oxide layer
 
 \begin{subequations}\label{eq:C.1}
-\begin{align}
-dQ &= C_{mos} dV_g\label{subeq:C.1a}\\[0.5cm]
-dQ &= C_{ox} (dV_g - d\varphi_s)\label{subeq:C.1b}\\[0.5cm]
-\intertext{Porovnaním vzťahov \ref{subeq:C.1a} a \ref{subeq:C.1b} dostaneme vzťah}
-\frac{C_{mos}}{C_{ox}} &= 1 - \frac{d\varphi_s}{dV_g}\label{subeq:C.1c}
-\end{align}
+  \begin{align}
+    dQ &= C_{mos} dV_g                                    \label{eq:C.1a}\\[0.3cm]
+    dQ &= C_{ox} (dV_g - d\varphi_s)                      \label{eq:C.1b}\\[0.3cm]
+    \intertext{Comparing the relations~\ref{eq:C.1a} and~\ref{eq:C.1b} we get the relation}
+    \frac{C_{mos}}{C_{ox}} &= 1 - \frac{d\varphi_s}{dV_g} \label{eq:C.1c}
+  \end{align}
 \end{subequations}

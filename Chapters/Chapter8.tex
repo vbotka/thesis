@@ -1,216 +1,238 @@
 % Chapter 8
-\chapter{Súhrn výsledkov s uvedením nových poznatkov.}
-\label{Chapter8}
-\lhead{Chapter 8. \emph{Súhrn výsledkov s uvedením nových poznatkov}}
-% This is for the header on each page - perhaps a shortened title
+\chapter{Summary of results with new findings.}\label{Chapter8}
+\lhead{Chapter 8. \emph{Summary of results with new findings}}
 %----------------------------------------------------------------------
 
-V dizertačnej práci sú uvedené výsledky získané pri skúmaní parametrov
-štruktúr MOS s nehomogénnym rozložením prímesí v podpovrchovej oblasti
-polovodiča. Vzhľadom k tomu, že u nás nebola doposiaľ táto
-problematika komplexne riešená, bolo potrebné zhrnúť súčasné poznatky
-z tejto oblasti, zvládnuť metodiku merania a vyhodnotenia parametrov a
-prakticky ich realizovať. Praktická stránka pozostávala z realizácie
-jednotlivých kapacitných metód a vytvorenia komplexného pracoviska pre
-meranie a vyhodnotenie plošného rozloženia parametrov štruktúr MOS s
-perspektívou ďalšieho využitia pre skúmanie korelácií medzi
-jednotlivými parametrami, prípadne medzi parametrami iných testovacích
-štruktúr, alebo technologických postupov planárnej technológie.
+The dissertation presents the results obtained by investigating the
+parameters of MOS structures with inhomogeneous distribution of
+impurities in the subsurface region of the semiconductor. Since in our
+country there has not been so far this problem has been
+comprehensively addressed in our country, it was necessary to
+summarize the current knowledge in this field, to master the
+methodology of measurement and evaluation of parameters and to
+implement them practically. The practical side consisted of the
+implementation of individual capacity methods and the creation of a
+complex workplace for measurement and evaluation of the area
+distribution parameters of MOS structures with with a view to further
+use for the investigation of correlations between individual
+parameters, or between the parameters of other test structures or
+technological procedures of planar technology.
 
-Dizertačná práca priniesla následovné výsledky:
+The dissertation has produced the following results:
 
 \begin{enumerate}
 
 % 1
-\item Vyriešili sme jedno-dimenzionálnu Poissonovu rovnicu pre
-  nehomogénne dotovaný substrát polovodiča a vypočítali sme teoretické
-  CV závislosti štruktúry MOS. Numerické riešenie Poissonovej rovnice
-  umožnilo získať informácie o fyzikálnych dejoch v štruktúre MOS v
-  procese merania CV závislostí a umožnilo overenie použitých
-  aproximácií pri výpočte koncentračných profilov.
+\item We have solved the one-dimensional Poisson equation for
+  inhomogeneously doped semiconductor substrate and calculated the
+  theoretical CV dependences of the MOS\@ structure. Numerical
+  solution of the Poisson equation made it possible to obtain
+  information about the physical processes in the structure MOS in the
+  process of CV dependence measurements and allowed verification of
+  the used approximations in the calculation of the concentration
+  profiles.
 
 %2
-\item Okrem Štandardnej vysokofrekvenčnej a kvázistatickej CV
-  metódy sme realizovali postup merania štruktúr MOS metódou QC, kde
-  bolo potrebné:
+\item In addition to the standard high-frequency and quasi-static CV
+  methods method, we implemented a procedure for measuring MOS
+  structures by QC method, where the needed:
 
-\begin{itemize}
-\item navrhnúť a realizovať prípravok pre umiestnenie meranej vzorky a
-  vzduchového kondenzátora
-\item  minimalizovať zvodové prúdy a parazitné kapacity
-\item zvoliť vhodné postupy určovania parazitných kapacít
-\item vytvoriť programové vybavenie pre zber a spracovanie dát.
-\end{itemize}
+  \begin{itemize}
+  \item design and implement a fixture for the location of the measured sample and
+    air condenser
+  \item minimise leakage currents and parasitic capacitances
+  \item select appropriate procedures for determining parasitic capacitances
+  \item to develop software for data acquisition and processing.
+  \end{itemize}
 
-Ako sa ukázalo počas zavádzania metódy, ako aj počas následovných
-experimentov, implementácia metódy QC vyžaduje vytvorenie dôkladného
-meracieho pracoviska s dôrazom na minimalizáciu zvodových prúdov a
-parazitných kapacít.
+  As has been demonstrated during the implementation of the method, as
+  well as during subsequent experiments, the implementation of the QC
+  method requires the development of a thorough measurement
+  workstation with an emphasis on minimizing leakage currents and
+  parasitic capacitances.
 
 %3
-\item Pre meranie generačného času života minoritných nosičov náboja
-  sme implementovali metódu konštantnej šírky OPN (CCT), ktorá
-  umožňuje efektívne vyhodnocovanie kvality polovodičových substrátov
-  pre vysoké hodnoty $\tau_{g}$ . Pri tvorbe riadiaceho programu sme
-  navrhli a realizovali algoritmus pre udržanie konštantnej
-  nerovnovážnej kapacity štruktúry MOS a merania závislosti
-  $V_{g}(t)$.
+\item To measure the generation lifetime of minority charge carriers
+  we have implemented the constant width OPN (CCT) method, which
+  allows efficient evaluation of the quality of semiconductor
+  substrates for high values of $\tau_{g}$. In the design of the
+  control program, we designed and implemented an algorithm to
+  maintain constant non-equilibrium capacitance of the MOS structure
+  and to measure the dependence $V_{g}(t)$.
 
 %4
-\item Všetky použité metódy (HF, LF, QC a CCT) boli automatizované
-  pomocou osobného počítača PC AT s interfejsom PCIIA, pričom bolo
-  potrebné zvládnuť riadenie zbernice IMS-2 a efektívne využiť
-  autonómne schopnosti použitých prístrojov. Pre skúmanie plošného
-  rozloženia parametrov štruktúr MOS na kremíkovej doske sme
-  vypracovali programový balík pozostávajúci z približne 40 programov,
-  ktoré vykonávajú zber dát, ich spracovanie a určenie parametrov
-  štruktúr MOS.  Zároveň sú k dispozícii programy pre zobrazenie
-  získaných výsledkov.  Stručný prehľad vytvorených programov, ktoré
-  slúžia pre zber, spracovanie a zobrazenie dát plošného rozloženia
-  parametrov štruktúr MOS, je v dodatku \ref{app:AppendixH}.
+\item All methods used (HF, LF, QC and CCT) were automated using a PC
+  AT personal computer with a PCIIA interface, while the it was
+  necessary to master the IMS-2 bus control and to make efficient use
+  of the autonomous capabilities of the instruments used. To
+  investigate the area distribution of the parameters of the MOS
+  structures on the silicon wafer, we developed a software package
+  consisting of approximately 40 programs, that perform data
+  acquisition, processing and parameter determination of MOS
+  structures\@ At the same time, programs are available for displaying
+  the results obtained. A brief overview of the developed programs,
+  which are used for the collection, processing and display of areal
+  distribution data parameters of MOS structures is given in
+  Appendix~\ref{app:AppendixH}.
 
 %5
-\item Pri výpočte koncentračných profilov dotujúcich prímesí v
-  podpovrchovej oblasti polovodiča sme aplikovali:
-\begin{itemize}
-\item korekciu aproximácie hlbokého ochudobnenia pri povrchu
-  polovodiča
-\item korekciu vzhľadom na hustotu pascí rozhrania $Si-SiO_{2}$
-\item výpočet šírky oblasti OPN pomocou aproximácie priebehu
-  elektrického potenciálu v polovodiči
-\item výpočet priestorového rozloženia dotujúcich atómov z
-  koncentračného profilu majoritných nosičov náboja.
-\end{itemize}
+\item When calculating the concentration profiles of the dopant
+  impurities in the subsurface region of the semiconductor, we
+  applied:
+
+  \begin{itemize}
+  \item correction to the deep depletion approximation at the surface
+    semiconductor
+  \item correction with respect to the trap density of the $Si-SiO_{2}$ interface
+  \item calculation of the OPN region width using the waveform approximation
+    of the electric potential in the semiconductor
+  \item calculation of the spatial distribution of dopant atoms from
+    the concentration profile of the major charge carriers.
+  \end{itemize}
 
 %6
-\item Vhodnosť použitých aproximácií sme overili riešením Poissonovej
-  rovnice a výpočtom koncentračného profilu majoritných nosičov náboja
-  z teoretickej CV závislosti.  Tu sa ukázalo, že pre určovanie
-  koncentračných profilov implantovaných prímesí testovaných
-  kremíkových dosiek v záverečnom experimente je použitie uvedených
-  aproximácii vhodné.
+\item We have verified the suitability of the approximations used by
+  solving the Poisson equation and calculating the concentration
+  profile of the major charge carriers from the theoretical CV
+  dependence. Here it was shown that for the determination of the
+  concentration profiles of the implanted impurities tested silicon
+  wafers in the final experiment is the use of the above approximation
+  is appropriate.
 
 %7
-\item Pre rôzne dávky implantácie v rozsahu od $0.6 \times 10^{15}$ do
-  $60.0 \times 10^{15} m^{-2}$ sme určili na 10 kremíkových doskách
-  priebehy koncentračných profilov $N(x)$ na približne 300 štruktúrach
-  MOS každej testovanej dosky a vypočítali sme ich stredné
-  hodnoty. Zároveň sme určili strednú hodnotu časti dávky
-  implantovaných iónov, ktoré sa stali elektricky aktívnymi v
-  polovodiči $D_{a}$ . Ukázalo sa, že závislosť medzi dávkou
-  implantácie $D_{i}$ a množstvom elektricky aktívnych, implantovaných
-  prímesí $D_{a}=f(D_{i})$ je lineárna, čo usudzujeme z hodnoty
-  korelačného koeficientu $R(D_{i},D_{a})=0.99$.  Lineárnou regresiou
-  závislosti $D_{a}=f(D_{i})$ sme zistili, že z pôvodnej implantovanej
-  dávky sa do polovodiča dostalo a stalo sa elektricky aktívnymi
-  $71\%$ iónov. Uvedenú metodiku možno využiť pri kontrole procesu
-  implantácie a bola vypracovaná na základe požiadavky Tesly Piešťany.
+\item For different implantation doses ranging from $0.6 \times
+  10^{15}$ to $60.0 \times 10^{15} m^{-2}$ we determined on 10 silicon
+  wafers $N(x)$ concentration profiles on approximately 300 structures
+  MOS of each tested wafer and calculated their mean values. At the
+  same time, we determined the mean value of the dose fraction of the
+  implanted ions that became electrically active in $D_{a}$
+  semiconductor. It turned out that the dependence between the dose
+  $D_{i}$ implantation and the amount of electrically active,
+  implanted $D_{a}=f(D_{i})$ is linear, as inferred from the value of
+  of the correlation coefficient $R(D_{i},D_{a})=0.99$.  Linear
+  regression of the dependence $D_{a}=f(D_{i})$, we found that from
+  the original implanted dose entered the semiconductor and became
+  electrically active $71\%$ of the ions. The above methodology can be
+  used to control the process implantation and was developed based on
+  the request of Tesla Piešťany.
 
 %8
-\item Vypočítané koncentračné profily sme overili simuláciou
-  technologického procesu implantácie pomocou funkcie Pearson IV. Z
-  porovnania výsledkov zistených pomocou kapacitných meraní a
-  simulácie vidieť malý rozdiel, ktorý môže byť spôsobený tým, že v
-  procese poimplantačného tepelného spracovania neboli všetky
-  implantované ióny aktivované.  Zistené rozdiely sú však
-  minimálne. Bola vypracovaná metodika na sledovanie plošného
-  rozloženia hĺbkových profilov dotujúcich prímesí v rámci hraníc
-  použiteľnosti kapacitnej metódy s možnosťou sledovať plošné
-  rozloženie v ľubovolnej hĺbke pod povrchom polovodiča. Na základe
-  experimentálnych výsledkov možno konštatovať, že proces implantácie
-  prebiehal na 4 palcových kremíkových substrátoch reprodukovateľne s
-  vysokou homogenitou rozloženia prímesí, čím sme overili kvalitu
-  implantačného zariadenia.
+\item The calculated concentration profiles were verified by
+  simulation technological process of implantation using Pearson IV
+  function. Z comparison of the results obtained by capacitance
+  measurements and simulation show a small difference, which may be
+  due to the fact that in the post-implantation heat treatment process
+  were not all implanted ions were activated. However, the differences
+  found are minimal. A methodology has been developed to track the
+  area distribution of the depth profiles of the dopant impurities
+  within the boundaries of the of applicability of the capacitance
+  method with the ability to track the areal distribution at arbitrary
+  depths below the semiconductor surface. Based on experimental
+  results, it can be concluded that the implantation process was
+  reproducibly performed on 4 inch silicon substrates with high
+  homogeneity of the impurity distribution, thus verifying the quality
+  of of the implantation device.
+
 
 %9
-\item Predchádzajúce výsledky, získané pri určovaní hĺbkových
-  koncentračných profilov, sa využili pri skúmaní vlastností rozhrania
-  $Si-SiO_{2}$ štruktúr MOS s implantovaným substrátom. Pre analýzu
-  týchto štruktúr bola použitá:
-\begin{enumerate}
-%a
-\item diferenciálna kapacitná metóda, porovnávajúca HF a LF CV
-  závislosť štruktúry MOS, pričom výpočet $\varphi_{s}(V_{g})$
-  zohľadňuje hĺbkový profil prímesí
-%b
-\item kvázistatická CV metóda, založená na porovnaní experimentálnej a
-  teoretickej CV závislosti.
-\end{enumerate}
-Z porovnania výsledkov získaných oboma metódami vyplýva, že hustota
-pascí rozhrania $Si-SiO_{2}$ v strede zakázaného pásu sa prakticky
-nelíši. Obe metodiky možno aplikovať na CV závislosti určené pomocou
-HF a kvázistatickej metódy, alebo na CV závislosti štruktúry MOS
-určené pomocou QC metódy. Zároveň sme zvládli postup určenia priebehu
-povrchového potenciálu $\varphi_s(V_g)$ pomocou QC metódy, alebo
-integráciou LF CV závislosti. Pre výpočet hustoty pascí z porovnania
-experimentálnej a teoretickej CV závislosti sme použili teoretickú LF
-CV závislosť určenú pomocou numerického riešenia Poissonovej rovnice
-pre nehomogénne rozloženie dotujúcich prímesí v polovodiči.
+\item Previous results, obtained in the determination of depth
+  concentration profiles have been used to investigate the properties
+  of the interface $Si-SiO_{2}$ MOS structures with implanted
+  substrate. For the analysis of these structures was used:
+
+  \begin{enumerate}
+  \item differential capacitance method, comparing HF and LF CV
+    dependence of the MOS structure, calculating $\varphi_{s} (V_{g})$
+    takes into account the depth profile of the impurities
+  \item quasi-static CV method, based on comparison of experimental
+    and theoretical CV dependence.
+  \end{enumerate}
+
+  A comparison of the results obtained by the two methods shows that
+  the density of the $Si-SiO_{2}$ interface traps in the center of the
+  forbidden band is practically does not differ. Both methodologies
+  can be applied to the CV dependences determined by HF and
+  quasi-static methods, or to the CV dependence of the MOS structure
+  determined using the QC method. At the same time, we have mastered
+  the procedure of determining the waveform surface potential
+  $\varphi_s (V_g)$ using the QC method, or by integration of the LF
+  CV dependence. To calculate the trap densities from the comparison
+  experimental and theoretical CV dependence, we used the theoretical
+  LF CV dependence determined by numerical solution of the Poisson
+  equation for an inhomogeneous distribution of dopant impurities in
+  the semiconductor.
 
 %10
-\item Z porovnania HF a LF CV závislosti sme určili plošné rozloženie
-  hustoty pascí rozhrania $Si-SiO_{2}$ . Stredná hodnota hustoty pascí
-  rozhrania v strede zakázaného pásu testovaných dosiek sa pohybovala
-  v intervale od $2.6 \times 10^{14}$ do $4.4 \times 10^{14}
-  m^{-2}eV^{-1}$. Tieto hodnoty sú na dolnej hranici rozlišovacej
-  schopnosti použitej metódy a hovoria o dobrej kvalite rozhrania
-  $Si-SiO_{2}$ testovaných vzoriek a súčasne o kvalite opracovania
-  polovodičových substrátov.
+\item From the comparison of HF and LF CV dependence we determined the
+  area distribution of the $Si-SiO_{2}$ interface trap densities. The
+  mean value of trap density of the interface traps in the middle of
+  the forbidden band of the tested plates ranged ranging from
+  $2.6\ \times\ 10^{14}$ to $4.4\ \times\ 10^{14}m^{-2}eV^{-1}$. These
+  values are at the lower limit of the resolving of the method used
+  and are indicative of good interface quality $Si-SiO_{2}$ of the
+  tested samples and at the same time the quality of the processing
+  semiconductor substrates.
 
 %11
-\item V záverečnom experimente sme metódou CCT určili plošné
-  rozloženie strednej hodnoty $\tau_{g}$ na 8 kremíkových doskách v
-  hĺbke od $0.9$ do $1.3 mm$, ktoré sa pohybujú od $0.41$ do $2.25
-  ms$, čo hovorí o vysokej kvalite substrátu. \newline Výhodou
-  použitej metódy je, že vyhodnocuje $\tau_{g}$ z generačného prúdu
-  minoritných nosičov náboja len z oblasti OPN a eliminuje vplyv
-  generácie minoritných nosičov náboja mimo túto oblasť, čo sa
-  prejavilo na reprodukovateľnosti hodnôt tohto parametra. \newline
-  Bola zistená vzájomná súvislosť medzi hĺbkovým profilom doby života
-  a koncentračným profilom implantovaných prímesí.  Dosiahnuté
-  výsledky poukazujú, že u skúmaných vzoriek dominantný mechanizmus,
-  ktorý určuje dobu života je rozptyl na ionizovaných prímesiach. To
-  taktiež potvrdzuje, že skúmané polovodičové substráty sú
-  vysoko-kvalitné z hľadiska defektov a preto je rozptyl na nich
-  vzhľadom na rozptyl na ionizovaných prímesiach zanedbateľný.
+\item In the final experiment, we used the CCT method to determine the
+  area distribution of the mean value of $\tau_{g}$ on 8 silicon
+  wafers in $0.9$ to $1.3 mm$ in depth, ranging from $0.41$ to $2.25
+  ms$, indicating high substrate quality.
+  \newline Advantage of the method used is that it evaluates
+  $\tau_{g}$ from the generation current of minority charge carriers
+  from the OPN region only and eliminates the influence of of the
+  generation of minority charge carriers outside this region, which
+  the reproducibility of the values of this parameter.
+  \newline A correlation was found between the depth profile of the
+  lifetime and the concentration profile of implanted
+  admixtures. Achieved results indicate that the dominant mechanism in
+  the studied samples, that determines the lifetime is the dispersion
+  on ionised impurities. This also confirms that the semiconductor
+  substrates investigated are high quality in terms of defects and
+  therefore the scattering on them with respect to the scattering on
+  ionised impurities is negligible.
 
 %12
-\item Určili sme plošné rozloženie hrúbky oxidovej vrstvy vypočítanej
-  z kapacity štruktúry MOS v akumulácii na 10 kremíkových doskách, z
-  ktorého vidieť nehomogenity hrúbky $SiO_{2}$ spôsobené nerovnomerným
-  rozložením teploty a turbulenciami oxidačnej atmosféry v trubici
-  oxidačnej pece. \newline Stredné hodnoty hrúbky $SiO_{2}$ na jednotlivých
-  doskách sa pohybujú v intervale od $94.14$ do $102.85 nm$, pričom
-  v technologickom procese výroby štruktúr MOS bola požadovaná hodnota
-  $100 nm$. \newline Zároveň je z tabuľky stredných hodnôt vidieť, že
-  hrúbka oxidu je najnižšia pre kremíkové dosky, ktoré sa nachádzali
-  na prednom a zadnom konci oxidačnej lodičky a najhrubší oxid sa
-  vytvoril v strede, čo bolo spôsobené rozdelením teploty v oxidačnej
-  trubici. Tieto poznatky sú v súlade s Bermannovým modelom mechanizmu
-  termickej oxidácie.
+\item We have determined the areal distribution of the oxide layer
+  thickness calculated from the capacity of the MOS structure in
+  accumulation on 10 silicon wafers, from which shows inhomogeneities
+  in the thickness of $SiO_{2}$ caused by uneven temperature
+  distribution and turbulence of the oxidizing atmosphere in the tube
+  of the oxidation furnace. \newline Mean values of $SiO_{2}$
+  thickness on individual plates range from $94.14$ to $102.85 nm$,
+  while in the technological process of manufacturing MOS structures
+  was the required value of $100 nm$. \newline At the same time, the
+  table of mean values shows that the oxide thickness is the lowest
+  for silicon wafers, which were located at the front and back ends of
+  the oxidation boat and the thickest oxide was formed in the middle,
+  which was due to the splitting temperature in the oxidation
+  tube. These findings are consistent with Bermann's model of the
+  thermal oxidation mechanism.
 
 %13
-\item Skúmali sme plošné rozloženie napätia vyrovnaných pásov $V_{fb}$
-  pre 10 kremíkových dosiek. Stredné hodnoty $V_{fb}$ na jednotlivých
-  kremíkových doskách sa pohybujú v rozsahu od $-1.24$ do $-2.43
-  V$. Vzhľadom k tomu, že náboj pascí rozhrania je pre skúmané dosky
-  malý, rozptyl stredných hodnôt $V_{fb}$ môže byť spôsobený nábojom
-  alkalických iónov v oxide.
+\item We have investigated the areal distribution of the stresses of
+  the aligned $V_{fb}$ strips for 10 silicon wafers. The mean values
+  of $V_{fb}$ on individual silicon wafers range from $-1.24$ to
+  $-2.43 V$. Since the interface trapping charge for the studied
+  plates is small, the scatter in the mean values of $V_{fb}$ may be
+  due to the charge alkaline ions in the oxide.
 
 %14
-\item Pre riešenie rovníc matematickej fyziky sme použili metódy
-  numerickej matematiky. Riešili sme diferenciálnu rovnicu druhého
-  rádu s počiatočnými podmienkami pomocou metódy prediktor-korektor so
-  štartovacím úsekom Runge-Kutta, hľadali sme korene nelineárnej
-  rovnice metódou dotyčníc, použili sme číslicové filtre pre
-  vyhladenie a určenie derivácií experimentálne získaných dát. Použili
-  sme funkcie knižnice NAG pre aproximáciu kubickými splajn-funkciami.
+\item To solve the mathematical physics equations, we used the methods
+numerical mathematics. We solved the differential equation of the
+second order with initial conditions using the predictor-corrector
+method with Runge-Kutta starting term, we searched for the roots of
+the nonlinear equation by the tangent method, we used numerical
+filters for smoothing and determining the derivatives of the
+experimentally obtained data. They used NAG library functions for
+approximation by cubic spline functions.
 
 %15
-\item Vypracovali sme systém a štruktúry dátových súborov, ktoré
-  uchovávajú namerané dáta a určené parametre štruktúry MOS, pričom
-  sme zohľadnili vzťahy medzi jednotlivými metodikami merania a
-  určovania parametrov, čo prispieva k väčšej efektívnosti programov a
-  umožňuje ďalšie použitie získaných výsledkov.
+\item We developed a system and data file structures that store the
+  measured data and the determined parameters of the MOS structure,
+  while we have taken into account the relationships between the
+  different measurement methodologies and of parameter determination,
+  contributing to greater efficiency of the programs and allowing
+  further use of the obtained results.
 
 \end{enumerate}
