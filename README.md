@@ -1,8 +1,13 @@
-# Doctoral Thesis: Electrophysical properties of the MOS structure with implanted bulk
+# Doctoral Thesis
+
+## Electrophysical properties of the MOS structure with implanted bulk
+
 by Vladimir Botka
 
-**SLOVAK UNIVERSITY OF TECHNOLOGY IN BRATISLAVA**
+### SLOVAK UNIVERSITY OF TECHNOLOGY IN BRATISLAVA
+
 Faculty of Electrical engineering and Information technology
+
 Department of Microelectronics
 
 **Abstract**
@@ -17,7 +22,9 @@ of investigated parameters can be depicted by means of two-dimensional
 color pictures providing the operator with fast overview of the
 parameters distribution and fluctuations.
 
-## Download
+<hr>
+
+**Download**
 
 * [Thesis current versions EN](https://drive.google.com/open?id=<TBD>) (6MB) 
 * [Thesis current versions SK](https://drive.google.com/open?id=<TBD>) (6MB) 
@@ -26,6 +33,6 @@ parameters distribution and fluctuations.
 
 * [Thesis 1991 SK (scanned)](https://drive.google.com/open?id=0B9QdgMgzmvIcekRRWnJIbGxHWHM) (49MB)
 
-## License:
+**License**
 
 Attribution-NonCommercial 4.0 International [(CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
