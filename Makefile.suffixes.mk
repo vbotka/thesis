@@ -1,4 +1,6 @@
-.SUFFIXES		: .tex .dvi .fig .aux .eps .spr .lat .ps .pdf .jpg .eps1i .png .pnm
+.SUFFIXES		: .tex .dvi .fig .aux .eps .spr .lat .ps .pdf .jpg .eps1i .png .pnm .gnuplot
+.gnuplot.eps		:
+	gnuplot $<
 .fig.eps		:
 	fig2dev -L ps$@ $<
 .fig.eps1		:
@@ -10,6 +12,8 @@
 	mv$@.lat.lat $${name}lat
 .ps.pdf			:
 	ps2pdf -sPAPERSIZE=a4 $< $@
+.pdf.ps			:
+	pdf2ps $< $@
 .dvi.ps			:
 	dvips -o $@ $<
 .jpg.eps		:

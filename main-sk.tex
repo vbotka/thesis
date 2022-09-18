@@ -1,0 +1,287 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 1.43 (17/5/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original authors:
+% Steven Gunn 
+% http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/
+% and
+% Sunil Patel
+% http://www.sunilpatel.co.uk/thesis-template/
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Note:
+% Make sure to edit document variables in the Thesis.cls file
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt, oneside]{Thesis-sk} % The default font size and one-sided printing (no margin offsets)
+\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+\usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
+\usepackage{amsmath}
+\usepackage{caption}
+\captionsetup[diagram]{
+  justification=raggedright,
+  labelsep=newline, % <<< label and text on different lines
+  singlelinecheck=false % <<< raggadright also when the caption is shorter
+  % than a single line
+  }
+\captionsetup[figure]{
+  justification=raggedright,
+  labelsep=newline, % <<< label and text on different lines
+  singlelinecheck=false % <<< raggadright also when the caption is shorter
+  % than a single line
+  }
+\captionsetup[table]{
+  justification=raggedright,
+  labelsep=newline, % <<< label and text on different lines
+  singlelinecheck=false % <<< raggadright also when the caption is shorter
+  % than a single line
+  }
+\usepackage{tikz} % for diagrams
+\usepackage{imakeidx}\makeindex
+\usepackage{hyperref}
+\hypersetup{urlcolor=blue, colorlinks=true} % Colors hyperlinks in blue - change to black if annoying
+\usepackage{graphicx}
+%----------------------------------------------------------------------------------------
+\title{\ttitle} % Defines the thesis title - don't touch this
+\begin{document}
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+\setstretch{1.3} % Line spacing of 1.3
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{} % Clears all page headers and footers
+\rhead{\thepage} % Sets the right side header to show the page number
+\lhead{} % Clears the left side page header
+\pagestyle{fancy} % Finally, use the "fancy" page style to implement the FancyHdr headers
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % New command to make the lines in the title page
+\newcommand{\myfiguresize}{5.5in}
+% PDF meta-data
+\hypersetup{pdftitle={\ttitle}}
+\hypersetup{pdfsubject=\subjectname}
+\hypersetup{pdfauthor=\authornames}
+\hypersetup{pdfkeywords=\keywordnames}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\begin{titlepage}
+\begin{center}
+  \textsc{\LARGE \univname}\\[0.5cm] % University name
+  \textsc{\Large \facname}\\[1.0cm] % Faculty name
+  \textsc{\Large Dizertačná práca}\\[0.5cm] % Thesis type
+  \HRule\\[0.4cm] % Horizontal line
+          {\huge \bfseries \ttitle}\\[0.4cm] % Thesis title
+          \vfil\textit{druhé nezmenené vydanie}
+          \HRule\\[1.5cm] % Horizontal line
+          \begin{tabular}{l r}
+            \parbox{5.5cm}{
+              \begin{flushleft}
+                \Large\emph{Autor:}\\
+                \href{http://}{\authornames}
+            \end{flushleft}} &
+            \parbox{8.5cm}{
+              \begin{flushright}
+                \Large\emph{Školiteľ:} \\
+                \href{http://}{\supname}
+            \end{flushright}}\\
+          \end{tabular}\\[3cm]
+          \large \textit{Dizertačná práca predložená pre splnenie požiadavkov\\ pre udelenie titulu \degreename}\\[0.3cm] % University requirement text
+          \textit{}\\[0.4cm]
+          \groupname\\
+          \deptname\\[2cm] % Research group name and department name
+                     {\large \today}% Date
+                     \vfil {(prvé vydanie Apríl 1991)}\\[3cm]
+                     %\includegraphics{Logo} % University/department logo - uncomment to place it
+                     \vfill
+\end{center}
+\end{titlepage}
+%----------------------------------------------------------------------------------------
+%	DECLARATION PAGE
+%	Your institution may give you a different text to place here
+%----------------------------------------------------------------------------------------
+% \Declaration{
+% \addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+% \input{Title/SK-Declaration.tex}
+% }
+% \clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+%\pagestyle{empty} % No headers or footers for the following pages
+%\null\vfill % Add some space to move the quote down the page a bit
+%\textit{``Thanks to my solid academic training, today I can write hundreds of words on virtually any topic without possessing a shred of information, which is how I got a good job in journalism."}
+%\begin{flushright}
+%Dave Barry
+%\end{flushright}
+%\vfill\vfill\vfill\vfill\vfill\vfill\null % Add some space at the bottom to position the quote just right
+%\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+\addtotoc{Abstrakt} % Add the "Abstract" page entry to the Contents
+\abstract{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+\input{Title/SK-Abstract.tex}
+}
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+\setstretch{1.3} % Reset the line-spacing to 1.3 for body text (if it has changed)
+\acknowledgements{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
+\input{Title/SK-Acknowledgement.tex}
+}
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+\pagestyle{fancy} % The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+\lhead{\emph{Obsah}} % Set the left side page header to "Contents"
+\tableofcontents % Write out the Table of Contents
+\lhead{\emph{Zoznam obrázkov}} % Set the left side page header to "List of Figures"
+\listoffigures % Write out the List of Figures
+\lhead{\emph{Zoznam tabuliek}} % Set the left side page header to "List of Tables"
+\listoftables % Write out the List of Tables
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+\setstretch{1.5} % Set the line spacing to 1.5, this makes the following tables easier to read
+\lhead{\emph{Zkratky}} % Set the left side page header to "Abbreviations"
+\input{Title/SK-Abbreviations.tex}
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+%----------------------------------------------------------------------------------------
+\lhead{\emph{Fyzikálne konštanty}} % Set the left side page header to "Physical Constants"
+\input{Title/SK-Constants.tex}
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+\lhead{\emph{Symboly}} % Set the left side page header to "Symbols"
+\input{Title/SK-Symbols.tex}
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+%\setstretch{1.3} % Return the line spacing back to 1.3
+%\pagestyle{empty} % Page style needs to be empty for this page
+%\dedicatory{\input{Title/Dedication.tex}} % Dedication text
+%\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+%\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	OPONENTSKE POSUDKY
+%----------------------------------------------------------------------------------------
+\lhead{{Oponentský posudok. Prof.\ RNDr. Helmar Frank, DrSc., dr.\ h.\ c.}}
+\begin{figure*}[tb]
+  \addtotoc{Oponentské posudky}
+  \addcontentsline{toc}{section}{Prof.\ RNDr. Helmar Frank, DrSc., dr.\ h.\ c.}
+  \centering
+  \makebox[\textwidth]{\includegraphics*[scale=0.9, keepaspectratio]{Files/1992-thesis-examiner-Frank-cz-1.PS}}
+\end{figure*}
+\newpage
+\begin{figure*}[tb]
+  \centering
+  \makebox[\textwidth]{\includegraphics*[scale=0.9, keepaspectratio]{Files/1992-thesis-examiner-Frank-cz-2.PS}}
+\end{figure*}
+\newpage
+\begin{figure*}[tb]
+  \centering
+  \makebox[\textwidth]{\includegraphics*[scale=0.9, keepaspectratio]{Files/1992-thesis-examiner-Frank-cz-3.PS}}
+\end{figure*}
+\newpage
+\begin{figure*}[tb]
+  \centering
+  \makebox[\textwidth]{\includegraphics*[scale=0.9, keepaspectratio]{Files/1992-thesis-examiner-Frank-cz-4.PS}}
+\end{figure*}
+\clearpage % Start a new page
+%----------------------------------------------------------------------------------------
+\lhead{{Oponentský posudok. Doc. Ing. Ivan Adamčík, CSc.}}
+\begin{figure*}[tb]
+  \addcontentsline{toc}{section}{Doc. Ing. Ivan Adamčík, CSc.}
+  \centering
+  \makebox[\textwidth]{\includegraphics*[scale=0.9, keepaspectratio]{Files/1992-thesis-examiner-Adamcik-sk-1.PS}}
+\end{figure*}
+\newpage
+\begin{figure*}[tb]
+  \centering
+  \makebox[\textwidth]{\includegraphics*[scale=0.9, keepaspectratio]{Files/1992-thesis-examiner-Adamcik-sk-2.PS}}
+\end{figure*}
+\clearpage % Start a new page
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+\setstretch{1.3} % Return the line spacing back to 1.3
+\pagestyle{fancy} % Return the page headers back to the "fancy" style
+\input{Chapters/SK-Introduction}
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+\mainmatter% Begin numeric (1,2,3...) page numbering
+\pagestyle{fancy} % Return the page headers back to the "fancy" style
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+\input{Chapters/SK-Chapter1}
+\input{Chapters/SK-Chapter2}
+\input{Chapters/SK-Chapter3}
+\input{Chapters/SK-Chapter4} 
+\input{Chapters/SK-Chapter5} 
+\input{Chapters/SK-Chapter6} 
+\input{Chapters/SK-Chapter7} 
+\input{Chapters/SK-Chapter8} 
+\input{Chapters/SK-Chapter9} 
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+\input{Appendices/SK-AppendixA}
+\input{Appendices/SK-AppendixB}
+\input{Appendices/SK-AppendixC}
+\input{Appendices/SK-AppendixD}
+\input{Appendices/SK-AppendixE}
+\input{Appendices/SK-AppendixF}
+\input{Appendices/SK-AppendixG}
+\input{Appendices/SK-AppendixH}
+\input{Appendices/SK-AppendixBibliography.tex}
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+%----------------------------------------------------------------------------------------
+%	INDEX
+%----------------------------------------------------------------------------------------
+\newpage
+\lhead{\emph{Index}} % Change the page header to say "Index"
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+% \newpage
+% \lhead{\emph{Literatúra}}\backmatter% Change the page header to say "Bibliography"
+% \bibliographystyle{unsrtnat}% Use the "unsrtnat" BibTeX style for formatting the Bibliography
+% \bibname{Literatúra}
+% \bibliography{Literatúra}\label{Bibliography} % The references (bibliography) information are stored in the file named "Bibliography.bib"
+
+\end{document}  

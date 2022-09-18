@@ -1,0 +1,51 @@
+# See the structure in vars/structure-dat.yml
+
+- name: Create csv files from profilnw
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-{{ item.key }}.csv"
+    content: |
+      {% for x,y in w|zip(n) %}
+      {{ x }};{{ y }}
+      {% endfor %}
+  loop: "{{ data.profilnw|dict2items }}"
+  loop_control:
+    label: "{{ item.key }}"
+  vars:
+    a: "{{ item.value.n_w_v_fi_c|map('split')|list }}"
+    n: "{{ a|map(attribute='0')|list }}"
+    w: "{{ a|map(attribute='1')|list }}"
+
+- name: Create gnuplot files
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
+    content: |
+      # file = "{{ figure_dir }}/{{ figure }}.csv"
+      set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
+      # set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
+      set terminal epslatex color 10 size 5.5in,3.9in
+      # set terminal pdf
+      set datafile separator ";"
+      # set key autotitle columnhead
+      set xrange [0:1e-6]
+      set yrange [1e21:2e23]
+      # set logscale x 10
+      set logscale y 10
+      set title "{{ text[item].title}}"
+      set xlabel "{{ text[item].xlabel}}"
+      set ylabel "{{ text[item].ylabel}}"
+      filelist=system("ls {{ figure_dir }}/{{ figure }}-*.csv")
+      plot for [filename in filelist] filename with dots notitle
+      # f(x) = a*x + b*x
+      # fit f(x) file via a, b
+      # plot f(x) dt 11
+  loop: [en, sk]
+  vars:
+    text:
+      en:
+        title: "Dopant profile"
+        xlabel: "Depth $[m]$"
+        ylabel: "Concentration $[{m}^{-3}]$"
+      sk:
+        title: "Kocentrácia dopantov"
+        xlabel: "Hĺbka $[m]$"
+        ylabel: "Koncentrácia $[{m}^{-3}]$"

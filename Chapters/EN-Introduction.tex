@@ -1,0 +1,140 @@
+% Introduction
+\chapter{Introduction.}\label{Introduction}
+\lhead{\emph{Introduction}}
+%----------------------------------------------------------------------------------------
+
+Diagnostics of MOS structure has been subject of extensive research in
+recent decades and now is at the stage-routine use. At present many
+methods of determining the parameters of MOS structure can be
+considered as closed as evidenced by the extensive monographies
+published in this area,~\cite{I.1, I.2, I.3, I.4}. At the same time
+the professional instrumentation for the determination of the
+parameters of MOS structure is available, which is used for rapid
+diagnostics of the technology of semiconductor devices and integrated
+circuits. Many technological processes currently used in the
+production of discrete semiconductor devices and integrated circuits
+based on silicon are well investigated, and high reproducibility of
+parameters is achieved, however, there are still areas where
+improvements in diagnostics of semiconductor devices using MOS
+structures is not completed.
+
+Aiming at enhancing the production efficiency there is still a
+tendency to use silicon wafers of larger diameters. In connection with
+the issue of yield it brings the requirement of statistical approach
+to evaluation of tested parameters of individual structures. Measured
+parameters of test structures are closely related to values of
+technological parameters achieved in the production and the
+functionality of finished devices depends on a number of individual
+technological steps that vary in certain tolerance limits. Tolerance
+intervals of technology parameters become important issue with
+increasing density of the integration and related decreasing of the
+size of individual integrated elements. Automation of production is
+typically related to high volume of the production, efficiency of
+which is ensured in its greatest extent by the technology. A detailed
+analysis of technological operations is far from simple and requires
+large volume of experiments and attempts. It is necessary to
+efficiently record the results of these experiments and use computers
+for calculations, where the volume of recorded and calculated data
+requires the use of database systems. There are number of mathematical
+methods which are suitable for this purpose and available program
+packages that address the analysis of technological
+processes~\cite{I.5}. Heuristic approach to addressing functionality
+of the products probably prevails in the production of integrated
+circuits. Clarification of dependencies of some parameters may lead to
+more exact management decisions by controlling the technology devices.
+
+\par In this work, we tried to make available the information on
+spatial distribution of some parameters of MOS structures on silicon
+wafer focusing on the ion implantation, that by creating inhomogeneous
+depth distribution of the dopant atoms in the semiconductor requires
+adapting the measurement methods to this condition. Planar display of
+the MOS structure parameters is based on a large number of
+measurements and data processing, and the application of the
+capacitance methods for testing the entire silicon wafer requires
+building adequate means for collecting, processing and displaying of
+data. Some of the examined parameters exhibit geometrical symmetry and
+other randomly moving in a certain range of values. Thus planar
+display of the examined parameters provides rapid and transparent
+information about the quality of individual technological steps, the
+value of which examined parameter depends. At the same time it is
+possible, by means of this visual information, to create an overview
+of the fluctuations of the parameters examined on silicon wafer and
+disregard randomly measured extreme values.
+
+\par The further continuation of this study should be searching
+relationships between the parameters of the test structures of
+different types (e.g. MOS structure, transistor structures) with a
+focus on improving the yield of the production of integrated
+circuits. Probably it would possible, in the light of knowledge of the
+degree of dependence between parameters, to determine what change of a
+technological parameter affects the functionality of the produced
+devices.
+
+\par This work comprises a number of areas of scientific research that
+can be listed as follows:
+\begin{itemize}
+\item{basics of used physical methods and interpretation of results}
+\item{automation of the experiment}
+\item{use of numerical mathematics for solving physical equations and
+  data processing}
+\item{programming}.
+\end{itemize}
+
+\par Chapter 1 provides an overview of the current state of research
+problems and deals with the ideal and real MOS structure. To obtain
+information on the physical processes in an ideal MOS structure we
+numerically solved the one-dimensional Poisson's equation for
+inhomogeneous distribution of impurities in semiconductor and at the
+same time we have gained the theoretical capacity-voltage curves of
+MOS structure. Chapter 2 comprises objectives of this
+thesis. Measurement methods and procedures to determine certain
+parameters of MOS structures are described in Chapter 3 and 4. In
+doing so, the method used in the past on Department of semiconductor
+integrated circuits and structures were developed, and new methods,
+yet not used on Department, introduced (Q-C method, method CCT
+constant width of space charge). Chapter 5 contains some idea of
+implementation of automated data collection and
+pre-processing. Problems of that data structures, data files,
+protection of measured data against loss and manipulation of
+individual records are solved.  At the same time some solutions of the
+problems related to the automation of the experiment are also
+mentioned in this section. Despite the fact that this range of issues
+is not directly related to the physical aspect of the measurements, it
+must be emphasized that without systematic solution it would be
+practically impossible to implement efficient automated workplace
+tracking spatial distribution of electro-physical parameters of MOS
+structures. Processing of measured data and displaying the results of
+the spatial distribution of the parameters is in Chapter 6 and Chapter
+7 contains a table with the results of the experiment. At the same
+time the results of the examination of cross-correlation of certain
+parameters of the MOS structure are also shown.
+
+\par Programs are written mainly in C, and only some subroutines, to
+process data and to solve physical equations numerically, use the
+programming language Fortran. The whole system of programs was
+developed under the operating system MS DOS\@. Transfer of the programs
+to other operating system would require solution of the following
+problems:
+\begin{itemize}
+\item GPIB (IEEE-488) bus control
+\item Porting of the file processing
+\item Handling of graphical images
+\end{itemize}
+
+\par To improve clarity of the text some sub-sections were moved to
+the amendments. The work contains a large number of images which help
+to complete the text and themselves provide large amount of
+information.
+
+\begin{thebibliography}{}
+\bibitem[I.1]{I.1} Nicollian E.H., Brews J.R.: MOS Physics and
+  Technology. John Wiley and Sons. New York 1982.
+\bibitem[I.2]{I.2} Grove A.S.: Physics and Technology of Semiconductor
+  devices. John Wiley and Sons. New York 1967.
+\bibitem[I.3]{I.3} Sze S.M.: Physics of semiconductor devices. John
+  Wiley and Sons. New York 1969.
+\bibitem[I.4]{I.4} Runyan W.R., Bean K.E.: Semiconductor integrated
+  circuit processing technology. Addison-Wesley 1990.
+\bibitem[I.5]{I.5} AIP ve vývoji technologie pro automatizovanou
+  výrobu. Zborník zo seminara. Dom techniky CSVTS Pardubice 1990.
+\end{thebibliography}

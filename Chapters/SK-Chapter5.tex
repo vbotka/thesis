@@ -1,7 +1,7 @@
 % Chapter 5
 
 \chapter{Pracovisko pre automatizovaný zber dát.}\label{Chapter5}
-\lhead{Chapter 5. \emph{Pracovisko pre automatizovaný zber dát}}
+\lhead{Kapitola 5. \emph{Pracovisko pre automatizovaný zber dát}}
 
 Na popisovanom pracovisku možno automaticky merať vysokofrekvenčnú a
 nízkofrekvenčnú kapacitu štruktúry MOS\@. Na obrázku~\ref{fig:5.1} je
@@ -18,7 +18,7 @@ metódy realizované.
 
 Riadiacim počítačom meraní je osobný počítač PC AT vybavený
 interfejsom IMS-2 (norma IEEE 488) firmy National Instruments model
-GPIB-PCIIA, ktorý pracuje ako riadič zbernice IMS-2. Všetky pripojené
+GPIB-PCIIA, ktorý pracuje ako radič zbernice IMS-2. Všetky pripojené
 prístroje sú vybavené interfejsom IMS-2, pomocou ktorého ich možno
 diaľkovo ovládať a zberať namerané údaje. Okrem profesionálnych
 meracích prístrojov HP4280a a Keithley 642 boli v experimente použité
@@ -33,7 +33,7 @@ konštrukcie~\cite{5.1}.
 MOS je možnosť automatického zberu dát po celej kremíkovej doske a ich
 uloženie do diskového súboru pre následovné spracovanie. Programové
 vybavenie pracoviska možno rozdeliť na programy (1) zberu dát (2)
-spracovania dát (3) zobrazenia vysledkov a (4) pomocné
+spracovania dát (3) zobrazenia výsledkov a (4) pomocné
 programy. Programy zberu dát umožňujú meranie C-V závislosti v
 ľubovoľnom počte bodov kremíkovej dosky, ktorých pozície sú voliteľné
 a sú definované operátorom.
@@ -47,19 +47,19 @@ požadovaného druhu merania, bolo potrebné programovo zabezpečiť (1)
 možnosť prerušenia merania operátorom v ľubovoľnom bode (2) možnosť
 opätovného reštartovania zberu dát v bode, kde bol zber dát
 prerušený. Zabezpečenie uchovania nameraných dát v prípade výskytu
-chyby bolo realizované následovným spôsobom. Namerané dáta sú naraz
+chyby bolo realizované nasledovným spôsobom. Namerané dáta sú naraz
 zapisované do diskového súboru vždy po ukončení merania na každej
-štruktúre. Túto dátovu jednotku budeme v ďalsom označovat záznam. To
+štruktúre. Túto dátovú jednotku budeme v ďalšom označovať záznam. To
 znamená, že k poškodeniu štruktúry dát môže prísť len v prípade
 výskytu chyby v priebehu krátkeho časového úseku (rádove desiatky ms),
 čím ale prichádza len k strate posledného záznamu. Pre tento prípad je
-k dispozícii pomocný program, ktorý zkráti dátový súbor na požadované
+k dispozícii pomocný program, ktorý skráti dátový súbor na požadované
 množstvo záznamov, čím obnoví kompaktnosť súboru a umožní
-reštartovanie zberu dát. Týmto spôsobom možno skrátiť dátovy súbor o
+reštartovanie zberu dát. Týmto spôsobom možno skrátiť dátový súbor o
 chybne namerané dáta aj po prerušení zberu dát operátorom, ak bola
 zistená nejaká závada v priebehu merania. Zároveň je k dispozícii
 pomocný program, ktorý umožňuje prepísanie ľubovolného počtu záznamov
-dátového súboru. Užitočnosť tohto programu vysvetlíme v následovnom
+dátového súboru. Užitočnosť tohto programu vysvetlíme v nasledovnom
 príklade.
 
 Predstavme si, že v priebehu zberu dát došlo (napr.dôsledkom vplyvov
@@ -73,20 +73,20 @@ zopakovať a pomocným programom prepísať záznamy v pôvodnom dátovom
 súbore.
 
 Uvedeným spôsobom boli realizované programy zberu dát pre HF C-V,
-kvázistaticku C-V metódu, meranie kapacity oxidovej vrstvy a metódu
+kvázistatickú C-V metódu, meranie kapacity oxidovej vrstvy a metódu
 konštantnej šírky oblasti priestorového náboja. Takto sme ale nemohli
 automatizovať Q-C metódu, pretože použitý interfejs prístroja Keithley
-642 neumožňuje diaľkové ovládanie skratovania vstupných svoriek
+642 neumožňuje diaľkové ovládanie zkratovania vstupných svoriek
 meracieho prístroja, čím nemožno automatizovať vynulovanie náboja v
 spoločnom bode zapojenia kondenzátorov, ktorý sa tam dostane vplyvom
 zvodových prúdov.
 
-Pre pohodlnú manipuláciu s dátovými súbormi bola zvolená následovná
-koncepcia pomenovania dátovych súborov. Pomenovanie súboru v operačnom
+Pre pohodlnú manipuláciu s dátovými súbormi bola zvolená nasledovná
+koncepcia pomenovania dátových súborov. Pomenovanie súboru v operačnom
 systéme MS DOS pozostáva z mena súboru a prípony.  Meno súboru
 predstavuje v našom prípade názov meranej kremíkovej dosky a prípona
 označuje druh dát, ktoré súbor obsahuje. Principiálne možno rozdeliť
-uvedené dátove súbory na dva typy podľa dát, ktoré obsahujú jednotlivé
+uvedené dátové súbory na dva typy podľa dát, ktoré obsahujú jednotlivé
 záznamy. Môže to byť funkčná závislosť alebo parameter. Ak sa jedná o
 funkčnú závislosť, potom prvý záznam v dátovom súbore obsahuje počet
 bodov, v ktorých bola funkčná závislosť zosnímaná a hodnoty nezávislej
@@ -107,7 +107,7 @@ súbory bola zvolená binárna forma záznamu.  Celočíselné hodnoty majú
 dĺžku 2 bajty a čísla s pohyblivou desatinnou čiarkou zaberajú 4
 bajty.
 
-Pre prípad, že by bol potrebný dátovy súbor, obsahujúci dáta vo forme
+Pre prípad, že by bol potrebný dátový súbor, obsahujúci dáta vo forme
 ASCII, je k dispozícii pomocný program, ktorý po zadaní pozície
 štruktúry (X,Y) vytvorí tento dátový súbor a zapíše do neho dáta,
 ktoré obsahuje záznam s pozíciou (X,Y). Ak sa jedná o funkčnú
@@ -118,17 +118,18 @@ nezávislej premennej.
 
 HF C-V závislosť štruktúry MOS meriame pomocou prístroja HP4280a,
 ktorý určuje zároveň kapacitu a vodivosť meranej vzorky na základe
-fázového posunu madzi HF napäťovým signálom (1MHz,30mV) a meraným
+fázového posunu medzi HF napäťovým signálom (1MHz,30mV) a meraným
 prúdom. Prístroj HP4280a je vybavený vlastným procesorom, ktorý riadi
 jeho vnútorné funkcie a operátorovi poskytuje komfortné ovládanie. Pre
 meranie HF C-V závislosti musíme nastaviť požadovaný interval napätia,
-v ktorom sa má merať kapacita (Vstart, Vstop) a napäťový krok Vstep,
-ktorým sa bude jednosmerné napätie meniť. Časové pomery merania sa
-určujú ďalšími dvoma parametrami. Thold určuje čas, počas ktorého bude
-na meranej vzorke pripojené napätie Vstart pred začiatkom
-merania. Tento čas je potrebný na ustálenie prechodových javov, v
-prípade že ich nechceme merať. Parameter Tdelay určuje dobu pozdržania
-merania po vykonaní napäťového kroku.
+v ktorom sa má merať kapacita ($V_{start}$, $V_{stop}$) a napäťový
+krok $V_{step}$, ktorým sa bude jednosmerné napätie meniť. Časové
+pomery merania sa určujú ďalšími dvoma parametrami. $T_{hold}$ určuje
+čas, počas ktorého bude na meranej vzorke pripojené napätie
+$V_{start}$ pred začiatkom merania. Tento čas je potrebný na ustálenie
+prechodových javov, v prípade že ich nechceme merať. Parameter
+$T_{delay}$ určuje dobu pozdržania merania po vykonaní napäťového
+  kroku.
 
 Pre automatizované meranie štruktúr sme zvolili najvýkonnejší mód
 prístroja HP4280a, v ktorom podľa vopred nastavených parametrov
@@ -143,7 +144,7 @@ prenos dát signalizuje prístroj HP4280a nastavením signálu SRQ
 interfejsu GPIB-PCIIA~\cite{5.2}, ktorý po detekovaní signálu SRQ môže
 automaticky vykonať sériové hlásenie prístrojov (Serial Poll) a po
 nájdení prístroja, ktorý žiada o obsluhu uložiť jeho stavové slovo do
-internej pamäte. Tým je vodič SRQ zbernice IMS-2 uvolnený a interfejs
+internej pamäte. Tým je vodič SRQ zbernice IMS-2 uvoľnený a interfejs
 GPIB-PCIIA môže reagovať na žiadosť o obsluhu od ďalších
 prístrojov. Ak riadiaci program požaduje stavové slovo prístroja,
 ktorý žiadal o obsluhu, interfejs GPIB-PCIIA ho vydá zo svojej
@@ -154,7 +155,7 @@ podarilo dosiahnuť minimálny čas HF C-V merania.  Konkrétne hodnoty
 trvania meraní a časové diagramy sú v časti~\ref{sec:5.4}.
 
 Ak potrebujeme určiť koncentračný profil dotujúcich prímesí vo väčšej
-hĺbke, ako je šírka OPN v stave inverzie, musime zmerat C-V závislosť
+hĺbke, ako je šírka OPN v stave inverzie, musíme zmerať C-V závislosť
 v stave hlbokého ochudobnenia. V tomto prípade sa vždy po napäťovom
 skoku do stavu hlbokého ochudobnenia (a zmerania kapacity) musíme
 vrátiť na určitý čas do stavu akumulácie. Prístroj HP4280a nemá mód
@@ -192,7 +193,7 @@ predného panelu.  Pred začiatkom merania je potrebné nastaviť meranú
 veličinu (okrem prúdu možno merať ešte napätie a náboj) a merací
 rozsah prístroja.
 
-Meranie a prenos dát z elektrometra do riadiaceho počítača môže
+Meranie a prenos dát z elektromera do riadiaceho počítača môže
 prebiehať v dvoch módoch, ktoré sa odlišujú adresou
 prístroja~\cite{5.3}. V kontinuálnom móde pracuje A/D prevodník
 prístroja nepretržite a na žiadosť o vyslanie dát do počítača
@@ -211,13 +212,13 @@ prijatí žiadosti o vyslanie nameraných dát najprv počká na ustálenie
 dynamických javov a potom vykoná A/D prevod.
 
 Okrem prúdu potrebujeme pre výpočet kapacity poznať rýchlosť nárastu
-napätia na hradle štruktúry MOS, ktorú určíme následovným spôsobom.
-Meranie vykonáme vo vačšom napäťovom intervale, ako je požadované. V
+napätia na hradle štruktúry MOS, ktorú určíme nasledovným spôsobom.
+Meranie vykonáme vo väčšom napäťovom intervale, ako je požadované. V
 štartovacom a koncovom úseku (mimo požadovaného intervalu napätí)
 odmeriame hodnoty lineárne narastajúceho napätia hradla a zároveň
 zmeriame čas pre každú hodnotu napätia. Čas meriame vnútornými
 hodinami riadiaceho počítača s rozlíšením 1/12 s. Lineárnou regresiou
-spomemutých dát určíme smernicu závislosti $V_{g}(t)$, ktorú použijeme
+spomenutých dát určíme smernicu závislosti $V_{g}(t)$, ktorú použijeme
 pri výpočte kapacity.
 
 Ako sme už spomenuli meranie prúdu trvá 400 ms.  V snahe získať čo
@@ -234,14 +235,14 @@ funkčné hodnoty ako aj hodnoty nezávislej premennej, čo by mohlo
 prinášať problémy pri vyhladzovaní nameraných dát.
 
 Napriek tomu, že meranie prúdu a času prebieha automaticky v meracej
-slučke, nemusíme vždy získat C-V závislosť s ekvidištantným krokom v
+slučke, nemusíme vždy získať C-V závislosť s ekvidistantným krokom v
 napäťovej ose a zároveň nemôžeme dopredu určiť pri akom hradlovom
 napätí odmeriame kapacitu.  Predspracovanie nameraných dát pred
 zápisom do diskového súboru preto pozostáva z aproximácie C-V
 závislosti pomocou kubických splajn-funkcií a výpočte kapacity
 štruktúry MOS pre zadané hodnoty napätia. Je potrebné voliť hodnoty
 napätia hradla v súlade s HF C-V meraním, čo uľahčí výpočet tých
-parametrov štruktúr MOS, ktore sa určujú z HF a kvázistatickej C-V
+parametrov štruktúr MOS, ktoré sa určujú z HF a kvázistatickej C-V
 závislosti.
 
 Dá sa ukázať~\cite{5.4}, že kubické splajn-funkcie vznikajú
@@ -254,7 +255,7 @@ podmienku minimalizácie uvedeného funkcionálu podmienkou najmenších
 štvorcov vzdialenosti aproximačných funkcií a nameraných bodov,
 vznikne aproximácia pomocou kubických splajn-funkcií. V našom programe
 sme použili dvojicu podprogramov z numerickej knižnice NAG (Numerical
-Algorythm Group), ktorých označenie je E02BAF a E02BCF\@. Podprogram
+Algorithm Group), ktorých označenie je E02BAF a E02BCF\@. Podprogram
 E02BAF na základe zadaných bodov vypočíta koeficienty aproximačných
 B-splajn polynómov.  Užívateľovi je daná možnosť zvoliť uzly, medzi
 ktorými sa nachádzajú jednotlivé B-splajn polynómy. Numerická metóda
@@ -277,7 +278,7 @@ zmenou gradientu.
 \section{Meranie metódou konštantnej šírky OPN.}\label{sec:5.3}
 
 Pre meranie metódou konštantnej šírky OPN sme použili prístroje
-HP4280a a zdroj jednosmerného (JS) napäťia, ktorý bol postavený na
+HP4280a a zdroj jednosmerného (JS) napätia, ktorý bol postavený na
 Katedre mikroelektroniky. Merací obvod prístroja HP4280a pozostáva z
 vnútorného zdroja JS napätia (INT BIAS), zdroja HF signálu a
 ampérmetra (označeného A)~\cite{5.7}. Vnútorný zdroj JS napätia má
@@ -304,7 +305,7 @@ JS napätia.
     OPN.}\label{fig:5.2}
 \end{figure}
 
-Meranie zavislosti $V_{g}(t)$ potom prebieha v následovných
+Meranie závislosti $V_{g}(t)$ potom prebieha v nasledovných
 krokoch. Pomocou externého zdroja JS napätia privedieme štruktúru MOS
 do nerovnovážneho stavu. Zo zmeny kapacity $\Delta{C}$, ktorú
 odmeriame prístrojom HP4280a, vypočítame pomocou vzťahu~\ref{eq:3.9}
@@ -335,14 +336,14 @@ testovaných štruktúr kremíkovej dosky. Pomocou týchto vopred
 nameraných dát a zo zadanej vzdialenosti hranice OPN potom určuje
 počiatočné hradlové napätie pre nastavenie externého zdroja JS
 napätia.  Pre svoju činnosť potrebuje riadiaci program ešte jeden
-dátovy súbor, obsahujúci koncentračné profily dotujúcich prímesí
-meraných štruktúr MOSň2. Hodnoty koncentrácie sú potrebné pri
-vyčíslovaní zmeny napätia hradla štruktúry MOS podľa
+dátový súbor, obsahujúci koncentračné profily dotujúcich prímesí
+meraných štruktúr MOS\@. Hodnoty koncentrácie sú potrebné pri
+vyčísľovaní zmeny napätia hradla štruktúry MOS podľa
 vzťahu~\ref{eq:3.9}.
 
 Po zmeraní závislosti $V_{g}(t)$ určíme lineárnou regresiou jej
 smernicu. Z uskutočnených experimentov sa ukazuje, že minimálna doba
-merania zavislosti $V_{g}(t)$, kedy ešte možno očakávať akceptovateľné
+merania závislosti $V_{g}(t)$, kedy ešte možno očakávať akceptovateľné
 výsledky je pre substráty s hodnotami $\tau_g$ rádove $10^{3}\mu{s}$
 približne $T_{hold}=10s$. Počas tejto doby prichádzalo k zmene napätia
 hradla v rozsahu $50-500 mV$ v závislosti od šírky OPN a v závislosti
@@ -354,7 +355,7 @@ $\frac{dV_g}{dt}=f(w)$, ale rôznou absolútnou hodnotou. Zo zobrazenia
 závislostí $\frac{dV_g}{dt}=f(w)$ na celej kremíkovej doske vyplýva,
 že akceptovateľné hodnoty $\tau_{g}$ možno počítať jedine z derivácie
 funkcie $\frac{dV_g}{dt}=f(w)$ podľa w (vzťah~\ref{eq:3.10}
-príp.~\ref{eq:3.7}) a v žiadnom prípade nie z jej fukčných hodnôt
+príp.~\ref{eq:3.7}) a v žiadnom prípade nie z jej funkčných hodnôt
 (vzťah~\ref{eq:3.5}). Do výstupného dátového súboru sme ukladali
 funkčné závislosti $\frac{dV_g}{dt}=f(w)$.
 

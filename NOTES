@@ -1,4 +1,4 @@
-* Abstract.
-pdfseparate -f 3 -l 3 main.pdf thesis-abstract-en.pdf
+# Extract Abstract
 
---
+pdfseparate -f 2 -l 2 main-en.pdf thesis-abstract-en.pdf
+pdfseparate -f 2 -l 2 main-sk.pdf thesis-abstract-sk.pdf

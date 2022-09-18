@@ -1,0 +1,106 @@
+- name: Read raw data. Write data to data_tmp
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+
+    data_dir: /scratch/vbotka-thesis-data
+    data_tmp: /tmp/data.yml
+    structure_dat: "{{ lookup('template', 'vars/structure-dat.yml')|from_yaml }}"
+    files_dat: "{{ lookup('file', 'vars/files-dat.txt').splitlines() }}"
+    files: "{{ dict(out.results|json_query(files_query)) }}"
+    files_query: '[].[item, files[].path]'
+
+  tasks:
+
+    - debug:
+        msg: |
+          structure_dat:
+            {{ structure_dat|to_yaml|indent(2) }}
+      when: debug|d(false)|bool
+
+    - name: Read raw data
+      block:
+        - name: Find files
+          find:
+            recurse: true
+            paths: "{{ data_dir }}"
+            patterns: "{{ item }}"
+          register: out
+          loop: "{{ files_dat }}"
+          tags: read_raw
+
+        - debug:
+            var: files
+          tags: debug_files
+
+        - name: Create empty dictionary
+          set_fact:
+            data: "{{ data_str|from_yaml }}"
+          vars:
+            data_str: |
+              {% for type in structure_dat.keys() %}
+              {{ type }}: {}
+              {% endfor %}
+          tags: read_raw
+
+        - debug:
+            var: data
+          tags: debug_empty_data
+
+        - name: Read raw data
+          set_fact:
+            data: "{{ data|combine({_type: _sample}) }}"
+          with_subelements:
+            - "{{ files|dict2items }}"
+            - value
+          vars:
+            sample: "{{ (item.1|split('/'))[-2]|split('-')|last }}"
+            _type: "{{ item.0.key|splitext|first }}"
+            _data_raw: "{{ lookup('file', item.1).splitlines() }}"
+            _param_len: "{{ structure_dat[_type]|length }}"
+            _data_str: |
+              {% if _param_len|int > 0 %}
+              {% for i in range(_param_len|int) %}
+              {% if structure_dat[_type][i] is string %}
+              {% if loop.last %}
+              {{ structure_dat[_type][i] }}: {{ _data_raw[i:] }}
+              {% else %}
+              {{ structure_dat[_type][i] }}: {{ _data_raw[i] }}
+              {% endif %}
+              {% else %}
+              {% set _params = _data_raw[i].split() %}
+              {% for p in structure_dat[_type][i] %}
+              {{ p }}: {{ _params[loop.index0]|trim }}
+              {% endfor %}
+              {% endif %}
+              {% endfor %}
+              {% else %}
+              "{}"
+              {% endif %}
+            _data: "{{ _data_str|from_yaml }}"
+            _sample: "{{ data[_type]|combine({sample: _data}) }}"
+      tags: read_raw
+
+    - name: Write data
+      copy:
+        dest: "{{ data_tmp }}"
+        content: |
+          {{ data }}
+      tags: write_data
+
+    - name: Read data
+      set_fact:
+        data: "{{ lookup('file', data_tmp)|from_yaml }}"
+      tags: read_data
+
+    - name: Show type
+      debug:
+        var: data.keys()|list
+      tags: list_types
+
+    - name: Show type
+      debug:
+        var: data[type]
+      when: type|d('')|length > 0
+      tags: show_type

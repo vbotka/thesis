@@ -1,0 +1,163 @@
+% Appendix A
+
+\chapter{Numerical solution of the Poisson equation.}\label{app:AppendixA}
+\raggedright\lhead{Appendix A. \emph{Numerical solution of Poisson's equation}}
+
+The Poisson equation can be written in the normalized form
+(Appendix~\ref{app:AppendixB})
+
+\begin{equation}\label{eq:A.1}
+  \frac{d^2u}{dx^2} = e^u - e^{2u_f-u} + \alpha(x) - 1 \qquad {x\ge0}
+\end{equation}
+
+The concentrations of the majority and minority charge carriers are
+the first two terms on the right-hand side of the equation. The
+substrate concentration and impurities is represented by the term
+$\alpha(x)-1$. We will solve the above equation as a second order
+differential equation with initial conditions, which we obtain by the
+following reasoning~\cite{App.1}. In most cases of inhomogeneous
+semiconductor concentration, the depth in the semiconductor can be
+found, beyond which we can consider the concentration of impurities to
+be constant. Let us denote this depth by $x_1$ and determine it from
+the condition
+
+\begin{equation}\label{eq:A.2}
+  \alpha(x_1) = 0.01
+\end{equation}
+
+Then for $x\ge{x_1}$ we can neglect the $\alpha(x)$ term
+
+\begin{equation}\label{eq:A.3}
+  \frac{d^2u}{dx^2} = e^u - e^{2u_f-u} - 1 \qquad {x\ge{x_1}}
+\end{equation}
+
+The equation~\ref{eq:A.3} represents the Poisson equation for a
+homogeneous semiconductor, which can be solved analytically with
+boundary conditions
+
+\begin{equation}\label{eq:A.4}
+  u(\infty) = 0 \qquad \frac{du}{dx}\Big\rvert_{x=\infty} = 0
+\end{equation}
+
+to get the relation for the first derivative of the potential
+
+\begin{equation}\label{eq:A.5}
+  \frac{du}{dx} = - \frac{u}{|u|} \sqrt{2} \big{[e^u - e^{2u_f-u} - 1 \big]}^{\frac{1}{2}} \qquad {x\ge{x_1}}
+\end{equation}
+
+Initial conditions for solving the equation~\ref{eq:A.1} in the domain
+${0\leq{x}\leq{x_1}}$ then forms a freely chosen potential at the
+point $x_1$ and the first derivative of the potential at the point
+$x_1$ expressed by the equation~\ref{eq:A.5}. By an appropriate choice
+of the potential at $x_1$ and by repeated numerical solution of the
+equation~\ref{eq:A.1} from the volume after the surface of the
+semiconductor, we obtain a set of potential curves in the
+semiconductor from accumulation to inversion. We still need to know
+the gate voltage for each potential curve in the semiconductor at a
+known oxide capacitance layer.  For the normal components of the
+electric field strength at the interface of the oxide and the
+semiconductor, the relation
+
+\begin{equation}\label{eq:A.6}
+  \varepsilon_{ox}E_{ox} = \varepsilon_s{E_s}
+\end{equation}
+
+If we denote the thickness of the oxide layer by $h_{ox}$, for the
+gate voltage we get the relations
+
+\begin{align}
+  v_g &= u_s + h_{ox}E_{ox} \label{eq:A.7} \\
+  v_g &= u_s - ku_{s}^{'} \qquad\qquad where {k = h_{ox}\frac{\varepsilon_s}{\varepsilon_{ox}}} \label{eq:A.8}
+\end{align}
+
+, where $u_s$ is the value of the potential at the surface of the
+semiconductor and $u_{s}^{'}$ its spatial derivative. After
+unnormalizing, we have thus obtained the curve of the surface
+potential as a function of the gate voltage Figure~\ref{fig:1.2}. To
+calculate the capacitance of the MOS structure by the following
+relation (Appendix~\ref{app:AppendixC})
+
+\begin{equation}\label{eq:A.9}
+  \frac{C_{mos}}{C_{ox}} = 1 - \frac{du_s}{dv_g}
+\end{equation}
+
+we need to know the value of the derivative of the surface potential
+by the gate voltage. Derivation of the equation~\ref{eq:A.1} by $v_g$
+gives relation
+
+\begin{samepage}
+  \begin{subequations}\label{eq:A.10}
+    \begin{align}
+      \frac{d^{2}w}{dx^2} &= w \Big[e^u + e^{2u_f-u}\Big] \qquad &{x\ge{0}} \label{eq:A.10a} \\
+      \intertext{,where $w=\frac{du}{dv_g}$}
+      \intertext{and by the same procedure for~\ref{eq:A.5} and~\ref{eq:A.8} we get the relations}
+      \frac{dw}{dx}\frac{du}{dx} &= w \Big[e^u - e^{2u_f-u} - 1\Big] \qquad &{x\ge{x_1}} \label{eq:A.10b} \\[0.3cm]
+      w_s - kw_s^{'} &= 1 \label{eq:A.10c}
+    \end{align}
+  \end{subequations}
+\end{samepage}
+
+For a freely chosen value of $w$ at $x_1$, we calculate the first
+derivative according to the equation~\ref{eq:A.10b} and with both
+initial conditions we solve equation~\ref{eq:A.10a} from the point
+$x_1$ towards the surface, thus obtaining values of $\beta$ and
+$\gamma$ for the quantities $w_s$ and $w^{'}_s$.  Because the value of
+w at point $x_1$ has been freely chosen, the values of $\beta$ and
+$\gamma$ satisfy the condition~\ref{eq:A.10c}. Because
+equations~\ref{eq:A.10a},~\ref{eq:A.10b} and~\ref{eq:A.10c} are
+linear, the relations
+
+\begin{samepage}
+  \begin{subequations}\label{eq:A.11}
+    \begin{align}
+      1 &= w_s - kw^{'}_s = \frac{\beta - k\gamma}{\beta - k\gamma} = \frac{\beta}{\beta -k\gamma} - k\frac{\gamma}{\beta -k\gamma} \\[0.3cm]
+      w_s &= \frac{\beta}{\beta -k\gamma} \qquad w^{'}_s = \frac{\gamma}{\beta -k\gamma}
+    \end{align}
+  \end{subequations}
+\end{samepage}
+
+As a result, the capacitance of the MOS structure can be calculated
+
+\begin{equation}\label{eq:A.12}
+  \frac{C_{mos}}{C_{ox}} = 1 - \frac{du_s}{dv_g} = 1 - w_s = -kw^{'}_s = -k\frac{\gamma}{\beta - k\gamma}
+\end{equation}
+
+It should be noted that the capacitance calculated by the equations~\ref{eq:A.10}
+and~\ref{eq:A.12} is the low-frequency capacitance of the MOS structure, because in
+equations~\ref{eq:A.10} the contribution of the minority carriers is accounted for
+charge. The high-frequency capacitance dependence is obtained by eliminating
+the terms representing the contribution of the minority charge carriers from
+equations~\ref{eq:A.10}. We obtain
+
+\begin{samepage}
+  \begin{subequations}\label{eq:A.13}
+    \begin{align}
+      \frac{d^{2}w}{dx^{2}} &= we^{u} \qquad &{x\ge{x_1}}                 \label{eq:A.13a} \\[0.3cm]
+      \frac{dw}{dx}\frac{du}{dx} &= w \big[e^u-1\big] \qquad &{x\ge{x_1}} \label{eq:A.13b} \\[0.3cm]
+      w_s-kw_s^{'} &= 1 \label{eq:A.13c}
+    \end{align}
+  \end{subequations}
+\end{samepage}
+
+To calculate the capacitance dependence of the MOS structure in the
+deep state depletion, we need to eliminate the contributions of both
+minority charge carriers and from the relations for potential
+calculation. By modifying~\ref{eq:A.1} and~\ref{eq:A.5} we obtain
+
+\begin{samepage}
+  \begin{subequations}\label{eq:A.14}
+    \begin{align}
+    \frac{d^2u}{dx^2} &= {e^u + \alpha(x)-1} \qquad &{x\ge0}                                     \label{eq:A.14a} \\[0.3cm]
+    \frac{du}{dx} &= -\frac{u}{|u|} \sqrt{2} \big{[e^u-1\big]}^{\frac{1}{2}} \qquad &{x\ge{x_1}} \label{eq:A.14b}
+    \end{align}
+  \end{subequations}
+\end{samepage}
+
+The figure~\ref{fig:1.3} shows the low-frequency, high-frequency CV
+curve, and the deep depletion CV curve, calculated by the above
+procedure. To solve the differential equation, the the
+predictor-corrector method was used with a starting section
+Runge-Kutta. The program was written in Fortran and the calculation of
+one CV dependence with approximately 100 points took on an ADT 4500 or
+IBM PC AT with mathematical coprocessor 1 to 2 minutes in double the
+precision of floating point operations.
