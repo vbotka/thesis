@@ -19,8 +19,8 @@ set ylabel "${C}/{C}_{ox}$ \\qquad $(1-{\\varphi}/{\\varphi}_{norm})$"
 # plot for [filename in filelist] filename with dots notitle
 plot file_dd u 1:2 w l t "${C}_{mos}^{DD}$" at end, \
           '' u 1:3 w l t "${\\varphi}_{s}^{DD}$" at end, \
-     file_hf u 1:2 w l t "${C}_{mos}^{HF}$" at beginning, \
-          '' u 1:3 w l t "${\\varphi}_{s}^{HF}$" at beginning
+     file_hf u 1:2 w l t "${C}_{mos}^{HF}$" at end, \
+          '' u 1:3 w l t "${\\varphi}_{s}^{HF}$" at end
 # f(x) = a*x + b*x
 # fit f(x) file via a, b
 # plot f(x) dt 11

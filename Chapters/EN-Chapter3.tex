@@ -103,7 +103,7 @@ $8\times10^{-17}A$. The source of the increasing voltage, which was
 built in our department, allows the adjustment of the rate of voltage
 rise in the range from $10V/s$ to $10^{-3}V/s$ with with a resolution
 of 1\% of the range. Both devices can be controlled using the bus
-GPIB.  The main source of error in the quasi-static method is the
+GPIB\@.  The main source of error in the quasi-static method is the
 inaccuracy of the determination of the gate voltage rise
 rate~\cite{1.5}. Before each measurement, it is necessary to
 accurately measure the rate of voltage rise, which is then used in the
@@ -445,7 +445,7 @@ Thesis~\cite{3.13}. Part of this dissertation is A numerical
 implementation of the constant-width method SCR\@. In order to measure
 capacitance was used to measure the HP4280a instrument, which also
 contains a source of DC voltage source. The method was automated using
-a bus GPIB. The most important part of the control program is the
+a bus GPIB\@. The most important part of the control program is the
 loop, in which maintains the constant capacitance of the MOS structure
 in non-equilibrium state by varying the gate voltage.  If we know the
 curve concentration profile in the semiconductor, we can calculate
@@ -464,16 +464,16 @@ the following evolution diagram.
   \includegraphics[scale=0.55,keepaspectratio]{Figures/diagram-2.EPS}\label{diagram:2}
 \end{diagram}
 
-Figure~\ref{fig:3.5} shows the dependence of $\frac{dV_g}{dt}$ on
-of the width of SCR\@. Assuming the SCR width is kept constant, the
-potential ratios in the semiconductor and the generation of minority carriers is
+Figure~\ref{fig:3.5} shows the dependence of ${dV_g}/{dt}$ on of the
+width of SCR\@. Assuming the SCR width is kept constant, the potential
+ratios in the semiconductor and the generation of minority carriers is
 constant, implying a linear dependence of $V_g(t)$.  Guidelines
-${frac{dV_g}{dt}}$ can then be determined by linear regression of the measured
-$V_g(t)$ dependence. It is not difficult to imagine that
-equations~\ref{eq:3.6} to~\ref{eq:3.8} represent the discrimination
-of the continuous curve $\tau_g(x)$. If the measured values
-$\frac{dV_g}{dt}=f(x)$ are approximated by a continuous function, we can express
-the depth profile $\tau_g(x)$ by the relation
+${dV_g}/{dt}$ can then be determined by linear regression of the
+measured $V_g(t)$ dependence. It is not difficult to imagine that
+equations~\ref{eq:3.6} to~\ref{eq:3.8} represent the discrimination of
+the continuous curve $\tau_g(x)$. If the measured values
+${dV_g}/{dt}=f(x)$ are approximated by a continuous function, we can
+express the depth profile $\tau_g(x)$ by the relation
 
 \begin{equation}\label{eq:3.10}
   \tau_g(x) = \frac{qn_i}{2C_{ox}} {\Bigg[\frac{d\big[\frac{dV_g}{dt}\big]}{dx}\Bigg]}^{-1}
@@ -484,8 +484,8 @@ from the measured data shown in Figure~\ref{fig:3.5}.
 
 \begin{figure}[h!]\centering
   \input{Figures/fig-3-5-en.tex}
-  \caption[Dependence of $\frac{dV_g}{dt}$ on SCR width obtained by
-    constant SCR width method]{Dependence of $\frac{dV_g}{dt}$ on width
+  \caption[Dependence of ${dV_g}/{dt}$ on SCR width obtained by
+    constant SCR width method]{Dependence of ${dV_g}/{dt}$ on width
     SCR obtained using the constant width SCR method.}\label{fig:3.5}
 \end{figure}
 %OBR19.BIT
