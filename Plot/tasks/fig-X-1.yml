@@ -1,0 +1,48 @@
+- name: Create csv file from data_other
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}.csv"
+    content: |
+      {% for x,y in w|zip(n) %}
+      {{ "%.2f" % (x|float / 1e-6) }};{{ "%.6e" % (y|float) }}
+      {% endfor %}
+  vars:
+    _file: "{{ data_other }}/{{ figure }}.csv"
+    a: "{{ lookup('file', _file).splitlines()|map('split')|list }}"
+    w: "{{ a|map(attribute='0')|list }}"
+    n: "{{ a|map(attribute='1')|list }}"
+
+- name: Create gnuplot files
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
+    content: |
+      file = "{{ figure_dir }}/{{ figure }}.csv"
+      #set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
+      set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
+      #set terminal epslatex color 10 size 5.5in,3.9in
+      set terminal pdf
+      set datafile separator ";"
+      # set key autotitle columnhead
+      set xrange [0:0.8]
+      set yrange [1e21:1e23]
+      # set xtics 0.0,0.2e-6,0.8e-6
+      # set ytics 0.0,0.2e-6,0.8e-6
+      # set logscale x 10
+      set logscale y 10
+      set title "{{ text[item].title}}"
+      set xlabel "{{ text[item].xlabel}}"
+      set ylabel "{{ text[item].ylabel}}"
+      plot file with dots notitle
+      # f(x) = a*x + b*x
+      # fit f(x) file via a, b
+      # plot f(x) dt 11
+  loop: [en, sk]
+  vars:
+    text:
+      en:
+        title: 'Dopant profile'
+        xlabel: 'Depth $[\\mu{m}]$'
+        ylabel: 'Concentration $[{m}^{-3}]$'
+      sk:
+        title: 'Kocentrácií dopantov'
+        xlabel: 'Hĺbka $[\\mu{m}]$'
+        ylabel: 'Koncentrácia $[{m}^{-3}]$'

@@ -1,4 +1,3 @@
-
 - name: Create gnuplot files
   copy:
     dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"

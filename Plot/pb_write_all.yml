@@ -1,0 +1,38 @@
+- name: Create csv and gnuplot files in figure_dir from the list
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+
+    data_dict: /tmp/data.yml
+    data_other: /scratch/vbotka-thesis-data/other
+    figure_dir: "{{ playbook_dir }}/Figures"
+    figures:
+      - {fig: fig-3-2, sample: '04'}
+      - {fig: fig-3-3, sample: '10'}
+      - {fig: fig-3-4, sample: '04'}
+      - {fig: fig-3-5, sample: }
+      - {fig: fig-3-6, sample: }
+      - {fig: fig-3-7, sample: }
+      - {fig: fig-4-6, sample: '04'}
+      - {fig: fig-4-7, sample: '04'}
+      - {fig: fig-4-9, sample: '04'}
+      - {fig: fig-7-3, sample: }
+      - {fig: fig-7-4, sample: }
+      - {fig: fig-7-5, sample: }
+      - {fig: fig-7-6, sample: }
+
+  tasks:
+
+    - name: Read data
+      set_fact:
+        data: "{{ lookup('file', data_dict)|from_yaml }}"
+
+    - name: Write csv and gnuplot files
+      include_tasks: "tasks/{{ figure }}.yml"
+      loop: "{{ figures }}"
+      loop_control:
+        loop_var: outer_item
+      vars:
+        figure: "{{ outer_item.fig }}"
+        sample: "{{ outer_item.sample }}"

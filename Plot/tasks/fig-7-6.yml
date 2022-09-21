@@ -1,4 +1,3 @@
-
 - name: Create gnuplot files
   copy:
     dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
@@ -29,9 +28,9 @@
     text:
       en:
         title: 'Flatband voltage / Oxide thickness'
-        xlabel: 'Oxide thickness $[\\nu{m}]$'
+        xlabel: 'Oxide thickness $[nm]$'
         ylabel: 'Flatband Voltage $[V]$'
       sk:
         title: 'Napätie vyrovnaných pásov / Hrúbka oxidu'
-        xlabel: 'Hrúbka oxidu $[\\nu{m}]$'
+        xlabel: 'Hrúbka oxidu $[nm]$'
         ylabel: 'Napätie vyrovnaných pásov $[V]$'

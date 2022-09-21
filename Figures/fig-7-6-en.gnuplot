@@ -13,7 +13,7 @@ set yrange [-1.7:-1.1]
 # set logscale x 10
 # set logscale y 10
 set title "Flatband voltage / Oxide thickness"
-set xlabel "Oxide thickness $[\\nu{m}]$"
+set xlabel "Oxide thickness $[nm]$"
 set ylabel "Flatband Voltage $[V]$"
 plot file with points notitle
 # f(x) = a*x + b*x

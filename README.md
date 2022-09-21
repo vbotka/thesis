@@ -26,11 +26,11 @@ parameters distribution and fluctuations.
 
 **Download**
 
-* [Thesis current versions EN](https://drive.google.com/open?id=<TBD>) (6MB) 
-* [Thesis current versions SK](https://drive.google.com/open?id=<TBD>) (6MB) 
-* [Abstract EN](https://drive.google.com/open?id=<TBD>) (6MB)
-* [Abstract SK](https://drive.google.com/open?id=<TBD>) (6MB)
+* [Abstract EN](https://drive.google.com/file/d/1wNpwhWLtBRLetNG_VAi7PqghXY0o4-eN/view?usp=sharing) (6MB)
+* [Abstract SK](https://drive.google.com/file/d/1E4-HgYJVOinzhTE1oKLpsdaMrKKqgclv/view?usp=sharing) (6MB)
 
+* [Thesis 2022 EN 2nd versions](https://drive.google.com/file/d/1oXSAzWqHjLRUclk2NQdLz0GyuvZTCMuD/view?usp=sharing) (6MB) 
+* [Thesis 2022 SK 2nd versions](https://drive.google.com/file/d/1VNwoCr5K_qdF-q-nyXkgAFsGKUT45ykz/view?usp=sharing) (6MB) 
 * [Thesis 1991 SK (scanned)](https://drive.google.com/open?id=0B9QdgMgzmvIcekRRWnJIbGxHWHM) (49MB)
 
 **License**

@@ -14,11 +14,11 @@ shell> https://github.com/vbotka/thesis-data.git
 * Configure the directories in the playbook
   *pb_read_raw_data.yml*. The raw data files will be searched in
   *data_dir*. The dictionary with parsed data will be stored in
-  *data_tmp*.
+  *data_dict*.
 
 ```yaml
 data_dir: /scratch/vbotka-thesis-data
-data_tmp: /tmp/data.yml
+data_dict: /tmp/data.yml
 ```
 
 * Read raw data and write the file
@@ -65,7 +65,7 @@ data.keys()|list:
 The file *vars/files-dat.txt* keeps the list of files that will be
 processed. The structure of the files is stored in the
 *vars/structure-dat.yml*. When you update these files rerun the
-previous playbook to store the parsed data in *data_tmp*.
+previous playbook to store the parsed data in *data_dict*.
 
 
 ## Create *.csv and *.gnuplot files
@@ -76,27 +76,24 @@ files in the directory *Figures*. See the *tasks*.
 * Configure the directories in the playbook *pb_write_figure.yml*
 
 ```yaml
-data_tmp: /tmp/data.yml
+data_dict: /tmp/data.yml
 figure_dir: "{{ playbook_dir }}/../Figures"
 ```
 
-* Create *.csv and *.gnuplot files
+* Create *.csv and *.gnuplot files for single figure
 
 ```yaml
 shell> ansible-playbook pb_write_figure.yml -e figure=fig-7-3
   ...
-TASK [Create csv files from profilnw] ***********************
-changed: [localhost] => (item=10)
-changed: [localhost] => (item=08)
-changed: [localhost] => (item=03)
-changed: [localhost] => (item=04)
-changed: [localhost] => (item=05)
-changed: [localhost] => (item=11)
-changed: [localhost] => (item=09)
-
 TASK [Create gnuplot files] *********************************
-changed: [localhost] => (item=en)
-changed: [localhost] => (item=sk)
+ok: [localhost] => (item=en)
+ok: [localhost] => (item=sk)
+```
+
+* Create all files in loop
+
+```
+shell> ansible-playbook pb_write_all.yml
 ```
 
 * Create files in *tasks*

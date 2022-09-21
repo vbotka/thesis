@@ -13,7 +13,7 @@ set yrange [-1.7:-1.1]
 # set logscale x 10
 # set logscale y 10
 set title "Napätie vyrovnaných pásov / Hrúbka oxidu"
-set xlabel "Hrúbka oxidu $[\\nu{m}]$"
+set xlabel "Hrúbka oxidu $[nm]$"
 set ylabel "Napätie vyrovnaných pásov $[V]$"
 plot file with points notitle
 # f(x) = a*x + b*x

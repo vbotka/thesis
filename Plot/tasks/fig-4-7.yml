@@ -1,0 +1,70 @@
+# See the structure in vars/structure-dat.yml
+
+- assert:
+    that: sample is defined
+    fail_msg: The variable *sample* is mandatory. e.g. sample=04
+
+- name: Create csv file from qc; HF QC
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-hfqc-{{ sample }}.csv"
+    content: |
+      {% for v,c,f in vg|zip(cn)|zip(fn)|map('flatten')|list %}
+      {{ v }};{{ c }};{{ f }}
+      {% endfor %}
+  vars:
+    a: "{{ (data.qc[sample].a_b_c_vg_cn_fn|map('split')|reverse)[:80] }}"
+    vg: "{{ a|map(attribute='3')|list }}"
+    cn: "{{ a|map(attribute='4')|list }}"
+    fn: "{{ a|map(attribute='5')|list }}"
+
+- name: Create csv file from ql; LF QC
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-lfqc-{{ sample }}.csv"
+    content: |
+      {% for v,c in vg|zip(cn) %}
+      {{ v }};{{ c }}
+      {% endfor %}
+  vars:
+    a: "{{ (data.ql[sample].v_cn|map('split')|list)[:130] }}"
+    vg: "{{ a|map(attribute='0')|list }}"
+    cn: "{{ a|map(attribute='1')|list }}"
+
+- name: Create gnuplot files for sample
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
+    content: |
+      file_hf = "{{ figure_dir }}/{{ figure }}-hfqc-{{ sample }}.csv"
+      file_lf = "{{ figure_dir }}/{{ figure }}-lfqc-{{ sample }}.csv"
+      set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
+      # set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
+      set terminal epslatex color 10 size 5.5in,3.6in
+      # set terminal pdf
+      set datafile separator ";"
+      # set key autotitle columnhead
+      set xrange [-2:6.0]
+      set yrange [0.5:1.2]
+      # set xtics 0.0,0.2e-6,0.8e-6
+      # set ytics 0.0,0.2e-6,0.8e-6
+      # set logscale x 10
+      # set logscale y 10
+      set title "{{ text[item].title}}"
+      set xlabel "{{ text[item].xlabel}}"
+      set ylabel "{{ text[item].ylabel}}"
+      # filelist=system("ls {{ figure_dir }}/{{ figure }}-*.csv")
+      # plot for [filename in filelist] filename with dots notitle
+      plot file_hf u 1:2 w l t "${C}_{mos}^{HF}$" at end, \
+           file_lf u 1:2 w l t "${C}_{mos}^{LF}$" at end
+      # f(x) = a*x + b*x
+      # fit f(x) file via a, b
+      # plot f(x) dt 11
+  loop: [en, sk]
+  vars:
+    text:
+      en:
+        title: 'QC method'
+        xlabel: 'Gate voltage ${V}_g$'
+        ylabel: '${C}/{C}_{ox}$'
+      sk:
+        title: 'QC metóda'
+        xlabel: 'Napätie hradla ${V}_g$'
+        ylabel: '${C}/{C}_{ox}$'

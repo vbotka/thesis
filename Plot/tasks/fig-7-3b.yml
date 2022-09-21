@@ -5,7 +5,7 @@
     dest: "{{ figure_dir }}/{{ figure }}-{{ item.key }}.csv"
     content: |
       {% for x,y in w|zip(n) %}
-      {{ x }};{{ y }}
+      {{ x|float / 1e-6 }};{{ y }}
       {% endfor %}
   loop: "{{ data.nxfile|dict2items }}"
   loop_control:
@@ -26,7 +26,7 @@
       # set terminal pdf
       set datafile separator ";"
       # set key autotitle columnhead
-      set xrange [0:0.8e-6]
+      set xrange [0:0.8]
       set yrange [1e21:2e23]
       # set logscale x 10
       set logscale y 10
@@ -42,10 +42,10 @@
   vars:
     text:
       en:
-        title: "Dopant profile"
-        xlabel: "Depth $[m]$"
-        ylabel: "Concentration $[{m}^{-3}]$"
+        title: 'Dopant profile'
+        xlabel: 'Depth $[\\mu{m}]$'
+        ylabel: 'Concentration $[{m}^{-3}]$'
       sk:
-        title: "Kocentrácia dopantov"
-        xlabel: "Hĺbka $[m]$"
-        ylabel: "Koncentrácia $[{m}^{-3}]$"
+        title: 'Kocentrácia dopantov'
+        xlabel: 'Hĺbka $[\\mu{m}]$'
+        ylabel: 'Koncentrácia $[{m}^{-3}]$'

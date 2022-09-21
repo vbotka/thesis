@@ -1,21 +1,22 @@
-- name: Read data. Create csv and gnuplot files in figure_dir
+- name: Create csv and gnuplot files in figure_dir
   hosts: localhost
   gather_facts: false
 
   vars:
 
-    data_tmp: /tmp/data.yml
+    data_dict: /tmp/data.yml
+    data_other: /scratch/vbotka-thesis-data/other
     figure_dir: "{{ playbook_dir }}/Figures"
 
   tasks:
 
     - assert:
         that: figure|d('')|length > 0
-        fail_msg: The variable 'figure' is mandatory.
+        fail_msg: The variable *figure* is mandatory.
 
     - name: Read data
       set_fact:
-        data: "{{ lookup('file', data_tmp)|from_yaml }}"
+        data: "{{ lookup('file', data_dict)|from_yaml }}"
 
     - name: Write csv and gnuplot files
       include_tasks: "tasks/{{ figure }}.yml"

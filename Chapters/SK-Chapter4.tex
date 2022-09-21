@@ -499,24 +499,6 @@ $C_{mos}^{LF}(V_{g})$ je vhodné použiť Q-C metódu~\cite{3.4, 3.6, 3.7,
 použitie štandardných metód určovania $C_{mos}^{HF}(V_{g})$ a
 $C_{mos}^{LF}(V_{g})$ je tiež možné.
 
-\begin{figure}[h!]\centering
-  \begin{minipage}[c]{\myfiguresize}
-    \begin{center}
-      \includegraphics{Figures/fig-4-6.eps}
-      \caption[VF C-V závislosť $C_{mos}^{HF}(V_{g})$ a priebeh
-        povrchového potenciálu $\varphi_{s}(V_{g})$ štruktúry MOS
-        získané pomocou Q-C metódy]{VF C-V závislosť
-        $C_{mos}^{HF}(V_{g})$ normovaná na kapacitu oxidu a normovaný
-        priebeh povrchového potenciálu $\varphi_{s}(V_{g})$ štruktúry
-        MOS získané pomocou Q-C metódy.  Priebeh povrchového
-        potenciálu je normovaný vzťahom
-        $1-\frac{\varphi_{s}}{\varphi_{norm}}$, kde
-        $\varphi_{norm}=3.33$.}\label{fig:4.6}
-    \end{center}
-  \end{minipage}
-\end{figure}
-% OBR15.BIT
-
 Na obrázku~\ref{fig:4.6} sú namerané hodnoty $C_{mos}^{HF}(V_{g})$ a
 povrchového potenciálu $\varphi_{s}$ štruktúry MOS, určené pomocou Q-C
 metódy. Na obrázku~\ref{fig:4.7} sa nachádzajú krivky
@@ -528,24 +510,7 @@ výpočet $D_{it}$ podľa následujúceho vzťahu~\cite{4.15}
 \end{equation}
 % was (4.14) in origin
 
-\begin{figure}[h!]\centering
-  \begin{minipage}[c]{\myfiguresize}
-    \begin{center}
-      \includegraphics{Figures/fig-4-7.eps}
-      \caption[VF C-V závislosť $C_{mos}^{HF}(V_{g})$ a LF C-V
-        závislosť $C_{mos}^{LF}(V_{g})$ štruktúry MOS normované na
-        kapacitu oxidu, získané pomocou Q-C metódy]{VF C-V závislosť
-        $C_{mos}^{HF}(V_{g})$ a LF C-V závislosť $C_{mos}^{LF}(V_{g})$
-        štruktúry MOS normované na kapacitu oxidu, získané pomocou Q-C
-        metódy.  LF C-V závislosť je vypočítaná deriváciou povrchového
-        potenciálu (zobrazeného na obrázku~\ref{fig:4.6}) podľa
-        vzťahu~\ref{eq:3.2}.}\label{fig:4.7}
-    \end{center}
-  \end{minipage}
-\end{figure}
-% OBR12.BIT
-
-\par Polohu Fermiho hladiny v zakázanom pásme pre vypočítané hodnoty
+Polohu Fermiho hladiny v zakázanom pásme pre vypočítané hodnoty
 $D_{it}$ určíme pomocou hodnôt povrchového potenciálu $\varphi_{s}$ a
 vzdialenosti Fermiho hladiny od intrinzickej Fermiho hladiny
 $\varphi_{f}$. Priebeh povrchového potenciálu $\varphi_{s}(V_{g})$
@@ -559,6 +524,42 @@ metódy posunutie predstavuje integračnú konštantu. Pre obidva prípady
 môžeme posunutie závislosti $\varphi_{s}(V_{g})$ vypočítať postupom
 uvedeným v dodatku~\ref{app:AppendixG}.
 
+\newpage
+\begin{figure}[h!]\centering
+  \begin{minipage}[c]{\myfiguresize}
+    \begin{center}
+      \input{Figures/fig-4-6-sk.tex}
+      \caption[VF C-V závislosť $C_{mos}^{HF}(V_{g})$ a priebeh
+        povrchového potenciálu $\varphi_{s}(V_{g})$ štruktúry MOS
+        získané pomocou Q-C metódy]{VF C-V závislosť
+        $C_{mos}^{HF}(V_{g})$ normovaná na $C_{ox}$ a normovaný
+        povrchový potenciál $\varphi_{s}(V_{g})$ získaný pomocou Q-C
+        metódy. Povrchový potenciál je normovaný vzťahom
+        $1-{\varphi_{s}}/{\varphi_{norm}}$, kde
+        $\varphi_{norm}=3.33$.}\label{fig:4.6}
+    \end{center}
+  \end{minipage}
+\end{figure}
+% OBR15.BIT
+
+\begin{figure}[h!]\centering
+  \begin{minipage}[c]{\myfiguresize}
+    \begin{center}
+      \input{Figures/fig-4-7-sk.tex}
+      \caption[VF C-V závislosť $C_{mos}^{HF}(V_{g})$ a LF C-V
+        závislosť $C_{mos}^{LF}(V_{g})$ štruktúry MOS normované na
+        kapacitu oxidu, získané pomocou Q-C metódy]{VF C-V závislosť
+        $C_{mos}^{HF}(V_{g})$ a LF C-V závislosť $C_{mos}^{LF}(V_{g})$
+        štruktúry MOS normované na kapacitu oxidu, získané pomocou Q-C
+        metódy.  LF C-V závislosť je vypočítaná deriváciou povrchového
+        potenciálu (zobrazeného na obrázku~\ref{fig:4.6}) podľa
+        vzťahu~\ref{eq:3.2}.}\label{fig:4.7}
+    \end{center}
+  \end{minipage}
+\end{figure}
+% OBR12.BIT
+
+\newpage
 \begin{figure}[h!]\centering
   \begin{minipage}[c]{\myfiguresize}
     \begin{center}
@@ -595,6 +596,7 @@ pásma $(E_{c})$ od intrinzickej Fermiho hladiny. Priebeh $D_{it}$ ako
 funkcie polohy v zakázanom pásme je znázornený na
 obrázku~\ref{fig:4.8}.
 
+\newpage
 \subsection{Porovnanie experimentálnej a teoretickej kvázistatickej CV závislosti.}\label{sec:4.2.2}
 
 Pre výpočet $D_{it}$ pomocou tejto metódy je potrebné poznať priebeh
@@ -638,7 +640,7 @@ popísaný v časti~\ref{sec:4.2.1}
 \begin{figure}[h!]\centering
   \begin{minipage}[c]{\myfiguresize}
     \begin{center}
-      \includegraphics{Figures/fig-4-9.eps}
+      \input{Figures/fig-4-9-en.tex}
       \caption[Teoretická LF C-V závislosť a nameraná LF C-V
         závislosť]{Teoretická LF C-V závislosť a nameraná LF C-V
         závislosť štruktúry MOS normované na kapacitu

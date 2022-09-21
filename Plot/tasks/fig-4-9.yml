@@ -1,0 +1,85 @@
+# See the structure in vars/structure-dat.yml
+
+# TODO: Calculate theoretical LF C-V and calculate Dit Fig.4.10
+
+- assert:
+    that: sample is defined
+    fail_msg: The variable *sample* is mandatory. e.g. sample=04
+
+- name: Create csv file from ql; LF QC
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-lfqc-{{ sample }}.csv"
+    content: |
+      {% for v,c in vg|zip(cn) %}
+      {{ v }};{{ c }}
+      {% endfor %}
+  vars:
+    a: "{{ (data.ql[sample].v_cn|map('split')|list)[:110] }}"
+    vg: "{{ a|map(attribute='0')|list }}"
+    cn: "{{ a|map(attribute='1')|list }}"
+
+- name: Create csv file from lf; LF CV
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-lf-{{ sample }}.csv"
+    content: |
+      {% for v,c in vg|zip(cn) %}
+      {{ v }};{{ c }}
+      {% endfor %}
+  vars:
+    a: "{{ (data.lf[sample].v_cn|map('split')|reverse)[:160] }}"
+    vg: "{{ a|map(attribute='0')|list }}"
+    cn: "{{ a|map(attribute='1')|list }}"
+
+- name: Create csv file from l2; Theoretical LF CV
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-tlf-{{ sample }}.csv"
+    content: |
+      {% for v,c in vg|zip(cn) %}
+      {{ v }};{{ c }}
+      {% endfor %}
+  vars:
+    a: "{{ data.l2[sample].v_cn|map('split')|reverse }}"
+    vg: "{{ a|map(attribute='0')|list }}"
+    cn: "{{ a|map(attribute='1')|list }}"
+
+- name: Create gnuplot files for sample
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
+    content: |
+      file_lf = "{{ figure_dir }}/{{ figure }}-lf-{{ sample }}.csv"
+      file_lfqc = "{{ figure_dir }}/{{ figure }}-lfqc-{{ sample }}.csv"
+      file_tlf = "{{ figure_dir }}/{{ figure }}-tlf-{{ sample }}.csv"
+      set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
+      # set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
+      set terminal epslatex color 10 size 5.5in,3.9in
+      # set terminal pdf
+      set datafile separator ";"
+      # set key autotitle columnhead
+      set xrange [-2:4.0]
+      set yrange [0.5:1.2]
+      # set xtics 0.0,0.2e-6,0.8e-6
+      # set ytics 0.0,0.2e-6,0.8e-6
+      # set logscale x 10
+      # set logscale y 10
+      set title "{{ text[item].title}}"
+      set xlabel "{{ text[item].xlabel}}"
+      set ylabel "{{ text[item].ylabel}}"
+      # filelist=system("ls {{ figure_dir }}/{{ figure }}-*.csv")
+      # plot for [filename in filelist] filename with dots notitle
+      plot file_lf u 1:2 w l t "${C}_{mos}^{LF}$" at end
+      #   file_tlf u 1:2 w l t "${C}_{mos}^{TLF}$" at beginning, \
+      #  file_lfqc u 1:2 w l t "${C}_{mos}^{QC}$"
+      # f(x) = a*x + b*x
+      # fit f(x) file via a, b
+      # plot f(x) dt 11
+  loop: [en, sk]
+  vars:
+    text:
+      en:
+        title: 'Comparison of measured and theoretical LF C-V'
+        xlabel: 'Gate voltage ${V}_g$'
+        ylabel: '${C}/{C}_{ox}$'
+      sk:
+        title: 'Porovnanie nameranej a reoretickej LF C-V'
+        xlabel: 'Napätie hradla ${V}_g$'
+        ylabel: '${C}/{C}_{ox}$'

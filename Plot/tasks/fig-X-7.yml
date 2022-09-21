@@ -1,0 +1,64 @@
+# See the structure in vars/structure-dat.yml
+
+- name: Create csv files from qf and qh; High Frequency
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-hf-{{ item.0.key }}.csv"
+    content: |
+      {% for v,c,f in v0|zip(cn)|zip(fi)|map('flatten')|list %}
+      {{ v }};{{ c }};{{ 1 - f|float / fnorm|float }}
+      {% endfor %}
+  with_together:
+    - "{{ data.qf|dict2items }}"
+    - "{{ data.qh|dict2items }}"
+  loop_control:
+    label: "{{ item.0.key }}-{{ item.1.key }}"
+  vars:
+    fnorm: 3.33
+    a0: "{{ item.0.value.v_fi|map('split')|list }}"
+    v0: "{{ a0|map(attribute='0')|list }}"
+    fi: "{{ a0|map(attribute='1')|list }}"
+    a1: "{{ item.1.value.v_cn_void|map('split')|list }}"
+    v1: "{{ a1|map(attribute='0')|list }}"
+    cn: "{{ a1|map(attribute='1')|list }}"
+
+- name: Create gnuplot files for sample 04
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
+    content: |
+      file_dd = "{{ figure_dir }}/{{ figure }}-dd-04.csv"
+      file_hf = "{{ figure_dir }}/{{ figure }}-hf-04.csv"
+      set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
+      # set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
+      set terminal epslatex color 10 size 5.5in,3.9in
+      # set terminal pdf
+      set datafile separator ";"
+      # set key autotitle columnhead
+      set xrange [-2:10]
+      set yrange [0:1.2]
+      # set xtics 0.0,0.2e-6,0.8e-6
+      # set ytics 0.0,0.2e-6,0.8e-6
+      # set logscale x 10
+      # set logscale y 10
+      set title "{{ text[item].title}}"
+      set xlabel "{{ text[item].xlabel}}"
+      set ylabel "{{ text[item].ylabel}}"
+      # filelist=system("ls {{ figure_dir }}/{{ figure }}-*.csv")
+      # plot for [filename in filelist] filename with dots notitle
+      plot file_dd using 1:2 with dots title "${C}_{mos}^{DD}$" at end, \
+                '' using 1:3 with dots title "${\\varphi}_{s}^{DD}$" at end, \
+           file_hf using 1:2 with dots title "${C}_{mos}^{HF}$" at end, \
+                '' using 1:3 with dots title "${\\varphi}_{s}^{HF}$" at end
+      # f(x) = a*x + b*x
+      # fit f(x) file via a, b
+      # plot f(x) dt 11
+  loop: [en, sk]
+  vars:
+    text:
+      en:
+        title: 'QC method'
+        xlabel: 'Gate voltage ${V}_g$'
+        ylabel: '${C}/{C}_{ox}$ \\qquad $(1-{\\varphi}/{\\varphi}_{norm})$'
+      sk:
+        title: 'QC metóda'
+        xlabel: 'Napätie hradla ${V}_g$'
+        ylabel: '${C}/{C}_{ox}$ \\qquad $(1-{\\varphi}/{\\varphi}_{norm})$'

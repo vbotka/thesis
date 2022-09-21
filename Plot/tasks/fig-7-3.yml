@@ -1,25 +1,21 @@
-# See the structure in vars/structure-dat.yml
-
-- name: Create csv files from profilnw
+- name: Create csv file from data_other
   copy:
-    dest: "{{ figure_dir }}/{{ figure }}-{{ item.key }}.csv"
+    dest: "{{ figure_dir }}/{{ figure }}.csv"
     content: |
       {% for x,y in w|zip(n) %}
-      {{ x|float / 1e-6 }};{{ y }}
+      {{ "%.2f" % (x|float / 1e-6) }};{{ "%.6e" % (y|float) }}
       {% endfor %}
-  loop: "{{ data.profilnw|dict2items }}"
-  loop_control:
-    label: "{{ item.key }}"
   vars:
-    a: "{{ item.value.n_w_v_fi_c|map('split')|list }}"
-    n: "{{ a|map(attribute='0')|list }}"
-    w: "{{ a|map(attribute='1')|list }}"
+    _file: "{{ data_other }}/{{ figure }}.csv"
+    a: "{{ lookup('file', _file).splitlines()|map('split')|list }}"
+    w: "{{ a|map(attribute='0')|list }}"
+    n: "{{ a|map(attribute='1')|list }}"
 
 - name: Create gnuplot files
   copy:
     dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
     content: |
-      # file = "{{ figure_dir }}/{{ figure }}.csv"
+      file = "{{ figure_dir }}/{{ figure }}.csv"
       set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
       # set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
       set terminal epslatex color 10 size 5.5in,3.9in
@@ -27,7 +23,7 @@
       set datafile separator ";"
       # set key autotitle columnhead
       set xrange [0:0.8]
-      set yrange [1e21:2e23]
+      set yrange [1e21:5e23]
       # set xtics 0.0,0.2e-6,0.8e-6
       # set ytics 0.0,0.2e-6,0.8e-6
       # set logscale x 10
@@ -35,8 +31,7 @@
       set title "{{ text[item].title}}"
       set xlabel "{{ text[item].xlabel}}"
       set ylabel "{{ text[item].ylabel}}"
-      filelist=system("ls {{ figure_dir }}/{{ figure }}-*.csv")
-      plot for [filename in filelist] filename with dots notitle
+      plot file with dots notitle
       # f(x) = a*x + b*x
       # fit f(x) file via a, b
       # plot f(x) dt 11
@@ -45,9 +40,9 @@
     text:
       en:
         title: 'Dopant profile'
-        xlabel: 'Depth $[\\mu\ m]$'
+        xlabel: 'Depth $[\\mu{m}]$'
         ylabel: 'Concentration $[{m}^{-3}]$'
       sk:
         title: 'Kocentrácia dopantov'
-        xlabel: 'Hĺbka $[\\mu\ m]$'
+        xlabel: 'Hĺbka $[\\mu{m}]$'
         ylabel: 'Koncentrácia $[{m}^{-3}]$'
