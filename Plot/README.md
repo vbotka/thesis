@@ -3,12 +3,22 @@
 Prepare files to create figures.
 
 
+## Quick start guide
+
+(cd /scratch/vbotka-thesis-data; git remote -v)
+origin  https://github.com/vbotka/thesis-data.git (fetch)
+origin  https://github.com/vbotka/thesis-data.git (push)
+
+ansible-playbook pb_read_raw_data.yml -t read_raw,write_data
+ansible-playbook pb_write_all.yml
+
+
 ## Read data
 
 * Clone data
 
 ```
-shell> https://github.com/vbotka/thesis-data.git
+shell> git clone https://github.com/vbotka/thesis-data.git
 ```
 
 * Configure the directories in the playbook

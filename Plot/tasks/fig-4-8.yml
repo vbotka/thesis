@@ -1,0 +1,63 @@
+# See the structure in vars/structure-dat.yml
+
+- assert:
+    that: sample is defined
+    fail_msg: The variable *sample* is mandatory. e.g. sample=04
+
+- name: Create csv file from qc; High Frequency
+  block:
+    - debug:
+        msg: |
+          fnorm: {{ fnorm }}
+          vg: {{ vg }}  # Gate voltage
+          ch: {{ ch }}  # HF C/Cox
+          fn: {{ fn }}  # Surface potential normalized
+          cl: {{ cl }}  # LF C/Cox calculated by eq.3.2.
+      when: debug|d(false)|bool
+    - copy:
+        dest: "{{ figure_dir }}/{{ figure }}-dit-{{ sample }}.csv"
+        content: |
+          {% for e,d in ei|zip(di) %}
+          {{ "%.4f" % e }};{{ "%.4E" % d }}
+          {% endfor %}
+  vars:
+    cox: "{{ data.qc[sample].cox }}"
+    fnorm: "{{ data.qc[sample].fnorm }}"
+    bulk: "{{ data.nwqc[sample].bulk }}"
+    a: "{{ (data.qc[sample].a_b_c_vg_cn_fn|map('split')|reverse)[:50] }}"
+#   a: "{{ (data.qcn[sample].a_b_c_vg_cn_fn|map('split'))[:50] }}"
+    vg: "{{ a|map(attribute='3')|map('float')|list }}"
+    ch: "{{ a|map(attribute='4')|map('float')|list }}"
+    fn: "{{ a|map(attribute='5')|map('float')|list }}"
+    cl: "{{ fn|eq_3_2(vg, fnorm|float) }}"
+    di: "{{ cl|eq_4_15(ch, cox|float) }}"
+    ei: "{{ fn|eq_4_17(fnorm|float, bulk|float, 'P') }}"
+
+- name: Create gnuplot files for sample
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
+    content: |
+      file_dit = "{{ figure_dir }}/{{ figure }}-dit-{{ sample }}.csv"
+      set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
+      # set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
+      set terminal epslatex color 10 size 5.5in,3.6in
+      # set terminal pdf
+      set datafile separator ";"
+      set xrange [0.0:0.4]
+      set yrange [1e7:1e11]
+      set logscale y 10
+      set title "{{ text[item].title}}"
+      set xlabel "{{ text[item].xlabel}}"
+      set ylabel "{{ text[item].ylabel}}"
+      plot file_dit using 1:2 with points notitle
+  loop: [en, sk]
+  vars:
+    text:
+      en:
+        title: 'Trap density of interface $Si-SiO_{2}$'
+        xlabel: '$E_{c} - E [eV]$'
+        ylabel: '$D_{it} [m^{-2}eV^{-1}]$'
+      sk:
+        title: 'Hustota pascí rozhrania $Si-SiO_{2}$'
+        xlabel: '$E_{c} - E [eV]$'
+        ylabel: '$D_{it} [m^{-2}eV^{-1}]$'

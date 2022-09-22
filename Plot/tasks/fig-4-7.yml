@@ -8,18 +8,20 @@
   copy:
     dest: "{{ figure_dir }}/{{ figure }}-hfqc-{{ sample }}.csv"
     content: |
-      {% for v,c,f in vg|zip(cn)|zip(fn)|map('flatten')|list %}
-      {{ v }};{{ c }};{{ f }}
+      {% for v,f,ch,cl in vg|zip(fn)|zip(ch)|zip(cl)|map('flatten')|list %}
+      {{ "%.4f" % v }};{{ "%.6f" % f }};{{ "%.6f" % ch }};{{ "%.6f" % cl }}
       {% endfor %}
   vars:
+    fnorm: "{{ data.qc[sample].fnorm }}"
     a: "{{ (data.qc[sample].a_b_c_vg_cn_fn|map('split')|reverse)[:80] }}"
-    vg: "{{ a|map(attribute='3')|list }}"
-    cn: "{{ a|map(attribute='4')|list }}"
-    fn: "{{ a|map(attribute='5')|list }}"
+    vg: "{{ a|map(attribute='3')|map('float')|list }}"  # Gate volatge
+    ch: "{{ a|map(attribute='4')|map('float')|list }}"  # HF C/Cox
+    fn: "{{ a|map(attribute='5')|map('float')|list }}"  # Surface potential normalized
+    cl: "{{ fn|eq_3_2(vg, fnorm|float) }}"              # LF C/Cox
 
-- name: Create csv file from ql; LF QC
+- name: Create csv file from ql; LF
   copy:
-    dest: "{{ figure_dir }}/{{ figure }}-lfqc-{{ sample }}.csv"
+    dest: "{{ figure_dir }}/{{ figure }}-lf-{{ sample }}.csv"
     content: |
       {% for v,c in vg|zip(cn) %}
       {{ v }};{{ c }}
@@ -33,30 +35,21 @@
   copy:
     dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
     content: |
-      file_hf = "{{ figure_dir }}/{{ figure }}-hfqc-{{ sample }}.csv"
-      file_lf = "{{ figure_dir }}/{{ figure }}-lfqc-{{ sample }}.csv"
+      file_hfqc = "{{ figure_dir }}/{{ figure }}-hfqc-{{ sample }}.csv"
+      file_lf = "{{ figure_dir }}/{{ figure }}-lf-{{ sample }}.csv"
       set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
       # set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
       set terminal epslatex color 10 size 5.5in,3.6in
       # set terminal pdf
       set datafile separator ";"
-      # set key autotitle columnhead
       set xrange [-2:6.0]
       set yrange [0.5:1.2]
-      # set xtics 0.0,0.2e-6,0.8e-6
-      # set ytics 0.0,0.2e-6,0.8e-6
-      # set logscale x 10
-      # set logscale y 10
       set title "{{ text[item].title}}"
       set xlabel "{{ text[item].xlabel}}"
       set ylabel "{{ text[item].ylabel}}"
-      # filelist=system("ls {{ figure_dir }}/{{ figure }}-*.csv")
-      # plot for [filename in filelist] filename with dots notitle
-      plot file_hf u 1:2 w l t "${C}_{mos}^{HF}$" at end, \
-           file_lf u 1:2 w l t "${C}_{mos}^{LF}$" at end
-      # f(x) = a*x + b*x
-      # fit f(x) file via a, b
-      # plot f(x) dt 11
+      plot file_hfqc u 1:3 w l t "${C}_{mos}^{HF}$" at end, \
+                  '' u 1:4 w l t "${C}_{mos}^{LF}$" at end
+      #    file_lf u 1:2 w l t "${C}_{mos}^{LF}$" at end
   loop: [en, sk]
   vars:
     text:
