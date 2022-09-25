@@ -4,11 +4,11 @@
     that: sample is defined
     fail_msg: The variable *sample* is mandatory. e.g. sample=04
 
-- name: Create csv file from qc; HF QC
+- name: Create csv file from qc; HF QC; LF QC Hamming filter
   copy:
     dest: "{{ figure_dir }}/{{ figure }}-hfqc-{{ sample }}.csv"
     content: |
-      {% for v,f,ch,cl in vg|zip(fn)|zip(ch)|zip(cl)|map('flatten')|list %}
+      {% for v,f,ch,cl in (vg|zip(fn)|zip(ch)|zip(cl)|map('flatten')|list)[7:-7] %}
       {{ "%.4f" % v }};{{ "%.6f" % f }};{{ "%.6f" % ch }};{{ "%.6f" % cl }}
       {% endfor %}
   vars:
@@ -17,7 +17,21 @@
     vg: "{{ a|map(attribute='3')|map('float')|list }}"  # Gate volatge
     ch: "{{ a|map(attribute='4')|map('float')|list }}"  # HF C/Cox
     fn: "{{ a|map(attribute='5')|map('float')|list }}"  # Surface potential normalized
-    cl: "{{ fn|eq_3_2(vg, fnorm|float) }}"              # LF C/Cox
+    cl: "{{ fn|eq_3_2(vg, fnorm|float, 'hamming') }}"   # LF C/Cox
+
+- name: Create csv file from qc; LF QC; NumPy filter
+  copy:
+    dest: "{{ figure_dir }}/{{ figure }}-numpy-{{ sample }}.csv"
+    content: |
+      {% for v,cl in (vg|zip(cl))[7:-7] %}
+      {{ "%.4f" % v }};{{ "%.6f" % cl }}
+      {% endfor %}
+  vars:
+    fnorm: "{{ data.qc[sample].fnorm }}"
+    a: "{{ (data.qc[sample].a_b_c_vg_cn_fn|map('split')|reverse)[:80] }}"
+    vg: "{{ a|map(attribute='3')|map('float')|list }}"
+    fn: "{{ a|map(attribute='5')|map('float')|list }}"
+    cl: "{{ fn|eq_3_2(vg, fnorm|float, 'numpy') }}"
 
 - name: Create csv file from ql; LF
   copy:
@@ -36,11 +50,17 @@
     dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
     content: |
       file_hfqc = "{{ figure_dir }}/{{ figure }}-hfqc-{{ sample }}.csv"
+      file_numpy = "{{ figure_dir }}/{{ figure }}-numpy-{{ sample }}.csv"
       file_lf = "{{ figure_dir }}/{{ figure }}-lf-{{ sample }}.csv"
+      #
+      {% if terminal|d('eps') == 'pdf' %}
+      set terminal pdf
+      set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
+      {% else %}
+      set terminal epslatex color 10 size 5.5in,3.9in
       set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
-      # set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
-      set terminal epslatex color 10 size 5.5in,3.6in
-      # set terminal pdf
+      {% endif %}
+      #
       set datafile separator ";"
       set xrange [-2:6.0]
       set yrange [0.5:1.2]
@@ -49,7 +69,8 @@
       set ylabel "{{ text[item].ylabel}}"
       plot file_hfqc u 1:3 w l t "${C}_{mos}^{HF}$" at end, \
                   '' u 1:4 w l t "${C}_{mos}^{LF}$" at end
-      #    file_lf u 1:2 w l t "${C}_{mos}^{LF}$" at end
+      #   file_numpy u 1:2 w l t "${C}_{mos}^{LF}$" at end
+      #      file_lf u 1:2 w l t "${C}_{mos}^{LF}$" at end
   loop: [en, sk]
   vars:
     text:

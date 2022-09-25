@@ -20,24 +20,24 @@
     dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
     content: |
       # file = "{{ figure_dir }}/{{ figure }}.csv"
-      set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
-      # set output "{{ figure_dir }}/{{ figure }}-{{ item }}.pdf"
+      #
+      {% if terminal|d('eps') == 'pdf' %}
+      set terminal pdf
+      set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
+      {% else %}
       set terminal epslatex color 10 size 5.5in,3.9in
-      # set terminal pdf
+      set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
+      {% endif %}
+      #
       set datafile separator ";"
-      # set key autotitle columnhead
       set xrange [0:0.8]
       set yrange [1e21:2e23]
-      # set logscale x 10
       set logscale y 10
       set title "{{ text[item].title}}"
       set xlabel "{{ text[item].xlabel}}"
       set ylabel "{{ text[item].ylabel}}"
       filelist=system("ls {{ figure_dir }}/{{ figure }}-*.csv")
       plot for [filename in filelist] filename with dots notitle
-      # f(x) = a*x + b*x
-      # fit f(x) file via a, b
-      # plot f(x) dt 11
   loop: [en, sk]
   vars:
     text:

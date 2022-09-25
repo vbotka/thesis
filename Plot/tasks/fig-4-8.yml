@@ -29,22 +29,27 @@
     vg: "{{ a|map(attribute='3')|map('float')|list }}"
     ch: "{{ a|map(attribute='4')|map('float')|list }}"
     fn: "{{ a|map(attribute='5')|map('float')|list }}"
-    cl: "{{ fn|eq_3_2(vg, fnorm|float) }}"
-    di: "{{ cl|eq_4_15(ch, cox|float) }}"
-    ei: "{{ fn|eq_4_17(fnorm|float, bulk|float, 'P') }}"
+    cl: "{{ fn|eq_3_2(vg, fnorm|float, 'hamming') }}"
+    di: "{{ cl[7:-7]|eq_4_15(ch[7:-7], cox|float) }}"
+    ei: "{{ fn[7:-7]|eq_4_17(fnorm|float, bulk|float, 'P') }}"
 
 - name: Create gnuplot files for sample
   copy:
     dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
     content: |
       file_dit = "{{ figure_dir }}/{{ figure }}-dit-{{ sample }}.csv"
+      #
+      {% if terminal|d('eps') == 'pdf' %}
+      set terminal pdf
+      set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
+      {% else %}
+      set terminal epslatex color 10 size 5.5in,3.9in
       set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
-      # set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
-      set terminal epslatex color 10 size 5.5in,3.6in
-      # set terminal pdf
+      {% endif %}
+      #
       set datafile separator ";"
       set xrange [0.0:0.4]
-      set yrange [1e7:1e11]
+      set yrange [1e7:1e10]
       set logscale y 10
       set title "{{ text[item].title}}"
       set xlabel "{{ text[item].xlabel}}"

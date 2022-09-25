@@ -22,10 +22,15 @@
     dest: "{{ figure_dir }}/{{ figure }}-{{ item }}.gnuplot"
     content: |
       file_hf = "{{ figure_dir }}/{{ figure }}-hfqc-{{ sample }}.csv"
+      #
+      {% if terminal|d('eps') == 'pdf' %}
+      set terminal pdf
+      set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
+      {% else %}
+      set terminal epslatex color 10 size 5.5in,3.9in
       set output "{{ figure_dir }}/{{ figure }}-{{ item }}.tex"
-      # set output '{{ figure_dir }}/{{ figure }}-{{ item }}.pdf'
-      set terminal epslatex color 10 size 5.5in,3.6in
-      # set terminal pdf
+      {% endif %}
+      #
       set datafile separator ";"
       set xrange [-2:6.0]
       set yrange [0.5:1.2]

@@ -3,6 +3,15 @@
 Prepare files to create figures.
 
 
+## Dependency
+
+Install Python package *hamming-digital-filters*
+https://pypi.org/project/hamming-digital-filters/
+
+```bash
+shell>pip3 install hamming-digital-filters
+```
+
 ## Quick start guide
 
 (cd /scratch/vbotka-thesis-data; git remote -v)

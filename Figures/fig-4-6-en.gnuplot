@@ -1,8 +1,8 @@
 file_hf = "/export/scratch/vbotka-thesis/Plot/Figures/fig-4-6-hfqc-04.csv"
+#
+set terminal epslatex color 10 size 5.5in,3.9in
 set output "/export/scratch/vbotka-thesis/Plot/Figures/fig-4-6-en.tex"
-# set output '/export/scratch/vbotka-thesis/Plot/Figures/fig-4-6-en.pdf'
-set terminal epslatex color 10 size 5.5in,3.6in
-# set terminal pdf
+#
 set datafile separator ";"
 set xrange [-2:6.0]
 set yrange [0.5:1.2]
