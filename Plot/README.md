@@ -5,35 +5,37 @@ Prepare files to create figures.
 
 ## Dependency
 
-Install Python package *hamming-digital-filters*
-https://pypi.org/project/hamming-digital-filters/
+Install Python packages:
+
+* [*hamming-digital-filters*](https://pypi.org/project/hamming-digital-filters/)
+* [*mos-math*](https://pypi.org/project/mos-math/)
 
 ```bash
 shell>pip3 install hamming-digital-filters
+shell>pip3 install mos-math
 ```
-
-## Quick start guide
-
-(cd /scratch/vbotka-thesis-data; git remote -v)
-origin  https://github.com/vbotka/thesis-data.git (fetch)
-origin  https://github.com/vbotka/thesis-data.git (push)
-
-ansible-playbook pb_read_raw_data.yml -t read_raw,write_data
-ansible-playbook pb_write_all.yml
-
-
-## Read data
 
 * Clone data
 
 ```
-shell> git clone https://github.com/vbotka/thesis-data.git
+shell> git clone https://github.com/vbotka/thesis-data.git /scratch/vbotka-thesis-data
 ```
 
-* Configure the directories in the playbook
-  *pb_read_raw_data.yml*. The raw data files will be searched in
-  *data_dir*. The dictionary with parsed data will be stored in
-  *data_dict*.
+
+## Quick start guide
+
+```
+shell> ansible-playbook pb_read_raw_data.yml -t read_raw,write_data
+shell> ansible-playbook pb_write_all.yml
+```
+
+
+## Configure playbooks
+
+
+* Configure the directories in the playbooks pb_*.yml. The raw data
+  files will be searched in *data_dir*. The dictionary with parsed
+  data will be stored in *data_dict*.
 
 ```yaml
 data_dir: /scratch/vbotka-thesis-data
@@ -46,11 +48,12 @@ data_dict: /tmp/data.yml
 shell> ansible-playbook pb_read_raw_data.yml -t read_raw,write_data
 ```
 
-* Read the dictionary *data* and list all types of data stored in the dictionary
+* Take a look at the created data. Read the dictionary *data* and list
+  all types of data stored in the dictionary
 
 ```yaml
-shell>ansible-playbook pb_read_raw_data.yml -t read_data,list_types
- ...
+shell> ansible-playbook pb_read_raw_data.yml -t read_data,list_types
+...
 data.keys()|list:
   - dcvfile
   - gausnw
