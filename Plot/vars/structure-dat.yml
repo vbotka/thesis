@@ -1,3 +1,4 @@
+cvfile: [len, v_fi_dfi_cmos_beta_gama_u1]
 dcvfile: [[len, cox], v_fi_cn]
 gausnw: [[nb, fbv, cox], n_w]
 gausnw2: [n_w]
